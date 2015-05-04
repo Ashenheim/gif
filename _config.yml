@@ -8,7 +8,7 @@ relative_permalinks: true
 title:            GIF
 tagline:
 url:
-baseurl:          "gif/"
+baseurl:          "/gif"
 author:
 - name:           Patrick Gurr
 - url:            https://twitter.com/ashenheim
