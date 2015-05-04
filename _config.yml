@@ -1,0 +1,28 @@
+# CONFIG for Jekyll
+
+# Permalinks
+permalink:           pretty
+relative_permalinks: true
+
+# Setup
+title:            GIF
+tagline:
+url:
+baseurl:          "gif/"
+author:
+- name:           Patrick Gurr
+- url:            https://twitter.com/ashenheim
+- email:          patrick@gmail.com
+
+
+# Build
+markdown: kramdown
+highlighter: rouge
+exclude: [
+    'node_modules',
+    'bower_components',
+    'bower.json',
+    'gulpfile.js',
+    'package.json',
+    'README.md'
+]

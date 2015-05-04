@@ -1,0 +1,83 @@
+/* ====================================
+   Grid system
+   ==================================== */
+
+
+/*
+	Settings
+	------------------------------------ */
+
+	$grid-columns				: 12;
+	$grid-gutter				: $gutter;
+
+
+
+/*
+	Functions
+	------------------------------------ */
+
+
+
+
+
+/*
+	Grid Systems
+	------------------------------------ */
+
+
+.container {
+	width: 100%;
+	max-width: $site-width;
+	margin: 0 auto;
+	padding-left: $grid-gutter;
+	padding-right: $grid-gutter;
+	@include cf;
+}
+
+.row {
+	margin-left: -#{$grid-gutter};
+	margin-right: -#{$grid-gutter};
+	@include cf;
+}
+
+.col {
+	padding-left: $grid-gutter;
+	padding-right: $grid-gutter;
+	@include bp-medium {
+		float: left;
+	}
+}
+
+@for $i from 1 through $grid-columns {
+
+	.col-#{$i} {
+		@extend .col;
+		@include bp-medium {
+			width: ( ( 100% / $grid-columns ) * $i );
+		}
+	}
+
+	.col-mob-#{$i} {
+		@extend .col;
+		width: ( ( 100% / $grid-columns ) * $i );
+		float: left;
+	}
+
+}
+
+@for $i from 1 through 100 {
+
+	.per#{$i} {
+		@extend .col;
+		@include bp-medium {
+			width: ( ( 100% / 100 ) * $i );
+		}
+
+		&,
+		& * {
+			background: rgba( $black, .05 );
+			height: 200px;
+		}
+	}
+
+}

@@ -1,0 +1,4 @@
+# CONFIG for Jekyll (Development version)
+
+title:      "Development"
+baseurl:    "http://10.0.0.122:3002"

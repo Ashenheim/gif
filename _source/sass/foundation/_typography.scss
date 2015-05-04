@@ -1,0 +1,87 @@
+/* ====================================
+	Site typography.
+==================================== */
+
+/*
+	Headings
+	added .alpha, .beta, .gamma, .delta, .epsilon and .zeta for OOCSS reasons.
+	------------------------------------ */
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.4em;
+}
+
+h1, .alpha {
+	font-size: 2em;
+}
+
+h2, .beta {
+	font-size: 1.8em;
+}
+
+h3, .gamma {
+	font-size: 1.5em;
+}
+
+h4, .delta {
+	font-size: 1.2em;
+}
+
+h5, .epsilon {
+	font-size: 1.1em;
+}
+
+h6, .zeta {
+	font-size: 1.05em;
+}
+
+/*
+	Paragraphs, links and combined
+	------------------------------------ */
+
+p {
+	margin-bottom: $spacing-large;
+	line-height: 1.5em;
+}
+
+a {
+	color: $c-link;
+	font-weight: 700;
+	text-decoration: none;
+	@include hover {
+		color: $c-link--hover;
+	}
+}
+
+
+/*
+	Separate elements
+	------------------------------------ */
+
+hr {
+	border: none;
+	border-bottom: 1px solid $grey;
+	width: 100%;
+}
+
+
+blockquote {
+	background: #f9f9f9;
+	border-left: 10px solid #ccc;
+	margin: 1.5em 10px;
+	padding: 0.5em 10px;
+	quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+	color: #ccc;
+	content: open-quote;
+	font-size: 4em;
+	line-height: 0.1em;
+	margin-right: 0.25em;
+	vertical-align: -0.4em;
+}
+blockquote p {
+	display: inline;
+}

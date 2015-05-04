@@ -1,0 +1,26 @@
+/* ====================================
+	Variables
+==================================== */
+
+// Base
+$font-family				: 'Open Sans', $helvetica;
+$font-size					: 14px;
+
+$site-width					: 960px;
+$gutter						: 15px;
+
+// Spacings
+$spacing-small              : .4em;
+$spacing-medium             : 1.4em;
+$spacing-large              : 2.4em;
+
+// Media breakpoints
+$bp-huge					: 1140px;
+$bp-large					: 960px;
+$bp-medium					: 780px;
+$bp-small					: 480px;
+
+// Animations
+$easing-fast                : 150ms ease-in-out;
+$easing						: 300ms ease-in-out;
+$easing-slow                : 1000ms ease-in-out;

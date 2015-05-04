@@ -1,0 +1,13 @@
+/* ====================================
+	List styling (ul, ol, dl)
+==================================== */
+
+ul,
+ol {
+    @include margin( 0 0 $spacing-medium 0 );
+    padding: 0;
+
+    li {
+        margin-left: $spacing-medium;
+    }
+}

@@ -1,0 +1,44 @@
+/* ====================================
+	GLOBAL
+==================================== */
+
+
+/*
+	Helpers
+	------------------------------------ */
+
+@import '../../bower_components/font-awesome/scss/font-awesome.scss';
+@import '../../bower_components/bourbon/dist/_bourbon.scss';
+@import 'helpers/global-classes';
+@import 'helpers/colors';
+@import 'helpers/variables';
+@import 'helpers/mixins';
+@import 'helpers/grid';
+
+/*
+	Foundation
+	------------------------------------ */
+
+@import 'foundation/reset';
+@import 'foundation/base';
+@import 'foundation/typography';
+
+/*
+	Components
+	------------------------------------ */
+
+@import 'elements/buttons';
+@import 'elements/lists';
+@import 'elements/media';
+@import 'elements/blocks';
+@import 'elements/forms';
+@import 'elements/javascript';
+
+/*
+	Regions
+	------------------------------------ */
+
+@import 'regions/header';
+@import 'regions/navigation';
+@import 'regions/footer';
+@import 'regions/content';

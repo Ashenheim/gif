@@ -1,0 +1,22 @@
+{
+  "name": "gulp-boilerplate",
+  "version": "1.0.0",
+  "authors": [
+    "Patt <patt.gerr@gmail.com>"
+  ],
+  "description": "My boilerplate using Gulp instead.",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "font-awesome": "~4.3.0",
+    "bourbon": "4.0.0"
+  }
+}

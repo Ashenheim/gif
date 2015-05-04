@@ -1,0 +1,29 @@
+/* ====================================
+    Colors
+==================================== */
+
+// Generic
+$white                      : #ffffff;
+$grey                       : #EEEEEE;
+$black                      : #000000;
+
+// Brand
+$c-main                 : #303641;
+$c-sec                  : #EA474B;
+$c-accent               : lighten($c-main,20%);
+
+// Text
+$c-text                 : rgba($black, .8);
+$c-link                 : $c-sec;
+$c-link--hover          : lighten(saturate($c-link, 30%),10%);
+$c-link-alt             : $white;
+$c-link-alt--hover      : lighten(saturate($c-main, 20%),65%);
+
+// Layout
+$c-background           : #fff;
+
+
+// Third party Brand colors
+$c-facebook             : #03539e;
+$c-twitter              : #35ccff;
+$c-linkedin             : #217bc1;
