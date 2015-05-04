@@ -1,3 +1,11 @@
 /* ====================================
    Header styling
 ==================================== */
+
+.main-header {
+    @include padding( $spacing-large $gutter );
+}
+
+.site-title {
+    text-align: center;
+}

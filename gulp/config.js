@@ -81,14 +81,19 @@ module.exports = {
     },
 
     /* ------------------------------
-        Fonts copy
+        Media
     ------------------------------ */
-    fonts: {
-        src: paths.bower + "font-awesome/fonts/*",
-        dest: {
-            one: paths.dest + paths.assets + "fonts/",
-            two: paths.assets + "fonts/"
-        }
+    Media: {
+        images: {
+            src: paths.media + "*.{jpg,gif,png,svg}"
+        },
+        svg: {
+            src: paths.media + "*.svg"
+        },
+        dest: [
+            paths.dest + paths.assets + "media/",
+            paths.assets + "media/"
+        ]
     },
 
     /* ------------------------------

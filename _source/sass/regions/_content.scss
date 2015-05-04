@@ -4,30 +4,31 @@
 
 .gif {
     @include margin( 0 ( $gutter / 2 ) $gutter );
-    background: $black;
+    background: $c-accent--l;
     position: relative;
-    background: $white;
     box-shadow: 0 1px 3px $c-accent--d;
 
     figcaption {
-        @include position( absolute, null null 0 0 );
-        @include linear-gradient( bottom, rgba( $black, 1 ), rgba( $black, 0 ) );
+        @include size(100%);
         background-color: transparent;
-        width: 100%;
-        padding: 10px;
-        color: $white;
-        vertical-align: middle;
+        color: darken($c-accent--d, 20%);
 
         >.title {
+            @include ellipsis;
+            padding: 10px;
+            width: 100%;
+            background-color: transparent;
             color: inherit;
             display: inline-block;
             font-weight: bold;
-            @include ellipsis;
+            vertical-align: middle;
         }
         >.cat {
-            float: right;
+            @include position( absolute, 0 0 null null );
             font-weight: 300;
             opacity: .6;
+            padding: 5px $gutter;
+            color: $white;
         }
     }
 
@@ -42,8 +43,8 @@
         float: left;
         width: 100%;
 
-        @include bp-medium { width: (100% / 2 ); }
-        @include bp-large { width: (100% / 3 ); }
+        @include bp-small { width: (100% / 2 ); }
+        @include bp-medium { width: (100% / 3 ); }
 
         &__container {
             @include clearfix;

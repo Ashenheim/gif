@@ -16,12 +16,8 @@ $c-notify                   : #FFA500;
 
 
 // Brand
-$c-main                     : #3366CC;
-$c-sec                      : #551A8B;
-// $c-main                     : #171032;
-// $c-sec                      : #B31B67;
-// $c-main                     : #E35542;
-// $c-sec                      : #520435;
+$c-main                     : #f9f9f9;
+$c-sec                      : darken( #cfd8dc, 40% );
 
 $c-main80                   : mix( $c-main, $white, 80% );
 $c-main60                   : mix( $c-main, $white, 60% );
@@ -49,7 +45,7 @@ $c-link-alt                 : $white;
 $c-link-alt--hover          : lighten(saturate($c-main, 20%),65%);
 
 // Layout
-$c-background               : #fafafa;
+$c-background               : $c-accent--l;
 $c-background--sec          : lighten(saturate($c-background,5%),15%);
 
 

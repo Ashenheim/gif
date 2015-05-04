@@ -13,7 +13,10 @@ layout: page
         <figure class="gif">
             <img src="{{site.baseurl}}/images/{{gif.url}}" alt="{{gif.title}}">
             <figcaption>
-                <a class="title" href="{{site.baseurl}}/images/{{gif.url}}">{{gif.title}}</a>
+                <a class="title" href="{{site.baseurl}}/images/{{gif.url}}">
+                    {% include svg.html id="link" viewbox="37 20" %}
+                    <span>{{gif.title}}</span>
+                </a>
                 <span class="cat">{{category_name}}</span>
             </figcaption>
         </figure>

@@ -27,7 +27,7 @@ gulp.task('build', function(callback) {
     runSequence(
         'clear',
         'jekyll-build',
-        [ 'scripts', 'styles', 'fonts' ]
+        [ 'scripts', 'styles', 'media' ]
     )
 });
 
@@ -36,7 +36,7 @@ gulp.task('server', function(callback) {
     runSequence(
         'clear',
         'jekyll-dev',
-        [ 'scripts', 'styles', 'fonts' ],
+        [ 'scripts', 'styles', 'media' ],
         ['browserSync', 'watch']
     )
 });
