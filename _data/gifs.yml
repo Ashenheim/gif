@@ -3,13 +3,17 @@ reactions:
   url: reactions/omfg-corgi.gif
 - title: Oh noez!
   url: reactions/cat-oh-noez.gif
+- title: Werewolf giving the bird
+  url: reactions/werewolf-middlefinger.gif
 
 funny:
-- title: Avengers - Bringing the party
-  url: funny/avengers-bringing-the-party.gif
 - title: Star Wars - Darth Vader baseball
   url: funny/star-wars-pitch.gif
 - title: Steam sale, Gabe stop!
   url: funny/steam-stop-gabe.gif
 - title: You see this!?
   url: funny/otter-you-see-this.gif
+
+movie-reference:
+- title: Avengers - Bringing the party
+  url: funny/avengers-bringing-the-party.gif

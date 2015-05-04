@@ -2,26 +2,25 @@
 title: Front
 layout: page
 ---
-{% assign gif_category == funny %}
 
 <section class="gif__container">
-<ul class="gif-item__container" id="masonry">
-{% for category in site.data.gifs %}
-{% assign category_name = category | first %}
-{% for gif in category[1] %}
-    <li class="gif-item">
-        <figure class="gif">
-            <img src="{{site.baseurl}}/images/{{gif.url}}" alt="{{gif.title}}">
-            <figcaption>
-                <a class="title" href="{{site.baseurl}}/images/{{gif.url}}">
-                    {% include svg.html id="link" viewbox="37 20" %}
-                    <span>{{gif.title}}</span>
-                </a>
-                <span class="cat">{{category_name}}</span>
-            </figcaption>
-        </figure>
-    </li>
-{% endfor %}
-{% endfor %}
-</ul>
+    <ul class="gif-item__container" id="masonry">
+    {% for category in site.data.gifs %}
+    {% assign category_name = category | first %}
+    {% for gif in category[1] %}
+        <li class="gif-item">
+            <figure class="gif">
+                <img src="{{site.baseurl}}/images/{{gif.url}}" alt="{{gif.title}}">
+                <figcaption>
+                    <a class="title" href="{{site.baseurl}}/images/{{gif.url}}">
+                        {% include svg.html id="link" viewbox="37 20" %}
+                        <span>{{gif.title}}</span>
+                    </a>
+                    <span class="cat">{{category_name}}</span>
+                </figcaption>
+            </figure>
+        </li>
+    {% endfor %}
+    {% endfor %}
+    </ul>
 </section>
