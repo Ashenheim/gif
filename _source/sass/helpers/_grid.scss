@@ -16,6 +16,21 @@
 	Functions
 	------------------------------------ */
 
+@mixin container() {
+	width: 100%;
+	max-width: $site-width;
+	margin: 0 auto;
+	padding-left: $grid-gutter;
+	padding-right: $grid-gutter;
+	@include cf;
+}
+
+
+@mixin row() {
+	margin-left: -#{$grid-gutter};
+	margin-right: -#{$grid-gutter};
+	@include cf;
+}
 
 
 
@@ -26,18 +41,11 @@
 
 
 .container {
-	width: 100%;
-	max-width: $site-width;
-	margin: 0 auto;
-	padding-left: $grid-gutter;
-	padding-right: $grid-gutter;
-	@include cf;
+	@include container;
 }
 
 .row {
-	margin-left: -#{$grid-gutter};
-	margin-right: -#{$grid-gutter};
-	@include cf;
+	@include row;
 }
 
 .col {

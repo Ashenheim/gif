@@ -67,6 +67,8 @@ module.exports = {
     Scripts: {
         src: [
             paths.bower + "/jquery/dist/jquery.js",
+            paths.bower + "/masonry/dist/masonry.pkgd.js",
+            paths.bower + "/imagesloaded/imagesloaded.pkgd.js",
             paths.js + "/vendors/**/*.js",
             paths.js + "/partials/**/*.js",
             paths.js + "/script.js"
@@ -105,6 +107,7 @@ module.exports = {
             baseDir: paths.dest
         },
         host: "localhost",
-        open: false
+        open: false,
+        port: 8080
     },
 }

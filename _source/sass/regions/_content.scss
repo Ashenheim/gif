@@ -1,3 +1,58 @@
 /* ====================================
    Content styling
 ==================================== */
+
+.gif {
+    @include margin( 0 ( $gutter / 2 ) $gutter );
+    background: $black;
+    position: relative;
+    background: $white;
+    box-shadow: 0 1px 3px $c-accent--d;
+
+    figcaption {
+        @include position( absolute, null null 0 0 );
+        @include linear-gradient( bottom, rgba( $black, 1 ), rgba( $black, 0 ) );
+        background-color: transparent;
+        width: 100%;
+        padding: 10px;
+        color: $white;
+        vertical-align: middle;
+
+        >.title {
+            color: inherit;
+            display: inline-block;
+            font-weight: bold;
+            @include ellipsis;
+        }
+        >.cat {
+            float: right;
+            font-weight: 300;
+            opacity: .6;
+        }
+    }
+
+    >img {
+        display: block;
+        width: 100%;
+    }
+
+    &-item {
+        margin: 0; padding: 0;
+        display: block;
+        float: left;
+        width: 100%;
+
+        @include bp-medium { width: (100% / 2 ); }
+        @include bp-large { width: (100% / 3 ); }
+
+        &__container {
+            @include clearfix;
+        }
+    }
+
+    &__container {
+        @include clearfix;
+        @include container;
+        padding-top: $gutter;
+    }
+}

@@ -2,28 +2,66 @@
     Colors
 ==================================== */
 
+
+// Variables
+// ---------
+
 // Generic
 $white                      : #ffffff;
-$grey                       : #EEEEEE;
+$grey                       : #999;
 $black                      : #000000;
 
+$c-warning                  : #EA474B;
+$c-notify                   : #FFA500;
+
+
 // Brand
-$c-main                 : #303641;
-$c-sec                  : #EA474B;
-$c-accent               : lighten($c-main,20%);
+$c-main                     : #3366CC;
+$c-sec                      : #551A8B;
+// $c-main                     : #171032;
+// $c-sec                      : #B31B67;
+// $c-main                     : #E35542;
+// $c-sec                      : #520435;
+
+$c-main80                   : mix( $c-main, $white, 80% );
+$c-main60                   : mix( $c-main, $white, 60% );
+$c-main40                   : mix( $c-main, $white, 40% );
+$c-main20                   : mix( $c-main, $white, 20% );
+
+$c-sec120                   : mix( $c-sec, $black, 80% );
+$c-sec80                    : mix( $c-sec, $white, 80% );
+$c-sec60                    : mix( $c-sec, $white, 60% );
+$c-sec40                    : mix( $c-sec, $white, 40% );
+$c-sec20                    : mix( $c-sec, $white, 20% );
+
+
+
+$c-accent--l                : #f9f9f9;
+$c-accent                   : #e4e9eb;
+$c-accent--d                : #cfd8dc;
+
 
 // Text
-$c-text                 : rgba($black, .8);
-$c-link                 : $c-sec;
-$c-link--hover          : lighten(saturate($c-link, 30%),10%);
-$c-link-alt             : $white;
-$c-link-alt--hover      : lighten(saturate($c-main, 20%),65%);
+$c-text                     : rgba($black, .8);
+$c-link                     : $c-sec;
+$c-link--hover              : lighten(saturate($c-link, 30%),10%);
+$c-link-alt                 : $white;
+$c-link-alt--hover          : lighten(saturate($c-main, 20%),65%);
 
 // Layout
-$c-background           : #fff;
+$c-background               : #fafafa;
+$c-background--sec          : lighten(saturate($c-background,5%),15%);
 
 
 // Third party Brand colors
-$c-facebook             : #03539e;
-$c-twitter              : #35ccff;
-$c-linkedin             : #217bc1;
+$c-facebook                 : #03539e;
+$c-twitter                  : #35ccff;
+$c-linkedin                 : #217bc1;
+
+
+
+// Functions
+
+@function c-main($p) {
+    @return mix( $c-main, $white, $p );
+}
