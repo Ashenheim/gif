@@ -1,6 +1,6 @@
-angular.module("MyApp", ['wu.masonry'])
+var app = angular.module("MyApp", ['wu.masonry']);
 
-    .controller("MyCtrl", function($scope, $http) {
+    app.controller("MyCtrl", function($scope, $http) {
 
         $http.get('all-gifs.json')
             .then( function( results ) {
