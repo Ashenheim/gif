@@ -3,6 +3,9 @@ title: Front
 layout: page
 ---
 
+{% include search.html %}
+
+{%comment%}
 <section class="gif__container">
     <ul class="gif-item__container" id="masonry">
     {% for category in site.data.gifs %}
@@ -24,3 +27,4 @@ layout: page
     {% endfor %}
     </ul>
 </section>
+{%endcomment%}

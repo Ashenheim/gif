@@ -6,7 +6,10 @@
     @include margin( 0 ( $gutter / 2 ) $gutter );
     background: $c-accent--l;
     position: relative;
+    z-index: 1;
     box-shadow: 0 1px 3px $c-accent--d;
+    transition: all $easing;
+    border: 0 solid $white;
 
     figcaption {
         @include size(100%);
@@ -15,13 +18,13 @@
 
         >.title {
             @include ellipsis;
-            padding: 10px;
             width: 100%;
             background-color: transparent;
             color: inherit;
             display: inline-block;
             font-weight: bold;
             vertical-align: middle;
+            padding: 10px;
         }
         >.cat {
             @include position( absolute, 0 0 null null );
@@ -55,5 +58,11 @@
         @include clearfix;
         @include container;
         padding-top: $gutter;
+    }
+
+
+    &:hover {
+        z-index: 2;
+        border-width: 5px;
     }
 }

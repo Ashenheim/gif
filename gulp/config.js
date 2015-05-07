@@ -66,12 +66,11 @@ module.exports = {
     ------------------------------ */
     Scripts: {
         src: [
-            paths.bower + "/jquery/dist/jquery.js",
-            paths.bower + "/masonry/dist/masonry.pkgd.js",
-            paths.bower + "/imagesloaded/imagesloaded.pkgd.js",
-            paths.js + "/vendors/**/*.js",
-            paths.js + "/partials/**/*.js",
-            paths.js + "/script.js"
+            paths.bower + '/jquery/dist/jquery.js',
+            paths.bower + '/angular-masonry/angular-masonry.js',
+            paths.js + '/vendors/**/*.js',
+            paths.js + '/partials/**/*.js',
+            paths.js + '/script.js'
         ],
         dest: {
             one: paths.dest + paths.assets + "js/",

@@ -62,7 +62,6 @@
 	font-size: calcRem($size);
 }
 
-
 // Add all states for Hover
 @mixin hover {
 	&:hover, &:active, &:focus {

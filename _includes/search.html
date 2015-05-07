@@ -1,0 +1,37 @@
+{%raw%}
+
+<section class="gif__container" ng-app="MyApp">
+
+    <div ng-controller="MyCtrl">
+
+        <form>
+            <input id="Search" ng-model="query" type="text" placeholder="Search Gif" autofocus>
+        </form>
+
+        <ul class="gif-item__container" masonry preserve-order>
+            <li
+                class="gif-item masonry-brick"
+                ng-repeat="gif in gifs | filter:query | orderBy: 'title'"
+                ng-hide="!gif.title"
+            >
+                <a href="{{gif.url}}">
+                    <figure class="gif">
+                        <img src="{{gif.url}}" alt="{{gif.title}}">
+                        <figcaption>
+
+
+                            <span class="title">
+                                {%endraw%}{% include svg.html id="link" viewbox="37 20" %}{%raw%}
+                                {{gif.title}}
+                            </span>
+                            <span class="cat">{{gif.cat}}</span>
+                        </figcaption>
+                    </figure>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+</section>
+
+{%endraw%}

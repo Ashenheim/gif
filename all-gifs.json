@@ -1,0 +1,17 @@
+---
+layout: none
+---
+{% assign counter = 0 %}
+
+{
+  "posts" : [
+    {% for cat in site.data.gifs %}{% for gif in cat[1] %}
+    {
+        "title": {{ gif.title | jsonify }},
+        "url": "{{site.baseurl}}/images/{{ gif.url}}",
+        "cat": {{ cat | first | jsonify }}
+    },
+    {%endfor%}{%endfor%}
+    {}
+  ]
+}
