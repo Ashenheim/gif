@@ -8,7 +8,7 @@
             <input id="Search" ng-model="query" type="text" placeholder="Search Gif" autofocus>
         </form>
 
-        <ul class="gif-item__container" masonry preserve-order reload-on-show>
+        <ul class="gif-item__container" masonry preserve-order>
             <li
                 class="gif-item masonry-brick"
                 ng-repeat="gif in filtered = (gifs | filter:query | limitTo:6 | orderBy:'rank')"

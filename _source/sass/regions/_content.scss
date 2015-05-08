@@ -60,10 +60,4 @@
         @include container;
         padding-top: $gutter;
     }
-
-
-    &:hover {
-        z-index: 2;
-        opacity: .8;
-    }
 }
