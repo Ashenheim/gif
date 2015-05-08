@@ -22,11 +22,17 @@ textarea {
     margin: 0 auto;
     padding: $gutter;
     color: $c-sec;
+    border: 1px solid $white;
+    transition: all $easing;
 
     &:focus {
         outline: none;
         border-color: $c-accent--d;
         box-shadow: 0 1px 5px $c-accent;
+    }
+
+    .is-no-results & {
+        border-color: red;
     }
 }
 
