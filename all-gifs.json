@@ -9,6 +9,7 @@ layout: none
       {
           "title": {{ gif.title | jsonify }},
           "url": "{{site.baseurl}}/images/{{ gif.url}}",
+          "keywords": {{ gif.keywords | jsonify }},
           "cat": {{ cat | first | jsonify }}
       },
       {%endfor%}{%endfor%}

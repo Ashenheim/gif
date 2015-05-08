@@ -1,14 +1,18 @@
 reactions:
 - title: OMFG Corgi
   url: reactions/omfg-corgi.gif
+  keywords: dog, corgi
 - title: Oh noez!
   url: reactions/cat-oh-noez.gif
+  keywords: cat
 - title: Werewolf flipping the bird
   url: reactions/werewolf-middlefinger.gif
+  keywords: dog, werewolf
 - title: Bird face massage
   url: reactions/bird-face-massage.gif
 - title: Screw birthdays
   url: reactions/fuck-birthdays.gif
+  keywords: dog, labrador
 
 funny:
 - title: Star Wars - Darth Vader baseball
@@ -17,7 +21,9 @@ funny:
   url: funny/steam-stop-gabe.gif
 - title: You see this!?
   url: funny/otter-you-see-this.gif
+  keywords: otter
 - title: Avengers - Bringing the party
   url: funny/avengers-bringing-the-party.gif
 - title: Spacy Husky
   url: funny/space-husky.gif
+  keywords: dog, husky
