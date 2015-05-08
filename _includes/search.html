@@ -11,7 +11,7 @@
         <ul class="gif-item__container" masonry preserve-order>
             <li
                 class="gif-item masonry-brick"
-                ng-repeat="gif in filtered = (gifs | filter:query | limitTo:6 | orderBy:'rank')"
+                ng-repeat="gif in filtered = (gifs | filter:query | orderBy:'rank')"
                 ng-hide="!gif.title"
             >
                 <a href="{{gif.url}}">
