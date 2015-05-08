@@ -8,10 +8,10 @@
             <input id="Search" ng-model="query" type="text" placeholder="Search Gif" autofocus>
         </form>
 
-        <ul class="gif-item__container" masonry preserve-order>
+        <ul class="gif-item__container" masonry preserve-order reload-on-show>
             <li
                 class="gif-item masonry-brick"
-                ng-repeat="gif in gifs | orderBy: 'title'"
+                ng-repeat="gif in gifs | filter:query"
                 ng-hide="!gif.title"
             >
                 <a href="{{gif.url}}">

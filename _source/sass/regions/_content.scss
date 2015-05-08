@@ -9,7 +9,7 @@
     z-index: 1;
     box-shadow: 0 1px 3px $c-accent--d;
     transition: all $easing;
-    border: 0 solid $white;
+
 
     figcaption {
         @include size(100%);
@@ -26,6 +26,7 @@
             vertical-align: middle;
             padding: 10px;
         }
+        
         >.cat {
             @include position( absolute, 0 0 null null );
             font-weight: 300;
@@ -63,6 +64,6 @@
 
     &:hover {
         z-index: 2;
-        border-width: 5px;
+        opacity: .8;
     }
 }
