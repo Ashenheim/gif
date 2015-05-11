@@ -52,15 +52,55 @@
         @include bp-large { width: (100% / 3 ); }
         @include bp-huge { width: (100% / 5 ); }
 
-        &__container {
-            @include clearfix;
-        }
     }
 
     &__container {
         @include clearfix;
         @include container;
+        padding-top: $spacing-large;
         max-width: 100%;
-        padding-top: $gutter;
     }
+}
+
+
+.search {
+
+    &-form {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        padding: $gutter;
+        background: $c-accent--l;
+        border-bottom: 1px solid $c-accent;
+
+        input {
+            font-size: 2em;
+            min-width: 100%;
+        }
+    }
+
+    &-results {
+        @include position( absolute, 50% $gutter null null );
+        transform: translateY(-50%);
+        font-size: 40px;
+        font-weight: bold;
+        color: $c-sec;
+        vertical-align: center;
+        pointer-events: none;
+
+        >.current:after {
+            content:'/';
+            display: inline-block;
+            font-weight: normal;
+        }
+        >.total {
+            font-size: .5em;
+            position: relative;
+            left: -.5em;
+            opacity: .5;
+            vertical-align: 15%;
+        }
+    }
+
+
 }

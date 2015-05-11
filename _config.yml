@@ -6,7 +6,7 @@ relative_permalinks: true
 
 # Setup
 title:            GIF
-tagline:
+tagline:          No need to figure out if it's pronounced as "Gif" or "Jif"
 url:
 baseurl:          "/gif"
 author:
@@ -18,11 +18,10 @@ author:
 # Build
 markdown: kramdown
 highlighter: rouge
-exclude: [
-    'node_modules',
-    'bower_components',
-    'bower.json',
-    'gulpfile.js',
-    'package.json',
-    'README.md'
-]
+exclude:
+- 'node_modules'
+- 'bower_components'
+- 'bower.json'
+- 'gulpfile.js'
+- 'package.json'
+- 'README.md'

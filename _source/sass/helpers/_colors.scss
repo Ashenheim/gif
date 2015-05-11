@@ -8,7 +8,7 @@
 
 // Generic
 $white                      : #ffffff;
-$grey                       : #999;
+$grey                       : #ccc;
 $black                      : #000000;
 
 $c-warning                  : #EA474B;
@@ -16,7 +16,7 @@ $c-notify                   : #FFA500;
 
 
 // Brand
-$c-main                     : #f9f9f9;
+$c-main                     : darken( #cfd8dc, 70% );
 $c-sec                      : darken( #cfd8dc, 40% );
 
 $c-main80                   : mix( $c-main, $white, 80% );

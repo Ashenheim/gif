@@ -9,3 +9,9 @@
 .site-title {
     text-align: center;
 }
+
+.site-tagline {
+    text-align: center;
+    color: lighten($c-sec, 30%);
+    font-style: italic;
+}
