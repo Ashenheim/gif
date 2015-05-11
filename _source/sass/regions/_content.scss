@@ -60,6 +60,27 @@
         padding-top: $spacing-large;
         max-width: 100%;
     }
+
+    &__no-results {
+        text-align: center;
+        margin-bottom: $spacing-large;
+        display: none;
+
+        >span {
+            display: inline-block;
+            padding: $gutter;
+            background: $c-warning;
+            font-weight: bold;
+            color: $white;
+            font-size: 3em;
+            border-radius: 3px;
+            text-shadow: 0 -2px 0 darken( $c-warning, 20% );
+            box-shadow: 0 3px 0 darken( $c-warning, 20% );
+        }
+
+
+        .is-no-results & { display: block; }
+    }
 }
 
 

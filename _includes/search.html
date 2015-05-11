@@ -12,7 +12,12 @@
             </div>
         </form>
 
-        <div class="gif__container">
+        <div class="gif__container" ng-class="{'is-no-results': filtered.length == '0'}">
+
+            <div class="gif__no-results">
+                <span>Nothing to GIF away right now, <br>try something else</span>
+            </div>
+
             <ul masonry preserve-order>
 
                 <li
