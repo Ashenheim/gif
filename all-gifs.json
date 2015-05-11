@@ -1,16 +1,15 @@
 ---
 layout: none
 ---
-{% assign counter = 0 %}
 
 {
   "posts" : [
       {% for cat in site.data.gifs %}{% for gif in cat[1] %}
       {
-          "title": {{ gif.title | jsonify }},
-          "url": "{{site.baseurl}}/images/{{ gif.url}}",
-          "keywords": {{ gif.keywords | jsonify }},
-          "cat": {{ cat | first | jsonify }}
+        "title": {{gif.image | replace:'.gif','' | jsonify}},
+        "image": "{{site.baseurl}}/images/{{cat | first}}/{{ gif.image }}",
+        {% if gif.keywords %}"keywords": {{ gif.keywords | jsonify }},{%endif%}
+        "cat": {{ cat | first | jsonify }}
       },
       {%endfor%}{%endfor%}
       {}

@@ -2,21 +2,26 @@
 
 <section class="gif__container" ng-app="MyApp">
 
-    <div ng-controller="MyCtrl">
+    <div ng-controller="Search">
 
-        <form ng-class="{'is-no-results': filtered.length == '0'}">
-            <input id="Search" ng-model="query" type="text" placeholder="Search Gif" autofocus>
+        <form id="Search" ng-class="{'is-no-results': filtered.length == '0'}">
+            <input ng-model="query" type="text" placeholder="Search Gif" autofocus>
         </form>
 
+        <p align="center">
+            {{filtered.length}}/<small>{{gifs.length}}</small>
+        </p>
+
         <ul class="gif-item__container" masonry preserve-order>
+
             <li
-                class="gif-item masonry-brick"
-                ng-repeat="gif in filtered = (gifs | filter:query | orderBy:'rank')"
+                class="gif-item masonry-brick {{gif.class}}"
+                ng-repeat="gif in filtered = (gifs | filter:queryResults | orderBy:'rank' | limitTo:20 )"
                 ng-hide="!gif.title"
             >
-                <a href="{{gif.url}}">
+                <a href="{{gif.image}}">
                     <figure class="gif">
-                        <img src="{{gif.url}}" alt="{{gif.title}}">
+                        <img src="{{gif.image}}" alt="{{gif.title}}">
                         <figcaption>
                             <span class="title">
                                 {%endraw%}{% include svg.html id="link" viewbox="37 20" %}{%raw%}

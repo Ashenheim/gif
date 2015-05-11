@@ -1,29 +1,506 @@
-reactions:
-- title: OMFG Corgi
-  url: reactions/omfg-corgi.gif
-  keywords: dog, corgi
-- title: Oh noez!
-  url: reactions/cat-oh-noez.gif
-  keywords: cat
-- title: Werewolf flipping the bird
-  url: reactions/werewolf-middlefinger.gif
-  keywords: dog, werewolf
-- title: Bird face massage
-  url: reactions/bird-face-massage.gif
-- title: Screw birthdays
-  url: reactions/fuck-birthdays.gif
-  keywords: dog, labrador
+funny:
+- image: star-wars-pitch.gif
+- image: steam-stop-gabe.gif
+- image: otter-you-see-this.gif
+  keywords: otter
+- image: avengers-bringing-the-party.gif
+- image: space-husky.gif
+  keywords: dog, husky
+
+amazed:
+- image: hepburn-sunglasses-off.gif
+- image: tom-hardy-glasses-off.gif
+
+badass:
+- image: skate-rope.gif
+- image: split.gif
+
+bboy:
+- image: bboy-bear.gif
+- image: bboy-jag.gif
+- image: camouflage-bboy.gif
+- image: shufflin-robot.gif
+
+big-lebowski:
+- image: ashes-toss.gif
+- image: dancing.gif
+- image: gun.gif
+- image: no-huh-uh.gif
+- image: polish-my-ball.gif
+- image: stoned.gif
+- image: what.gif
+
+boom:
+- image: atomic_bomb.gif
+- image: booyah.gif
+- image: cat-explosion.gif
+- image: drop-the-mic.gif
+- image: fist-bump.gif
+- image: mic-drop-2.gif
+- image: nuke.gif
+- image: Rick-Ross-Boom.gif
+
+boss:
+- image: breakfast-club-sunglasses.gif
+- image: like-a-ross.gif
+
+bring-it:
+- image: challenge-accepted.gif
+
+burn:
+- image: ashton-kutcher-burn.gif
+- image: car-burn.gif
+- image: fight-club-burn-it-down.gif
+- image: hashtag-burn-neil-patrick-harris.gif
+
+careful:
+- image: indiana-jones-sand-bag.gif
+
+cinemagraphs:
+- image: whiskey-pour.gif
+
+clap:
+- image: applause.gif
+- image: clap-transformers-bumblebee.gif
+- image: clap.gif
+- image: dance.gif
+- image: picard-slow-clap.gif
+
+classics:
+- image: cheech-joint.gif
+- image: drinking-from-teh-firehose.gif
+- image: heman.gif
+- image: hercules.gif
+- image: im-an-adult.gif
+- image: whatchutalkingbout-willis.gif
+- image: yak-shave.gif
+- image: you-keep-using-that-word.gif
+
+contempt:
+- image: cheech-wtf.gif
+- image: Dwight-Schrute-look-of-disapproval.gif
+- image: enough-internet.gif
+- image: farley-weekend-update.gif
+- image: max-smart-confused.gif
+- image: no_way_Neil_deGrasse_Tyson.gif
+- image: oh-please.gif
+- image: simon-cowel-glazed-look.gif
+- image: spader-contempt.gif
+- image: stevie-mcquinn.gif
+
+crying:
+- image: bugs-crying.gif
+- image: gushing-tears.gif
+- image: jim-cry-happy.gif
+- image: laughing-crying.gif
+- image: peter-parker-crying.gif
+- image: raining.gif
+- image: sad-kitty.gif
+- image: seth-rogen-crying.gif
+
+dancing:
+- image: ace-ventura-dance.gif
+- image: bboy-bear.gif
+- image: Blues-Brothers.gif
+- image: calvin-hobbes-dance.gif
+- image: carlton.gif
+- image: dancin.gif
+- image: dumb-dumber-dance.gif
+- image: fresh-prince-dance.gif
+- image: girl-get-down.gif
+- image: hammer-time.gif
+- image: happy-dance-forever.gif
+- image: jiggy.gif
+- image: molly-breakfast-club.gif
+- image: napoleon-dance.gif
+- image: shufflin-robot.gif
+- image: sprockets-dancing.gif
+- image: stormtroopin.gif
+- image: techno-viking.gif
+- image: world-order.gif
+
+deal-with-it:
+- image: deal-with-it-paul-rudd.gif
+- image: deal-with-it.gif
+- image: sophia-sunglasses-on.gif
+
+disgust:
+- image: disgust-jony-depp.gif
+- image: disgust.gif
+- image: disgusted.gif
+- image: dsn-eye-roll.gif
+- image: fresh-prince-omg.gif
+- image: gangsta-what-the.gif
+- image: george-costanza.gif
+- image: horrified-hippie.gif
+- image: judge-judy-computer-disgust.gif
+- image: ted-confused.gif
+- image: uh-yeah-office-space.gif
+- image: whut.gif
+
+distracted:
+- image: squirrel-up-dog-gif_large.gif
+
+done:
+- image: hand-wipe.gif
+
+downton-abbey:
+- image: hughes-carson-shocked.gif
+- image: mary-eye-roll.gif
+- image: mary-snarky-look.gif
+- image: violet-forbids.gif
+- image: violet-never-wrong.gif
+- image: violet-shocked.gif
+- image: violet-shufflin.gif
+
+eddie-izzard:
+- image: not-listening.gif
+
+excited:
+- image: 42-Snoop-Bounce.gif
+- image: aha.gif
+- image: anchorman-jump-in-air.gif
+- image: baby-excited.gif
+- image: bill-murray-toast.gif
+- image: breakfast-club-jud-fist-pump.gif
+- image: cabbage-patch.gif
+- image: carl-sagan-youre-awesome.gif
+- image: cookie-monster.gif
+- image: giggle.gif
+- image: ice-cube-good-day.gif
+- image: jean-claud-van-dam-dance.gif
+- image: jiggy.gif
+- image: joel-tim-toast.gif
+- image: kip_yes.gif
+- image: leo-toast.gif
+- image: matt-foley-1.gif
+- image: more-cowbell.gif
+- image: never-ending-story.gif
+- image: noice.gif
+- image: Sean-Connery-Fist-Pump-US-Open.gif
+- image: shufflin-robot.gif
+- image: snl-sue-surprise-party.gif
+- image: stefan-spicy.gif
+- image: super-duper.gif
+- image: super-happy-men.gif
+- image: yes-excited-kids.gif
+- image: yes-github-yissssss.gif
+- image: zoolander.gif
+
+facepalm:
+- image: cosby-facepalm.gif
+- image: picard-facepalm-o.gif
+- image: picard-facepalm.gif
+- image: worf-startrek-facepalm.gif
+
+fail:
+- image: breakdancing.gif
+- image: cat-fail.gif
+- image: cat-mirror.gif
+- image: dance-fail.gif
+- image: ferret-fail.gif
+- image: fumble.gif
+- image: girls-swing.gif
+- image: ice-bucket-challenge.gif
+- image: ice-jump.gif
+- image: kayak-diving.gif
+- image: mascot-spill.gif
+- image: monday-crash.gif
+- image: party-wipeout.gif
+- image: truck-pool.gif
+- image: warehouse-forklift-crash.gif
+- image: wheelbarrel-dump.gif
+
+fu:
+- image: boba-fett.gif
+- image: finger.gif
+- image: finger2.gif
+- image: fu-computer.gif
+- image: homer.gif
+- image: jon-stewart.gif
+- image: maybe-fuck-yourself.gif
+- image: mr-bean.gif
+- image: mr-rogers.gif
+- image: mrs-doubtfire-finger.gif
+- image: silly-face.gif
+- image: stormtrooper.gif
+- image: zach-galifianakis.gif
 
 funny:
-- title: Star Wars - Darth Vader baseball
-  url: funny/star-wars-pitch.gif
-- title: Steam sale, Gabe stop!
-  url: funny/steam-stop-gabe.gif
-- title: You see this!?
-  url: funny/otter-you-see-this.gif
-  keywords: otter
-- title: Avengers - Bringing the party
-  url: funny/avengers-bringing-the-party.gif
-- title: Spacy Husky
-  url: funny/space-husky.gif
-  keywords: dog, husky
+- image: avengers-bringing-the-party.gif
+- image: otter-you-see-this.gif
+- image: space-husky.gif
+- image: star-wars-pitch.gif
+- image: steam-stop-gabe.gif
+
+gangsta:
+- image: 1-50-Cent-Laugh-Off.gif
+- image: 42-Snoop-Bounce.gif
+- image: 46-Ross-Boom.gif
+- image: good-day.gif
+- image: ice-cube-good-day.gif
+
+gtfo:
+- image: get-the-eff-out.gif
+- image: hulk-punch-thor.gif
+- image: pirates-runs-away.gif
+- image: tsunami.gif
+- image: whack.gif
+
+hacking:
+- image: typity-type.gif
+
+hand-wave:
+- image: bw-handwave.gif
+- image: kelly-kapour-w.gif
+- image: piss-off-1.gif
+- image: sheen-hand-wave.gif
+- image: spader-hand-wave.gif
+- image: whiz-handwave.gif
+
+haters-gonna-hate:
+- image: haters-gone-hate.gif
+- image: haters-gonna-hate-futurama.gif
+
+headbang:
+- image: beavis-butthead-headbang2.gif
+
+help:
+- image: he-man-help.gif
+- image: help.gif
+- image: skeletor-help.gif
+
+hiding:
+- image: homer.gif
+
+high-five:
+- image: amy-poehler-tina-fey-high-five.gif
+- image: amy-seth-snl-high-five.gif
+- image: avengers-high-five.gif
+- image: awkward-high-five.gif
+- image: borat-high-five.gif
+- image: cat-high-five.gif
+- image: community-high-five.gif
+- image: conan-andy-high-five.gif
+- image: friends-rachel-ross-high-five.gif
+- image: high-five-knailed-it.gif
+- image: high-five-met-your-mother.gif
+- image: high-five-one-tree-hill.gif
+- image: it-crowd-high-five.gif
+- image: pokemon-high-five-2.gif
+- image: police-high-five.gif
+- image: will-smith-jazzy-jeff-dap.gif
+- image: will-smith-jazzy-jeff-high-five.gif
+
+hubbers:
+- image: 1-50-Cent-Laugh-Off-JAG.gif
+- image: bboy-jag.gif
+- image: github-dodgeball-tnm.gif
+- image: hubmojis-afeld-hearteyes.gif
+- image: hubmojis-balevine-laughing.gif
+- image: hubmojis-balevine-metal.gif
+- image: hubmojis-balevine-newsroom.gif
+- image: hubmojis-jglovier-angry.gif
+- image: hubmojis-jglovier-confused.gif
+- image: hubmojis-jglovier-excited.gif
+- image: hubmojis-jglovier-hearteyes.gif
+- image: hubmojis-jglovier-indifference.gif
+- image: hubmojis-jglovier-kudos.gif
+- image: hubmojis-jglovier-laughing.gif
+- image: hubmojis-jglovier-metal.gif
+- image: hubmojis-jglovier-newsroom.gif
+- image: hubmojis-jglovier-rollingeyes.gif
+- image: hubmojis-jglovier-sad.gif
+- image: hubmojis-jglovier-wink.gif
+- image: hubmojis-jonrohan-confused.gif
+- image: hubmojis-jonrohan-metal.gif
+- image: hubmojis-schacon-metal.gif
+- image: hubmojis-technoweenie-confused.gif
+- image: jakeboxer-uh-uh-whiteboard.gif
+- image: jasonsalez-dj.gif
+- image: joao-magic.gif
+- image: joel-tim-toast.gif
+- image: rtomayko-dance.gif
+- image: yes-github-yissssss.gif
+
+hug:
+- image: cartoon-kid-hug.gif
+- image: girfriend-hug.gif
+- image: glee-group-hug-gif.gif
+- image: hug-tysonholyfield.gif
+
+impressed:
+- image: aha.gif
+- image: impressive.gif
+- image: sunglasses-off-loop.gif
+
+jpg:
+- image: guinness-brilliant.jpg
+- image: what-you-did-there.jpg
+
+jurassic-park:
+- image: come-quickly-comon.gif
+- image: dennis-nedry-ah-ah-ah.gif
+- image: hold-onto-ur-butts.gif
+- image: jello-jiggle.gif
+- image: life-finds-a-way.gif
+
+lol:
+- image: harry-lol.gif
+- image: milk-out-noze.gif
+
+lolwat:
+- image: dj-spok.gif
+- image: dryer-abuse.gif
+- image: foot-dance.gif
+- image: hambergler.gif
+- image: hoth-puppy.gif
+- image: icecreamkid.gif
+- image: lobster-distraction.gif
+- image: lolwat.gif
+- image: lolwut-rappers.gif
+- image: pocket-sand.gif
+- image: prancercise.gif
+- image: silly-face.gif
+- image: thats-a-penis-gif.gif
+- image: vevulza-winning.gif
+- image: wtf.gif
+
+mind-blown:
+- image: magic.gif
+- image: mind-blown-2.gif
+- image: Mind-Blown-Russell-Brand.gif
+- image: mind-blown.gif
+- image: mind-blown2.gif
+
+nailed-it:
+- image: huge-dive.gif
+- image: nailed-it-bowling-pins.gif
+- image: nailed-it-car-jump.gif
+- image: nailed-it-glasses.gif
+- image: nailed-it-phone-dunk.gif
+
+napoleon:
+- image: napoleon.gif
+
+"no":
+- image: dikembe-mutumbo-nope.gif
+- image: no-no.gif
+- image: nope-duck.gif
+- image: no_way_Neil_deGrasse_Tyson.gif
+- image: old-man-no.gif
+- image: QA-rejected.gif
+- image: really-hahaha-no.gif
+- image: tracey-jordan-nope.gif
+- image: wave-denied-nope.gif
+- image: whatno.gif
+
+omg:
+- image: 36-Friday-Damn.gif
+- image: austin-powers-omg.gif
+- image: fresh-prince-omg.gif
+- image: Kramer-whaaa.gif
+- image: omg.gif
+- image: ooooo.gif
+
+popcorn:
+- image: gazelle-popcorn.gif
+- image: it-crowd-popcorn.gif
+- image: popcorn-eating.gif
+- image: popcorn-stuffing.gif
+- image: troy-popcorn-stare.gif
+
+reactions:
+- image: bird-face-massage.gif
+- image: cat-oh-noez.gif
+- image: fuck-birthdays.gif
+- image: omfg-corgi.gif
+- image: werewolf-middlefinger.gif
+- image: omfg-corgi.gif
+  keywords: dog, corgi
+- image: cat-oh-noez.gif
+  keywords: cat
+- image: werewolf-middlefinger.gif
+  keywords: dog, werewolf
+- image: bird-face-massage.gif
+- image: fuck-birthdays.gif
+  keywords: dog, labrador
+
+scared:
+- image: 3FlzE.gif
+- image: ahhhhh.gif
+- image: badger-run-away.gif
+- image: scared-cat.gif
+- image: scared-cats.gif
+
+ship:
+- image: canal-ships.gif
+
+shut-up:
+- image: shut-up.gif
+
+support:
+- image: take-my-money.gif
+- image: you-can-do-it-o.gif
+- image: yup-stepbrothers.gif
+
+swoon:
+- image: cartoon-swoon.gif
+- image: ohhh-minion.gif
+
+thank-you:
+- image: thank-you-spice.gif
+
+thumbs-up:
+- image: chuck-norris.gif
+- image: jakie-chan-thumbsup.gif
+- image: suits-thumbsup.gif
+- image: terminator.gif
+- image: thumbs-up-levar-burton.gif
+- image: thumbs-up.gif
+
+tongue:
+- image: tongue-out.gif
+
+upset:
+- image: alen-rickman.gif
+- image: amy-pohler-rage.gif
+- image: chris-farley.gif
+- image: chuck-norris-punch.gif
+- image: conan-ragequit.gif
+- image: DataBSOD.gif
+- image: jumps-out-window2.gif
+- image: Kramer-whaaa.gif
+- image: noooo.gif
+- image: obama-kicks-door.gif
+- image: office-tableflip.gif
+- image: outta-here.gif
+- image: really.gif
+- image: table-wipe-rage.gif
+- image: tableflip.gif
+- image: whyyyyy.gif
+
+waiting:
+- image: coming-to-america-waiting.gif
+
+web-dev:
+- image: family-guy-css.gif
+
+whatever:
+- image: bw-whatever.gif
+- image: eye-roll.gif
+- image: james-franco-hands-up.gif
+- image: miley-whatever.gif
+
+why-you:
+- image: i-see-what-you-did-there.gif
+
+will-ferrell:
+- image: air-juggling.gif
+- image: boy-that-escalated-quickly.gif
+- image: kind-of-a-big-deal.gif
+- image: san-diego-whales-vigina.gif
+
+"yes":
+- image: eh-uh-huh.gif
+- image: yup.gif

@@ -41,6 +41,15 @@ textarea {
 }
 
 #Search {
-    font-size: 2em;
-    margin-bottom: $spacing-large;
+    @include position(fixed, 0 null null 0);
+    z-index: 10;
+    width: 100%;
+    background: $c-accent;
+    margin-bottom: $spacing-small;
+    padding: $gutter;
+
+    input {
+        font-size: 2em;
+        max-width: 100%;
+    }
 }
