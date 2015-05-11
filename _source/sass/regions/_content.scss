@@ -47,10 +47,10 @@
         float: left;
         width: 100%;
 
-        @include bp-small { width: 100%; }
+        @include bp-small  { width: 100%; }
         @include bp-medium { width: (100% / 2 ); }
-        @include bp-large { width: (100% / 3 ); }
-        @include bp-huge { width: (100% / 5 ); }
+        @include bp-large  { width: (100% / 3 ); }
+        @include bp-huge   { width: (100% / 5 ); }
 
     }
 
@@ -92,11 +92,11 @@
 
 
 .search {
+    position: sticky;
+    top: 0;
+    z-index: 10;
 
     &-form {
-        position: sticky;
-        top: 0;
-        z-index: 10;
         padding: $gutter;
         background: $c-accent--l;
         border-bottom: 1px solid $c-accent;
@@ -104,6 +104,10 @@
         input {
             font-size: 2em;
             min-width: 100%;
+        }
+
+        &.is-no-results input {
+            border-color: red;
         }
     }
 

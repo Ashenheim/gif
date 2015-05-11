@@ -4,7 +4,14 @@ var app = angular.module("MyApp", ['wu.masonry']);
 
         $http.get('all-gifs.json')
             .then( function( results ) {
-                $scope.gifs = results.data.posts;
+                var $json    = results.data.posts;
+                var $length  = $json.length - 1;
+
+                var $results = $json.splice(0,$length);
+
+                $scope.gifs = $results;
+
+                console.log( $results.length );
             });
 
         $scope.filterFunction = function(element) {

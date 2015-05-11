@@ -8,7 +8,7 @@ $(document).ready(function() {
         Initiations
     ------------------------------ */
 
-    $('#Search').Stickyfill();
+    $('.search').Stickyfill();
 
     /* ------------------------------
         Events
