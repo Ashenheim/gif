@@ -69,13 +69,10 @@
         >span {
             display: inline-block;
             padding: $gutter;
-            background: $c-warning;
             font-weight: bold;
-            color: $white;
-            font-size: 3em;
+            color: $c-warning;
+            font-size: 2em;
             border-radius: 3px;
-            text-shadow: 0 -2px 0 darken( $c-warning, 20% );
-            box-shadow: 0 3px 0 darken( $c-warning, 20% );
         }
 
         .is-no-results & { display: block; animation: noresults $easing; }
