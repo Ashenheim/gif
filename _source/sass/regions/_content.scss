@@ -111,13 +111,18 @@
     }
 
     &-results {
-        @include position( absolute, 50% $gutter null null );
-        transform: translateY(-50%);
-        font-size: 40px;
+        @include position( absolute, $gutter $gutter null null );
+        font-size: 1.5em;
         font-weight: bold;
         color: $c-sec;
         vertical-align: center;
         pointer-events: none;
+
+        @include bp-small {
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 40px;
+        }
 
         >.current:after {
             content:'/';
@@ -132,6 +137,4 @@
             vertical-align: 15%;
         }
     }
-
-
 }

@@ -1,21 +1,25 @@
 {%raw%}
 
-<section class="gifs" ng-app="MyApp">
+<main class="gifs" ng-app="MyApp">
 
     <div ng-controller="Search">
 
-        <form id="Search" class="search-form" ng-class="{'is-no-results': filtered.length == '0'}">
-            <input ng-model="query" type="text" placeholder="Search Gif" autofocus>
-            <div class="search-results">
-                <span class="current">{{filtered.length}}</span>
-                <span class="total">{{gifs.length}}</span>
-            </div>
-        </form>
+        <section class="search">
 
-        <div class="gif__container" ng-class="{'is-no-results': filtered.length == '0'}">
+            <form id="Search" class="search-form" ng-class="{'is-no-results': filtered.length == '0'}">
+                <div class="search-results">
+                    <span class="current">{{filtered.length}}</span>
+                    <span class="total">{{gifs.length}}</span>
+                </div>
+                <input ng-model="query" type="text" placeholder="Search Gif" autofocus>
+            </form>
+
+        </section>
+
+        <section class="gif__container" ng-class="{'is-no-results': filtered.length == '0'}">
 
             <div class="gif__no-results">
-                <span>Nothing to GIF away right now, <br>try something else</span>
+                <span>Nothing to <i>GIF</i> away right now, <br>try something else</span>
             </div>
 
             <ul masonry preserve-order>
@@ -39,8 +43,8 @@
                     </a>
                 </li>
             </ul>
-        </div>
+        </section>
     </div>
-</section>
+</main>
 
 {%endraw%}
