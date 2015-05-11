@@ -78,8 +78,18 @@
             box-shadow: 0 3px 0 darken( $c-warning, 20% );
         }
 
+        .is-no-results & { display: block; animation: noresults $easing; }
+    }
+}
 
-        .is-no-results & { display: block; }
+
+@include keyframes( noresults ) {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0;
+    } 100% {
+        transform: translateY(0px);
+        opacity: 1;
     }
 }
 
