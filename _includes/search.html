@@ -2,6 +2,7 @@
 
 <main class="gifs" ng-app="MyApp">
 
+
     <div ng-controller="Search" ng-class="{'no-input': !query }">
 
         <section class="search">
@@ -13,6 +14,10 @@
                 </div>
                 <input ng-model="query" type="text" placeholder="Search Gif" autofocus>
             </form>
+
+            <ul class="list-buttons">
+                <li ng-click="queryFind(cat)" ng-repeat="cat in categories">{{cat}}</li>
+            </ul>
 
         </section>
 

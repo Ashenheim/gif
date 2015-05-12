@@ -40035,20 +40035,29 @@ app.controller("Search", function($scope, $http, $timeout) {
         JSON request
     ------------------------------------ */
 
-    $http.get('all-gifs.json')
-        .then( function( results ) {
+    $scope.fetchScope = function() {
+        $http.get('all-gifs.json')
+            .then( function( results ) {
 
-            var $json    = results.data.posts;
-            var $length  = $json.length;
-            var $results = $json.splice(0,$length); // Removes last empty entry
+                var $json    = results.data;
+                var $length  = $json.gifs.length;
+                var $results = $json.gifs.splice(0,$length); // Removes last empty entry
 
-            $results.forEach(function(item) {
-                item.randomVal = $scope.random();
+                $results.forEach(function(item) {
+                    item.randomVal = $scope.random();
+                });
+
+                $scope.gifs = $results;
+                $scope.categories = $json.categories;
+
             });
+    };
 
-            $scope.gifs = $results;
+    $scope.fetchScope();
 
-        });
+    $scope.clickOnUpload = function () {
+        console.log("Refresh");
+    };
 
     /* ------------------------------------
         Search filter
@@ -40071,17 +40080,25 @@ app.controller("Search", function($scope, $http, $timeout) {
 
     $scope.queryResults = '';
 
-    $scope.$watch('query', function (val) {
-
+    $scope.filterSearch = function (val) {
         if (queryTextTimout) $timeout.cancel(queryTextTimout);
 
         queryFilterText = val;
 
         queryTextTimout = $timeout(function() {
             $scope.queryResults = queryFilterText;
+
         }, queryTimeOutTime);
 
+    };
+
+    $scope.$watch('query', function (val) {
+        $scope.filterSearch( val );
     });
+
+    $scope.queryFind = function (val) {
+        $scope.query = val;
+    };
 
     /* ------------------------------------
         Random number sort

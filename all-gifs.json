@@ -3,15 +3,22 @@ layout: compress
 ---
 
 {
-  "posts" : [
-      {% for cat in site.data.gifs %}{% for gif in cat[1] %}
-      {
-        "title": {{gif.image | replace:'.gif','' | replace:'-',' ' | jsonify}},
-        "image": "{{site.baseurl}}/images/{{cat | first}}/{{ gif.image }}",
-        {% if gif.keywords %}"keywords": {{ gif.keywords | jsonify }},{%endif%}
-        "cat": {{ cat | first | jsonify | replace:'-',' ' }}
-      },
-      {%endfor%}{%endfor%}
-      {}
-  ]
+
+    "categories": [
+        {% for cat in site.data.gifs %}
+        "{{cat | first | replace:'-',' ' }}"{%unless forloop.last%},{%endunless%}
+        {%endfor%}
+    ],
+
+    "gifs": [
+        {% for cat in site.data.gifs %}{% for gif in cat[1] %}
+        {
+            "title": {{gif.image | replace:'.gif','' | replace:'-',' ' | jsonify}},
+            "image": "{{site.baseurl}}/images/{{cat | first}}/{{ gif.image }}",
+            {% if gif.keywords %}"keywords": {{ gif.keywords | jsonify }},{%endif%}
+            "cat": {{ cat | first | jsonify | replace:'-',' ' }}
+        },
+        {%endfor%}{%endfor%}
+        {}
+    ]
 }
