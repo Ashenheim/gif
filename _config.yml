@@ -9,7 +9,7 @@ tagline: >
   No need to figure out if it's pronounced as "Gif" or "Jif"
   Just add it in and enjoy
 url:
-baseurl:          "/gif"
+baseurl:          "/gif/"
 author:
 - name:           Patrick Gurr
 - url:            https://twitter.com/ashenheim
