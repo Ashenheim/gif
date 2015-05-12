@@ -2,11 +2,12 @@
 
 # Permalinks
 permalink:           pretty
-relative_permalinks: true
 
 # Setup
 title:            GIF
-tagline:          No need to figure out if it's pronounced as "Gif" or "Jif"
+tagline: >
+  No need to figure out if it's pronounced as "Gif" or "Jif"
+  Just add it in and enjoy
 url:
 baseurl:          "/gif"
 author:
@@ -25,3 +26,11 @@ exclude:
 - 'gulpfile.js'
 - 'package.json'
 - 'README.md'
+
+# compress.html by Anatol Broder (http://jch.penibelst.de)
+compress_html:
+  clippings: all
+  comments: ["<!--", "-->"]
+  endings: all
+  ignore:
+    envs: [local]

@@ -4,6 +4,10 @@
 
 .main-header {
     @include padding( $spacing-large $gutter );
+
+    h1,p {
+        margin: 0;
+    }
 }
 
 .site-title {

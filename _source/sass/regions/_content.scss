@@ -48,8 +48,8 @@
         width: 100%;
 
         @include bp-small  { width: 100%; }
-        @include bp-medium { width: (100% / 2 ); }
-        @include bp-large  { width: (100% / 3 ); }
+        @include bp-medium { width: (100% / 3 ); }
+        @include bp-large  { width: (100% / 4 ); }
         @include bp-huge   { width: (100% / 5 ); }
 
     }
@@ -125,10 +125,13 @@
             font-size: 40px;
         }
 
-        >.current:after {
-            content:'/';
-            display: inline-block;
-            font-weight: normal;
+        >.current {
+            @include transition( opacity $easing );
+            &:after {
+                content:'/';
+                display: inline-block;
+                font-weight: normal;
+            }
         }
         >.total {
             font-size: .5em;
@@ -136,6 +139,11 @@
             left: -.5em;
             opacity: .5;
             vertical-align: 15%;
+        }
+
+
+        .no-input & .current {
+            opacity: 0;
         }
     }
 }

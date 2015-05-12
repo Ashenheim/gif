@@ -115,6 +115,7 @@ module.exports = {
         },
         host: "localhost",
         open: false,
-        port: 8080
+        port: 8080,
+        online: false
     },
 }

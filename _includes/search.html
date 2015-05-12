@@ -2,7 +2,7 @@
 
 <main class="gifs" ng-app="MyApp">
 
-    <div ng-controller="Search">
+    <div ng-controller="Search" ng-class="{'no-input': !query }">
 
         <section class="search">
 
@@ -26,7 +26,7 @@
 
                 <li
                     class="gif-item masonry-brick {{gif.class}}"
-                    ng-repeat="gif in filtered = (gifs | filter:queryResults | orderBy:'rank' | limitTo:15 )"
+                    ng-repeat="gif in filtered = (gifs | filter:queryResults | orderBy:'randomVal' | limitTo:15 )"
                     ng-hide="!gif.title"
                 >
                     <a href="{{gif.image}}">

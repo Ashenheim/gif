@@ -7,7 +7,7 @@ layout: none
       {% for cat in site.data.gifs %}{% for gif in cat[1] %}
       {
         "title": {{gif.image | replace:'.gif','' | jsonify}},
-        "image": "{{site.baseurl}}/images/{{cat | first}}/{{ gif.image }}",
+        "image": "{{site.baseurl}}images/{{cat | first}}/{{ gif.image }}",
         {% if gif.keywords %}"keywords": {{ gif.keywords | jsonify }},{%endif%}
         "cat": {{ cat | first | jsonify }}
       },
