@@ -116,6 +116,7 @@ dancing:
 - image: shufflin-robot.gif
 - image: sprockets-dancing.gif
 - image: stormtroopin.gif
+  keywords: star wars
 - image: techno-viking.gif
 - image: world-order.gif
 
@@ -224,6 +225,7 @@ fu:
 - image: mrs-doubtfire-finger.gif
 - image: silly-face.gif
 - image: stormtrooper.gif
+  keywords: star wars
 - image: zach-galifianakis.gif
 
 funny:
