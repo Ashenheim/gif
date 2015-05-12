@@ -75,7 +75,7 @@
             border-radius: 3px;
         }
 
-        .is-no-results & { display: block; animation: noresults $easing; }
+        .has-no-results & { display: block; animation: noresults $easing; }
     }
 }
 
@@ -108,7 +108,7 @@
             min-width: 100%;
         }
 
-        &.is-no-results input {
+        &.has-no-results input {
             border-color: red;
         }
 
