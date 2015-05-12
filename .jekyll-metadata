@@ -1,7 +1,8 @@
 ---
 C:/Users/patrick.gerritsen/Code/Github/gif/all-gifs.json:
-  mtime: 2015-05-12 11:41:59.000000000 +02:00
-  deps: []
+  mtime: 2015-05-12 12:12:56.000000000 +02:00
+  deps:
+  - "/Users/patrick.gerritsen/Code/Github/gif/_layouts/compress.html"
 C:/Users/patrick.gerritsen/Code/Github/gif/index.html:
   mtime: 2015-05-11 16:06:51.000000000 +02:00
   deps:
@@ -1149,28 +1150,28 @@ C:/Users/patrick.gerritsen/Code/Github/gif/images/yes/yup.gif:
   mtime: 2015-05-06 16:24:02.000000000 +02:00
   deps: []
 C:/Users/patrick.gerritsen/Code/Github/gif/media.svg:
-  mtime: 2015-05-12 11:00:26.000000000 +02:00
+  mtime: 2015-05-12 11:58:23.000000000 +02:00
   deps: []
 C:/Users/patrick.gerritsen/Code/Github/gif/names.json:
   mtime: 2015-05-08 16:20:01.000000000 +02:00
   deps: []
 C:/Users/patrick.gerritsen/Code/Github/gif/assets/css/global.css:
-  mtime: 2015-05-12 11:00:26.000000000 +02:00
+  mtime: 2015-05-12 12:11:07.000000000 +02:00
   deps: []
 C:/Users/patrick.gerritsen/Code/Github/gif/assets/js/global.js:
-  mtime: 2015-05-12 11:00:27.000000000 +02:00
+  mtime: 2015-05-12 11:58:23.000000000 +02:00
   deps: []
 C:/Users/patrick.gerritsen/Code/Github/gif/assets/js/global.min.js:
-  mtime: 2015-05-12 11:00:31.000000000 +02:00
+  mtime: 2015-05-12 11:58:26.000000000 +02:00
   deps: []
 C:/Users/patrick.gerritsen/Code/Github/gif/assets/media/link.svg:
-  mtime: 2015-05-12 11:00:26.000000000 +02:00
+  mtime: 2015-05-12 11:58:23.000000000 +02:00
   deps: []
 C:/Users/patrick.gerritsen/Code/Github/gif/assets/media/map.svg:
-  mtime: 2015-05-12 11:00:26.000000000 +02:00
+  mtime: 2015-05-12 11:58:23.000000000 +02:00
   deps: []
 C:/Users/patrick.gerritsen/Code/Github/gif/assets/media/pacman.svg:
-  mtime: 2015-05-12 11:00:26.000000000 +02:00
+  mtime: 2015-05-12 11:58:23.000000000 +02:00
   deps: []
 C:/Users/patrick.gerritsen/Code/Github/gif/images/reactions/obama-laughing.gif:
   mtime: 2015-05-12 09:31:27.000000000 +02:00

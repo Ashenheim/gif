@@ -5,13 +5,28 @@
 .main-header {
     @include padding( $spacing-large $gutter );
 
-    h1,p {
+    p {
         margin: 0;
     }
 }
 
 .site-title {
     text-align: center;
+    margin-bottom: 30px;
+
+    #icon-link {
+        @include size(1.5em);
+        padding: 10px;
+        border-radius: 50%;
+        fill: $white;
+        background: $c-link;
+        vertical-align: -28%;
+    }
+
+
+    & a:hover #icon-link {
+        background: $c-link--hover;
+    }
 }
 
 .site-tagline {
