@@ -5,19 +5,32 @@
 
     <div ng-controller="Search" ng-class="{'no-input': !query }">
 
+        <section class="search-categories">
+
+            {%endraw%}{%comment%}<ul class="list-buttons">
+                <li ng-click="queryFind(cat)" ng-repeat="cat in categories">{{cat}}</li>
+            </ul>{%endcomment%}{%raw%}
+
+
+
+        </section>
+
         <section class="search">
 
             <form id="Search" class="search-form" ng-class="{'is-no-results': filtered.length == '0'}">
-                <div class="search-results">
-                    <span class="current">{{filtered.length}}</span>
-                    <span class="total">{{gifs.length}}</span>
+                <div class="search-form__input">
+                    <div class="search-results">
+                        <span class="current">{{filtered.length}}</span>
+                        <span class="total">{{gifs.length}}</span>
+                    </div>
+                    <input ng-model="query" type="text" placeholder="Search Gif" autofocus>
                 </div>
-                <input ng-model="query" type="text" placeholder="Search Gif" autofocus>
+                <div class="search-form__select">
+                    <select ng-model="querySelect">
+                        <option ng-click="queryFind(cat)" ng-repeat="cat in categories" value="{{cat}}">{{cat}}</option>
+                    </select>
+                </div>
             </form>
-
-            <ul class="list-buttons">
-                <li ng-click="queryFind(cat)" ng-repeat="cat in categories">{{cat}}</li>
-            </ul>
 
         </section>
 

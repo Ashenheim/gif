@@ -8,7 +8,8 @@ input[type=search],
 input[type=url],
 input[type=email],
 input[type=number],
-textarea {
+textarea,
+select {
     display: block;
     margin: 0;
     width: 100%;
@@ -30,6 +31,10 @@ textarea {
         border-color: $c-accent--d;
         box-shadow: 0 1px 5px $c-accent;
     }
+}
+
+select {
+    
 }
 
 @include placeholder {

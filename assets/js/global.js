@@ -40092,13 +40092,21 @@ app.controller("Search", function($scope, $http, $timeout) {
 
     };
 
+    $scope.queryFind = function (val) {
+        $scope.query = val;
+    };
+
+    /* ------------------------------------
+        Watch
+    ------------------------------------ */
+
     $scope.$watch('query', function (val) {
         $scope.filterSearch( val );
     });
 
-    $scope.queryFind = function (val) {
+    $scope.$watch('querySelect', function (val) {
         $scope.query = val;
-    };
+    });
 
     /* ------------------------------------
         Random number sort

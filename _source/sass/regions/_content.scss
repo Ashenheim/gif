@@ -97,18 +97,31 @@
     z-index: 10;
 
     &-form {
+        @include clearfix;
         position: relative;
         padding: $gutter;
         background: $c-accent--l;
         border-bottom: 1px solid $c-accent;
 
-        input {
+        input,select {
             font-size: 2em;
             min-width: 100%;
         }
 
         &.is-no-results input {
             border-color: red;
+        }
+
+
+        &__input {
+            @include padding( null $gutter );
+            position: relative;
+            width: 60%;
+            float: left;
+        }
+        &__select {
+            @extend .search-form__input;
+            width: 40%;
         }
     }
 
