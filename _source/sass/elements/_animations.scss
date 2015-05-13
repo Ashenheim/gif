@@ -1,0 +1,18 @@
+/* ====================================
+    Animations
+==================================== */
+
+@include keyframes( noresults ) {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0;
+    } 100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@include keyframes( spinner ) {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

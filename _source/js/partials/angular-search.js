@@ -1,5 +1,5 @@
 
-var app = angular.module("MyApp", ['wu.masonry']);
+var app = angular.module("MyApp", ['wu.masonry','angular.filter']);
 
 app.controller("Search", function($scope, $http, $timeout) {
 
@@ -88,4 +88,24 @@ app.controller("Search", function($scope, $http, $timeout) {
         return 0.5 - Math.random();
     };
 
+});
+
+
+app.directive('imageonload', function() {
+    return {
+        restrict: 'A',
+        link: function(scope, element, attrs) {
+            var _parent = element.parent('.gif');
+            _parent.addClass('image-not-loaded');
+            element.bind('load', function() {
+
+                _parent
+                    .removeClass('image-not-loaded')
+                    .addClass('image-is-loaded');
+
+                console.log(element.attr("src"));
+
+            });
+        }
+    };
 });
