@@ -65,7 +65,6 @@ clap:
 - image: clap.gif
 - image: dance.gif
 - image: picard-slow-clap.gif
-- image: peter-dinklage-dancing.gif
 
 classics:
 - image: cheech-joint.gif
@@ -121,6 +120,8 @@ dancing:
 - image: techno-viking.gif
 - image: world-order.gif
 - image: carlton-dance-fresh-prince-of-belair.gif
+- image: peter-dinklage-dancing.gif
+
 
 deal-with-it:
 - image: deal-with-it-paul-rudd.gif
