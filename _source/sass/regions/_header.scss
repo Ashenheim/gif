@@ -3,7 +3,9 @@
 ==================================== */
 
 .main-header {
+    @include linear-gradient(top, rgba($c-accent--d,1), rgba($c-accent--d,0));
     @include padding( $spacing-large $gutter );
+    background-color: transparent;
 
     p {
         margin: 0;

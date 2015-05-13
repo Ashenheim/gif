@@ -6,8 +6,7 @@ permalink:           pretty
 # Setup
 title:            GIF
 tagline: >
-  No need to figure out if it's pronounced as "Gif" or "Jif"
-  Just add it in and enjoy
+  ### Is it "Gif" or "Jif"?
 url:
 baseurl:          "/gif"
 author:

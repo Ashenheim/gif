@@ -9,9 +9,9 @@ layout: default
             {{site.title}}
         </a>
     </h1>
-    <p class="site-tagline">
-        {{site.tagline}}
-    </p>
+    <div class="site-tagline">
+        {{ site.tagline | markdownify }}
+    </div>
 </header>
 
 {{content}}

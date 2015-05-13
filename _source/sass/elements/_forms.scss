@@ -23,7 +23,7 @@ select {
     margin: 0 auto;
     padding: $gutter;
     color: $c-sec;
-    border: 1px solid $white;
+    border: 1px solid $c-accent;
     transition: all $easing;
 
     &:focus {
@@ -34,7 +34,7 @@ select {
 }
 
 select {
-    
+
 }
 
 @include placeholder {
