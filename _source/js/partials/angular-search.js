@@ -1,5 +1,5 @@
 
-var app = angular.module("MyApp", ['wu.masonry','angular.filter']);
+var app = angular.module("MyApp", ['wu.masonry']);
 
 app.controller("Search", function($scope, $http, $timeout) {
 
