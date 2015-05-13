@@ -42270,6 +42270,11 @@ var app = angular.module("MyApp", ['wu.masonry','angular.filter']);
 
 app.controller("Search", function($scope, $http, $timeout) {
 
+    /* Settings */
+    $scope.settings = 15;
+
+    console.log($scope.settings);
+
     /* ------------------------------------
         JSON request
     ------------------------------------ */
