@@ -99,7 +99,7 @@
     &-form {
         @include clearfix;
         position: relative;
-        padding: $gutter;
+        padding: $gutter 10%;
         background: $c-accent--l;
         border-bottom: 1px solid $c-accent;
 
