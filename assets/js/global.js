@@ -42266,7 +42266,7 @@ if (window.jQuery) {
 }
 
 
-var app = angular.module("MyApp", ['wu.masonry']);
+var app = angular.module("searchApp", ['wu.masonry']);
 
 app.controller("Search", function($scope, $http, $timeout) {
 
