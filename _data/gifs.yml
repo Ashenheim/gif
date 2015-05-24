@@ -98,6 +98,9 @@ crying:
 - image: sad-kitty.gif
 - image: seth-rogen-crying.gif
 
+cute:
+- image: wolf-wuff-cute.gif
+
 dancing:
 - image: ace-ventura-dance.gif
 - image: bboy-bear.gif
@@ -256,6 +259,7 @@ gtfo:
 guildwars:
 - image: guildwars-esports.gif
   keywords: Guild Wars 2 gw2 Rytlock e-sports
+- image: guild-wars-2-charr-guitar-rock-on.gif
 
 hacking:
 - image: typity-type.gif
@@ -346,6 +350,7 @@ jurassic-park:
 lol:
 - image: harry-lol.gif
 - image: milk-out-noze.gif
+- image: team-america-laugh.gif
 
 lolwat:
 - image: dj-spok.gif
@@ -432,6 +437,7 @@ responses:
 - image: that-is-racist-kid.gif
 - image: that-is-racist-kid-mexican-edition.gif
 - image: that-is-racist-kid-uber-version.gif
+- image: dumbledore-no-one.gif
 
 scared:
 - image: 3FlzE.gif
