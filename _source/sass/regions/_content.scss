@@ -52,6 +52,10 @@
         @include bp-medium { width: (100% / 3 ); }
         @include bp-huge   { width: (100% / 4 ); }
 
+        .results-1 & { width: (100% / 1); }
+        .results-2 & { width: (100% / 2); }
+        .results-3 & { width: (100% / 3); }
+
         &__container {
             max-width: $site-width;
             margin: 0 auto;

@@ -6,7 +6,7 @@
 
         <section class="search">
 
-            <form id="Search" class="search-form" ng-class="{'has-no-results': filtered.length == '0'}">
+            <form id="Search" class="search-form" ng-class="{'has-no-results': filtered.length == 0}">
                 <div class="search-form__input">
                     <div class="search-results">
                         <span class="current">{{filtered.length}}</span>
@@ -18,7 +18,7 @@
 
         </section>
 
-        <section class="gif__container" ng-class="{'has-no-results': filtered.length == '0'}">
+        <section class="gif__container" ng-class="{'has-no-results': filtered.length == 0}">
 
             <div class="gif__no-results">
 
@@ -34,7 +34,7 @@
                 </ul>
             </div>
 
-            <ul class="gif-item__container" masonry preserve-order>
+            <ul class="gif-item__container results-{{ filtered.length }}" masonry preserve-order>
 
                 <li
                     class="gif-item masonry-brick {{gif.class}}"
