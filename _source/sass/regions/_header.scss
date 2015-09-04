@@ -4,7 +4,7 @@
 
 .main-header {
     @include linear-gradient(top, rgba($c-accent--d,1), rgba($c-accent--d,0));
-    @include padding( $spacing-large $gutter );
+    @include padding( $spacing-medium $gutter );
     background-color: transparent;
 
     p {
@@ -14,7 +14,7 @@
 
 .site-title {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 0;
 
     #icon-link {
         @include size(1.5em);

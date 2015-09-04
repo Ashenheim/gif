@@ -1,11 +1,9 @@
 {%raw%}
 
 <main class="gifs" ng-app="searchApp">
-
     <div ng-controller="Search" ng-class="{'no-input': !query }">
 
         <section class="search">
-
             <form id="Search" class="search-form" ng-class="{'has-no-results': filtered.length == 0}">
                 <div class="search-form__input">
                     <div class="search-results">
@@ -15,20 +13,14 @@
                     <input ng-model="query" type="text" placeholder="Search Gif" autofocus>
                 </div>
             </form>
-
         </section>
 
         <section class="gif__container" ng-class="{'has-no-results': filtered.length == 0}">
-
             <div class="gif__no-results">
-
                 <code>(╯°□°)╯︵ ┻━┻</code>
-
                 <span>
                     Nothing to <i>GIF</i> away right now, <br>try something else
                 </span>
-
-
                 <ul class="list-buttons">
                     <li ng-click="queryFind(cat)" ng-repeat="cat in categories">{{cat}}</li>
                 </ul>
@@ -40,20 +32,14 @@
                     class="gif-item masonry-brick {{gif.class}}"
                     ng-repeat="gif in filtered = (gifs | filter:queryResults | orderBy:'randomVal' | limitTo:12 )"
                     ng-hide="!gif.title"
+
                 >
-                    <a href="{{gif.image}}">
-                        <figure class="gif">
+                    <figure class="gif">
+                        <a ng-href="{{gif.image}}">
                             <div class="spinner"></div>
                             <img ng-src="{{gif.image}}" alt="{{gif.title}}" imageonload>
-                            <figcaption>
-                                <span class="title">
-                                    {%endraw%}{% include svg.html id="link" viewbox="37 20" %}{%raw%}
-                                    {{gif.title}}
-                                </span>
-                                <span class="cat">{{gif.cat}}</span>
-                            </figcaption>
-                        </figure>
-                    </a>
+                        </a>
+                    </figure>
                 </li>
             </ul>
         </section>

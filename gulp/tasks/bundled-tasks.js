@@ -26,23 +26,29 @@ var gulp         = require('gulp'),
 gulp.task('build', function(callback) {
     runSequence(
         'clear',
-        'jekyll-build',
+        'jekyll:dev',
+        [ 'scripts', 'styles', 'media' ]
+    )
+});
+
+gulp.task('build:dist', function(callback) {
+    runSequence(
+        'clear',
+        'jekyll:dist',
         [ 'scripts', 'styles', 'media' ]
     )
 });
 
 // gulp server
-gulp.task('server', function(callback) {
+gulp.task('server', ['browserSync', 'watch']);
+gulp.task('serve', ['server']);
+
+// gulp (default)
+gulp.task('default', function(callback) {
     runSequence(
         'clear',
-        'jekyll-dev',
+        'jekyll:dev',
         [ 'scripts', 'styles', 'media' ],
         ['browserSync', 'watch']
     )
 });
-
-// gulp serve
-gulp.task('serve', ['server']);
-
-// gulp (default)
-gulp.task('default', [ 'build' ]);
