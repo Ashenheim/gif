@@ -8,7 +8,13 @@
     z-index: 1;
     box-shadow: 0 1px 3px $c-accent--d;
     transition: all $easing;
-    margin: 0 $gutter $gutter;
+    margin: 0 $spacing-small ($spacing-small * 2);
+
+    &:after {
+      content: '';
+      @include position(absolute, 0);
+      border: 1px solid $c-accent--d;
+   }
 
     figcaption {
         @include size(100%);
