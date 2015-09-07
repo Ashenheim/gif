@@ -13,7 +13,7 @@
     &:after {
       content: '';
       @include position(absolute, 0);
-      border: 1px solid $c-accent--d;
+      border: 2px solid $c-accent--d;
    }
 
     figcaption {
@@ -112,20 +112,9 @@
             position: relative;
         }
 
-        figcaption {
-            height: 0;
-            overflow: hidden;
-        }
+        figcaption { height: 0; overflow: hidden; }
 
-        .spinner {
-            display: block;
-        }
-    }
-
-    &.image-is-loaded {
-
-
-
+        .spinner { display: block; }
     }
 }
 
@@ -142,20 +131,11 @@
         background: $c-accent--l;
         border-bottom: 1px solid $c-accent;
 
-        input,select {
-            font-size: 2em;
-            min-width: 100%;
-        }
+        input,select { font-size: 2em; min-width: 100%; }
 
-        &__input {
-            max-width: 600px;
-            margin: 0 auto;
-            position: relative;
-        }
+        &__input { max-width: 600px; margin: 0 auto; position: relative; }
 
-        &.has-no-results input {
-            border-color: red;
-        }
+        &.has-no-results input { border-color: red; }
     }
 
     &-results {
@@ -191,20 +171,15 @@
             opacity: .5;
             vertical-align: 24%;
         }
-
-
-        .no-input & .current {
-            opacity: 0;
-        }
+        .no-input & .current { opacity: 0; }
     }
 }
 
 .spinner {
     @include position( absolute, 50% null null 50% );
-    @include size(100px);
+    @include size(60px);
     transform: translate3d(-50%,-50%,0);
     z-index: 2;
-    height: 100px;
     display: none;
 
     &:after,
@@ -215,16 +190,16 @@
         margin: 0 auto;
         content: '';
         display: block;
-        border: 10px solid transparent;
+        border: 5px solid transparent;
         @include border-color( white white null );
         border-radius: 50%;
-        animation: spinner 300ms infinite linear;
+        animation: spinner 800ms infinite linear;
     }
     &:before {
-        @include margin(20%);
-        @include size(60%);
+        @include margin(18%);
+        @include size(64%);
         @include border-color( white $c-accent--d );
         animation-direction: reverse;
-        animation-duration: 500ms;
+        animation-duration: 1000ms;
     }
 }

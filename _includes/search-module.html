@@ -27,20 +27,7 @@
             </div>
 
             <ul class="gif-item__container results-{{ filtered.length }}" masonry preserve-order>
-
-                <li
-                    class="gif-item masonry-brick {{gif.class}}"
-                    ng-repeat="gif in filtered = (gifs | filter:queryResults | orderBy:'randomVal' | limitTo:12 )"
-                    ng-hide="!gif.title"
-
-                >
-                    <a ng-href="{{gif.image}}">
-                        <figure class="gif">
-                            <div class="spinner"></div>
-                            <img ng-src="{{gif.image}}" alt="{{gif.title}}" imageonload>
-                        </figure>
-                    </a>
-                </li>
+                {%endraw%}{% include gif-item.html %}{%raw%}
             </ul>
         </section>
     </div>

@@ -40163,7 +40163,6 @@ if (window.jQuery) {
 function searchController($scope, $http, $timeout) {
 
     /* Settings */
-    $scope.settings = 15;
 
     /* ------------------------------------
         JSON request
