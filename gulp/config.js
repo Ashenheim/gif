@@ -29,6 +29,7 @@ module.exports = {
             "_layouts/**",
             "_posts/**",
             "_data/**",
+            "app/**/*.html",
             "i/**",
             "_config.yml", "_config.dev.yml"
         ],

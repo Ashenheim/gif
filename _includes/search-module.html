@@ -1,36 +1,33 @@
 {%raw%}
 
-<main class="gifs" ng-app="searchApp">
-    <div ng-controller="Search" ng-class="{'no-input': !query }">
-
-        <section class="search">
-            <form id="Search" class="search-form" ng-class="{'has-no-results': filtered.length == 0}">
-                <div class="search-form__input">
-                    <div class="search-results">
-                        <span class="current" ng-bind="filtered.length"></span>
-                        <span class="total" ng-bind="gifs.length"></span>
-                    </div>
-                    <input ng-model="query" type="text" placeholder="Search" autofocus>
+<main ng-controller="Search" ng-class="{'no-input': !query }" class="gifs">
+    <section class="search">
+        <form id="Search" class="search-form" ng-class="{'has-no-results': filtered.length == 0}">
+            <div class="search-form__input">
+                <div class="search-results">
+                    <span class="current" ng-bind="filtered.length"></span>
+                    <span class="total" ng-bind="gifs.length"></span>
                 </div>
-            </form>
-        </section>
-
-        <section class="gif__container" ng-class="{'has-no-results': filtered.length == 0}">
-            <div class="gif__no-results">
-                <code>(╯°□°)╯︵ ┻━┻</code>
-                <span>
-                    Nothing to <i>GIF</i> away right now, <br>try something else
-                </span>
-                <ul class="list-buttons">
-                    <li ng-click="queryFind(cat)" ng-repeat="cat in categories">{{cat}}</li>
-                </ul>
+                <input ng-model="query" type="text" placeholder="Search" autofocus>
             </div>
+        </form>
+    </section>
 
-            <ul class="gif-item__container results-{{ filtered.length }}" masonry preserve-order>
-                <gif-block ng-repeat="gif in filtered = (gifs | filter:queryResults | orderBy:'randomVal' | limitTo:12 )"></gif-block>
+    <section class="gif__container" ng-class="{'has-no-results': filtered.length == 0}">
+        <div class="gif__no-results">
+            <code>(╯°□°)╯︵ ┻━┻</code>
+            <span>
+                Nothing to <strong>GIF</strong> away
+            </span>
+            <ul class="list-buttons">
+                <li ng-click="queryFind(cat)" ng-repeat="cat in categories">{{cat}}</li>
             </ul>
-        </section>
-    </div>
+        </div>
+
+        <ul class="gif-item__container results-{{ filtered.length }}" masonry preserve-order>
+            <gif-block ng-repeat="gif in filtered = (gifs | filter:queryResults | orderBy:'randomVal' | limitTo:12 )"></gif-block>
+        </ul>
+    </section>
 </main>
 
 {%endraw%}

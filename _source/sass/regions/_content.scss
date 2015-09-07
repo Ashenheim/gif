@@ -1,59 +1,17 @@
 /* ====================================
-   Content styling
+    Content styling
 ==================================== */
 
 .gif {
-    background: $c-accent--l;
-    position: relative;
-    z-index: 1;
-    box-shadow: 0 1px 3px $c-accent--d;
-    transition: all $easing;
-    margin: 0 $spacing-small ($spacing-small * 2);
-
-    &:after {
-      content: '';
-      @include position(absolute, 0);
-      border: 2px solid $c-accent--d;
-   }
-
-    figcaption {
-        @include size(100%);
-        background-color: transparent;
-        color: darken($c-accent--d, 20%);
-        transition: all $easing--fast;
-
-        >.title {
-            @include ellipsis;
-            width: 100%;
-            background-color: transparent;
-            color: inherit;
-            display: inline-block;
-            font-weight: bold;
-            vertical-align: middle;
-            padding: 10px;
-        }
-
-        >.cat {
-            @include position( absolute, 0 0 null null );
-            font-weight: 300;
-            opacity: .6;
-            padding: 5px $gutter;
-            color: $white;
-            text-shadow: 0 1px 0 rgba($black, .5);
-        }
-    }
-
-    img {
-        display: block;
-        width: 100%;
-    }
-
-    &-item {
-        margin: 0; padding: 0;
+    &-block {
+        list-style-type: none;
+        float: left;
+        padding: 0 $spacing-small ($spacing-small * 2);
+        margin: 0;
         display: block;
         float: left;
         width: 100%;
-        max-width: 420px;
+        cursor: pointer;
 
         @include bp-small  { width: 100%; }
         @include bp-medium { width: (100% / 3 ); }
@@ -63,18 +21,45 @@
         .results-2 & { width: (100% / 2); }
         .results-3 & { width: (100% / 3); }
 
-        &__container {
-            max-width: $site-width;
-            margin: 0 auto;
+        figcaption {
+            @include size(100%);
+            @include position(absolute, 0);
+            opacity: 0;
+            .inner {
+                position: absolute;
+                bottom: 0;
+                padding: $spacing-small;
+                background: rgba($c-accent, .9);
+                width: 100%;
+                color: $c-main;
+                font-weight: bold;
+            }
         }
 
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        figure {
+            margin: 0;
+            position: relative;
+            background: $c-accent--l;
+            box-shadow: 0 1px 3px $c-accent--d;
+
+            &:after {
+                content: '';
+                @include position(absolute, 0);
+                border: 1px solid $c-accent--d;
+            }
+        }
     }
 
     &__container {
         @include clearfix;
         @include container;
-        padding-top: $spacing-large;
-        max-width: 100%;
+        max-width: $site-width;
+        animation: slideUp 1000ms ease-in-out;
     }
 
     &__no-results {
@@ -85,13 +70,13 @@
         >span {
             display: block;
             padding: $gutter;
-            font-weight: bold;
             color: $c-warning;
             font-size: 1.5em;
             border-radius: 3px;
         }
 
         code {
+            font-family: serif;
             background: $c-warning;
             color: $white;
             padding: 10px;
@@ -107,7 +92,7 @@
     &.image-not-loaded {
         img {
             height: 0;
-            padding-bottom: 100%;
+            padding-bottom: 65%;
             background: $c-accent--d;
             position: relative;
         }
@@ -123,6 +108,8 @@
     position: sticky;
     top: 0;
     z-index: 10;
+    margin-bottom: $spacing-medium;
+    animation: slideDown 1s ease-in-out;
 
     &-form {
         @include clearfix;
@@ -202,4 +189,15 @@
         animation-direction: reverse;
         animation-duration: 1000ms;
     }
+}
+
+.modal {
+    padding: $spacing-small $gutter;
+    width: 100%;
+    max-width: 600px;
+    background: $white;
+    margin: 0 auto;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba($black, .2);
+    input { max-width: none; }
 }

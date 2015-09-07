@@ -7,17 +7,8 @@ layout: compress
 
     {% include head.html %}
 
-<body>
-    {%comment%}
-    <header class="main-header">
-        <h1 class="site-title">
-            <a href="{{site.baseurl}}">
-                {% include svg.html id="link" viewbox="37 20" %}
-                {{site.title}}
-            </a>
-        </h1>
-    </header>
-    {%endcomment%}
+<body ng-app="searchApp">
+
     {{ content }}
 
     <script src="{{ site.baseurl }}/assets/js/global.min.js"></script>

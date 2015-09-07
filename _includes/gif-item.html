@@ -1,6 +1,6 @@
 {%raw%}
 <li
-    class="gif-item image-not-loaded masonry-brick {{gif.class}}"
+    class="gif-block image-not-loaded masonry-brick {{gif.class}}"
     ng-repeat="gif in filtered = (gifs | filter:queryResults | orderBy:'randomVal' | limitTo:12 )"
     ng-hide="!gif.title"
     gif-block

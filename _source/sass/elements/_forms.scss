@@ -33,10 +33,9 @@ select {
     }
 }
 
-select {
-
-}
 
 @include placeholder {
     color: $c-accent;
+    font-family: $font-family;
+    line-height: 1;
 }
