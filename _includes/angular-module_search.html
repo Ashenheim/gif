@@ -1,0 +1,11 @@
+<section class="search">
+    <form id="Search" class="search-form" ng-class="{'has-no-results': filtered.length == 0}">
+        <div class="search-form__input">
+            <div class="search-results">
+                <span class="current" ng-bind="filtered.length"></span>
+                <span class="total" ng-bind="gifs.length"></span>
+            </div>
+            <input ng-model="query" type="text" placeholder="Search" autofocus>
+        </div>
+    </form>
+</section>

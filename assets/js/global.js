@@ -40160,6 +40160,36 @@ if (window.jQuery) {
     })(window.jQuery);
 }
 
+// Event handler for modules
+
+var events = {
+    events: {},
+    // Adds event to the list
+    on: function (eventName, fn) {
+        this.events[eventName] = this.events[eventName] || [];
+        this.events[eventName].push(fn);
+    },
+    // Removes event from the list
+    off: function(eventName, fn) {
+        if (this.events[eventName]) {
+            for (var i = 0; i < this.events[eventName].length; i++) {
+                if (this.events[eventName][i] === fn) {
+                    this.events[eventName].splice(i, 1);
+                    break;
+                }
+            };
+        }
+    },
+    // Searched events list for function and executes it
+    emit: function (eventName, data) {
+        if (this.events[eventName]) {
+            this.events[eventName].forEach(function(fn) {
+                fn(data);
+            });
+        }
+    }
+};
+
 function searchController($scope, $http, $timeout) {
 
     /* Settings */
@@ -40276,8 +40306,9 @@ function gifBlockDir() {
                 .addClass('image-is-loaded');
         });
 
-        element.on('click', function() {
+        element.on('mousedown', function() {
             var imageUrl = window.location.href + (element.attr('data-image')).substring(1);
+            events.emit('buttonAnimation', element);
             window.prompt("Copy to clipboard: Ctrl+C, Enter", imageUrl);
         });
     }
@@ -40289,6 +40320,73 @@ function gifBlockDir() {
         replace: true
     };
 }
+
+var materialButton = (function() {
+    'use strict';
+
+    // Store Dom elements
+    var $buttons     = $('.btn, .nav-item, button, .hamburger');
+    var circleClass  = 'btn-circle';
+    var clickedClass = 'clicked';
+    var fadeOutTime  = 250;
+
+    events.on('buttonAnimation', init);
+
+    // Event listeners
+    function init(obj) {
+        addCircle(obj);
+        obj.css({'overflow':'hidden'});
+        obj.on('mouseup mouseleave', removeCircle);
+    }
+
+    function addCircle(obj) {
+        var $this = obj;
+        var offset = $this.offset();
+        var offsetY = (event.pageY - offset.top);
+        var offsetX = (event.pageX - offset.left);
+        var circle = $('<span class="' + circleClass + '"></span>').css({ 'top' : offsetY, 'left': offsetX });
+
+        $this.addClass(clickedClass);
+        $this.append(circle);
+    }
+
+    function removeCircle(event) {
+        var $this = $(this);
+        $this.removeClass(clickedClass)
+        $this.find('.btn-circle').fadeOut( fadeOutTime, function() {
+            $(this).remove();
+        });
+    }
+
+    function destroy() {
+        events.off('buttonAnimation');
+    }
+
+    return {
+        destroy:destroy
+    }
+})();
+
+var modal = (function() {
+    var $el = $('#modal');
+    var $modal = $el.find('.modal');
+
+    events.on('openModal', open);
+
+    function open(data) {
+        console.log(data);
+        $modal.html(data);
+    }
+
+    function destroy() {
+        $el.remove();
+        events.off('openModal');
+    }
+
+    return {
+        destroy: destroy
+    }
+})();
 
 $("html")
     .removeClass('no-js')

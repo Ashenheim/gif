@@ -192,12 +192,30 @@
 }
 
 .modal {
-    padding: $spacing-small $gutter;
+    padding: $spacing-large $gutter;
     width: 100%;
     max-width: 600px;
     background: $white;
     margin: 0 auto;
     border-radius: 3px;
     box-shadow: 0 1px 3px rgba($black, .2);
+    animation: slideDown 1s ease-in-out;
+
+    h1 {margin-bottom: 0;}
     input { max-width: none; }
+
+    &__container {
+        @include position(fixed, 50% null null null);
+        transform: translateY(-50%);
+        width: 100%;
+        z-index: 11;
+    }
+}
+
+.overlay {
+    @include position(fixed, 0);
+    @include size(100%);
+    background: rgba($c-accent--d, .9);
+    z-index: 10;
+    display: none;
 }

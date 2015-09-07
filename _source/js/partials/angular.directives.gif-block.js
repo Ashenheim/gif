@@ -9,8 +9,9 @@ function gifBlockDir() {
                 .addClass('image-is-loaded');
         });
 
-        element.on('click', function() {
+        element.on('mousedown', function() {
             var imageUrl = window.location.href + (element.attr('data-image')).substring(1);
+            events.emit('buttonAnimation', element);
             window.prompt("Copy to clipboard: Ctrl+C, Enter", imageUrl);
         });
     }
