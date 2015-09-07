@@ -40269,6 +40269,7 @@ function gifBlockDir() {
     function link(scope,element,attrs) {
 
         var image = element.find('img');
+
         image.on('load', function() {
             element
                 .removeClass('image-not-loaded')
@@ -40276,14 +40277,16 @@ function gifBlockDir() {
         });
 
         element.on('click', function() {
-            var imageUrl = (window.location.href.split('#')[0]) + (element.attr('data-image'));
+            var imageUrl = window.location.href + (element.attr('data-image')).substring(1);
             window.prompt("Copy to clipboard: Ctrl+C, Enter", imageUrl);
         });
     }
 
     return {
-        restrict: 'A',
-        link: link
+        restrict: 'E',
+        link: link,
+        templateUrl: 'app/templates/gif-item.html',
+        replace: true
     };
 }
 

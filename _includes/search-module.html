@@ -27,7 +27,7 @@
             </div>
 
             <ul class="gif-item__container results-{{ filtered.length }}" masonry preserve-order>
-                {%endraw%}{% include gif-item.html %}{%raw%}
+                <gif-block ng-repeat="gif in filtered = (gifs | filter:queryResults | orderBy:'randomVal' | limitTo:12 )"></gif-block>
             </ul>
         </section>
     </div>
