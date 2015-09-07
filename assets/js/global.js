@@ -40249,19 +40249,40 @@ function searchController($scope, $http, $timeout) {
 
 function imageOnLoadDirective() {
     function link(scope, element, attrs) {
-        var $element = element.parent('.gif');
-        $element.addClass('image-not-loaded');
-        element.on('load', function() {
-
-            $element
-                .removeClass('image-not-loaded')
-                .addClass('image-is-loaded');
-
-        });
+        // var $element = element.parent('.gif');
+        // $element.addClass('image-not-loaded');
+        // element.on('load', function() {
+        //
+        //     $element
+        //         .removeClass('image-not-loaded')
+        //         .addClass('image-is-loaded');
+        //
+        // });
     }
     return {
         restrict: 'A',
         link: link
+    };
+}
+
+function gifBlockDir() {
+
+    return {
+        restrict: 'A',
+        link: function(scope,element,attrs) {
+
+            var image = element.find('img');
+            image.on('load', function() {
+                element
+                    .removeClass('image-not-loaded')
+                    .addClass('image-is-loaded');
+            });
+            element.on('click', function() {
+                var imageUrl = element.attr('data-image');
+                console.log(imageUrl);
+                window.prompt("Copy to clipboard: Ctrl+C, Enter", imageUrl);
+            });
+        }
     };
 }
 
@@ -40272,15 +40293,14 @@ $("html")
 angular
     .module("searchApp", ['wu.masonry'])
     .controller('Search', searchController)
-    .directive('imageonload', imageOnLoadDirective);
+    .directive('imageonload', imageOnLoadDirective)
+    .directive('gifBlock', gifBlockDir);
 
 $(document).ready(function() {
 
     /* ------------------------------
         Initiations
     ------------------------------ */
-
-    $('.search').Stickyfill();
 
     var $gifs = $('.gif__container');
     var $gifLink = $('.gif-item a');

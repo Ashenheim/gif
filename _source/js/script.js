@@ -5,15 +5,14 @@ $("html")
 angular
     .module("searchApp", ['wu.masonry'])
     .controller('Search', searchController)
-    .directive('imageonload', imageOnLoadDirective);
+    .directive('imageonload', imageOnLoadDirective)
+    .directive('gifBlock', gifBlockDir);
 
 $(document).ready(function() {
 
     /* ------------------------------
         Initiations
     ------------------------------ */
-
-    $('.search').Stickyfill();
 
     var $gifs = $('.gif__container');
     var $gifLink = $('.gif-item a');

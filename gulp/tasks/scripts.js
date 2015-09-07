@@ -28,7 +28,7 @@ gulp.task('scripts', function() {
         .pipe(gulp.dest( config.dest.one ))
         .pipe(gulp.dest( config.dest.two ))
         .pipe(rename('global.min.js'))
-        .pipe(uglify( config.uglify ))
+        // .pipe(uglify( config.uglify ))
         .pipe(gulp.dest( config.dest.one ))
         .pipe(gulp.dest( config.dest.two ))
         .pipe( browserSync.reload({stream:true}) );
