@@ -5,7 +5,6 @@ $("html")
 angular
     .module("searchApp", ['wu.masonry'])
     .controller('Search', searchController)
-    .directive('imageonload', imageOnLoadDirective)
     .directive('gifBlock', gifBlockDir);
 
 $(document).ready(function() {
