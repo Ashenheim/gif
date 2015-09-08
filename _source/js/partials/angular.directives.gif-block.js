@@ -1,17 +1,18 @@
-function gifBlockDir() {
+function gifBlockDir($timeout) {
     function link(scope,element,attrs) {
 
         var image = element.find('img');
+        var container = element.parent('.gif__container');
 
-        image.on('load', function() {
+        image.imagesLoaded(function() {
+            console.log('image fully loaded');
             element
                 .removeClass('image-not-loaded')
                 .addClass('image-is-loaded');
         });
 
-        element.on('mousedown', function() {
+        element.bind('click', function() {
             var imageUrl = window.location.href + (element.attr('data-image')).substring(1);
-            events.emit('buttonAnimation', element);
             window.prompt("Copy to clipboard: Ctrl+C, Enter", imageUrl);
         });
     }

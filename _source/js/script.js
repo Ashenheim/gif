@@ -3,9 +3,10 @@ $("html")
     .addClass('js');
 
 angular
-    .module("searchApp", ['wu.masonry'])
+    .module("searchApp", [])
     .controller('Search', searchController)
-    .directive('gifBlock', gifBlockDir);
+    .directive('gifBlock', gifBlockDir)
+    .directive('isotope', isotopeDir);
 
 $(document).ready(function() {
 
@@ -15,11 +16,6 @@ $(document).ready(function() {
 
     var $gifs = $('.gif__container');
     var $gifLink = $('.gif-item a');
-
-    $gifs.delegate('.gif-item a', 'hover', function(event) {
-        event.preventDefault();
-        console.log("Hovers gif");
-    })
 
     /* ------------------------------
         Events

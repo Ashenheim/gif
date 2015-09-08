@@ -12,29 +12,16 @@
         float: left;
         width: 100%;
         cursor: pointer;
+        position: relative;
 
-        @include bp-small  { width: 100%; }
-        @include bp-medium { width: (100% / 3 ); }
-        @include bp-huge   { width: (100% / 4 ); }
+        @include media('screen', '<mobile')  { width: 100%; }
+        @include media('screen', '>mobile')  { width: 50%; }
+        @include media('screen', '>tablet') { width: (100% / 3 ); }
+        @include media('screen', '>desktop')   { width: (100% / 4 ); }
 
         .results-1 & { width: (100% / 1); }
         .results-2 & { width: (100% / 2); }
         .results-3 & { width: (100% / 3); }
-
-        figcaption {
-            @include size(100%);
-            @include position(absolute, 0);
-            opacity: 0;
-            .inner {
-                position: absolute;
-                bottom: 0;
-                padding: $spacing-small;
-                background: rgba($c-accent, .9);
-                width: 100%;
-                color: $c-main;
-                font-weight: bold;
-            }
-        }
 
         img {
             display: block;
@@ -44,8 +31,16 @@
         figure {
             margin: 0;
             position: relative;
-            background: $c-accent--l;
             box-shadow: 0 1px 3px $c-accent--d;
+            position: relative;
+            height: 0;
+            padding-bottom: 70%;
+            background: $c-accent--l;
+            background-size: cover;
+
+            img {
+                visibility: hidden;;
+            }
 
             &:after {
                 content: '';
@@ -132,12 +127,6 @@
         color: $c-sec;
         vertical-align: center;
         pointer-events: none;
-
-        @include bp-small {
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 40px;
-        }
 
         >.current {
             @include transition( opacity $easing );

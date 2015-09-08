@@ -70,10 +70,8 @@ module.exports = {
         src: [
             paths.bower + '/jquery/dist/jquery.js',
             paths.bower + '/angular/angular.js',
-            paths.bower + '/masonry/dist/masonry.pkgd.js',
-            paths.bower + 'imagesloaded/imagesloaded.pkgd.js',
-            paths.bower + '/angular-masonry/angular-masonry.js',
-            paths.bower + '/angular-filter/dist/angular-filter.js',
+            paths.bower + '/isotope/dist/isotope.pkgd.js',
+            paths.bower + '/imagesloaded/imagesloaded.pkgd.js',
             paths.js + '/vendors/**/*.js',
             paths.js + '/partials/**/*.js',
             paths.js + '/script.js'

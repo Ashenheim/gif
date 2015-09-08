@@ -1,128 +1,81 @@
 /* ====================================
-	Mixins and functions
+    Mixins and functions
 ==================================== */
 
 
-/*
-	Media queries
-	------------------------------------ */
+$media-desktop:992px;
+$media-tablet: 767px;
+$media-mobile: 480px;
 
-@mixin bp-huge {
-	@media only screen and (min-width: $bp-huge) {
-		@content;
-	}
+
+@function translate-media-conditions($c) {
+    $conditionsMap: (
+        "screen": "only screen",
+        "print": "only print",
+        "retina": "(-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 1.5), (min-resolution: 120dpi)",
+
+        ">desktop": "(min-width: #{$media-desktop + 1})",
+        "<desktop": "(max-width: #{$media-desktop})",
+        ">tablet":  "(min-width: #{$media-tablet + 1})",
+        "<tablet":  "(max-width: #{$media-tablet})",
+        ">mobile":  "(min-width: #{$media-mobile + 1})",
+        "<mobile":  "(max-width: #{$media-mobile})"
+    );
+    @return map-get( $conditionsMap, $c );
 }
 
-@mixin bp-large {
-	@media only screen and (min-width: $bp-large) {
-		@content;
-	}
-}
+// The mdia mixin
+@mixin media($args...) {
+    $query: "";
 
-@mixin bp-medium {
-	@media only screen and (min-width: $bp-medium) {
-		@content;
-	}
+    // Loops through all $arguments passed, and if more then one is found add " and " between them
+    @each $arg in $args {
+        $op: "";
+        @if ( $query != "" ) {
+            $op: " and ";
+        }
+        $query: $query + $op + translate-media-conditions($arg);
+    }
+    @media #{$query}  { @content; }
 }
-
-@mixin bp-small {
-	@media only screen and (min-width: $bp-small) {
-		@content;
-	}
-}
-
-@mixin above($bp) {
-	@media only screen and (min-width: $bp) {
-		@content;
-	}
-}
-
-@mixin below( $bp ) {
-	@media only screen and (max-width: ($bp - 1px)) {
-		@content;
-	}
-}
-
 
 
 
 
 /*
-	Mixins and functions
-	------------------------------------ */
-
-
-@function calcRem($size) {
-	$remSize: $size / 16px;
-	@return #{$remSize}rem;
-}
-
-@mixin font-size($size) {
-	font-size: $size;
-	font-size: calcRem($size);
-}
-
-// Add all states for Hover
-@mixin hover {
-	&:hover, &:active, &:focus {
-		@content;
-	}
-}
-
-
-@mixin cf {
-	@extend %clearfix;
-}
-
-
-@mixin edit($color: black, $important: false) {
-	@if $important {
-		* {
-			background: rgba($color, .05) !important;
-		}
-	} @else {
-		* {
-			background: rgba($color, .05);
-		}
-	}
-}
-
-
-
-/*
-	Extends
-	------------------------------------ */
+    Extends
+    ------------------------------------ */
 
 %hide-text {
-	text-indent: -99999px;
-	direction: ltr;
+    text-indent: -99999px;
+    direction: ltr;
 }
 
 %visually-hidden {
-	position: absolute !important;
-	overflow: hidden;
-	width: 1px;
-	height: 1px;
-	padding: 0;
-	border: 0;
-	clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
 }
 
 %clearfix {
-	*zoom: 1;
-	&:before {
-		content: " ";
-		display: table;
-	}
-	&:after {
-		content: " ";
-		display: table;
-		clear: both;
-	}
+    *zoom: 1;
+    &:before {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        content: " ";
+        display: table;
+        clear: both;
+    }
 }
 
 %vertical-align {
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }

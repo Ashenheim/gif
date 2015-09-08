@@ -1,14 +1,9 @@
-<li
-    class="gif-block image-not-loaded masonry-brick"
+<div
+    class="gif-block image-not-loaded"
     data-image="{{gif.image}}"
 >
-    <figure class="gif">
+    <figure class="gif" style="background-image: url('{{gif.image}}')">
         <div class="spinner"></div>
         <img ng-src="{{gif.image}}" alt="{{gif.title}}">
-        <figcaption>
-            <div class="inner">
-                <span ng-bind="gif.title"></span>
-            </div>
-        </figcaption>
     </figure>
-</li>
+</div>

@@ -4,37 +4,37 @@
 
 
 /*
-	Settings
-	------------------------------------ */
+    Settings
+    ------------------------------------ */
 
-	$grid-columns				: 12;
-	$grid-gutter				: $gutter;
+    $grid-columns				: 12;
+    $grid-gutter				: $gutter;
 
 
 
 /*
-	Functions
-	------------------------------------ */
+    Functions
+    ------------------------------------ */
 
 @mixin container() {
-	width: 100%;
-	max-width: $site-width;
-	margin: 0 auto;
-	padding-left: $grid-gutter;
-	padding-right: $grid-gutter;
-	@include cf;
+    width: 100%;
+    max-width: $site-width;
+    margin: 0 auto;
+    padding-left: $grid-gutter;
+    padding-right: $grid-gutter;
+    @include clearfix;
 }
 
 
 @mixin row() {
-	margin-left: -#{$grid-gutter};
-	margin-right: -#{$grid-gutter};
-	@include cf;
+    margin-left: -#{$grid-gutter};
+    margin-right: -#{$grid-gutter};
+    @include clearfix;
 }
 
 
 
 
 /*
-	Grid Systems
-	------------------------------------ */
+    Grid Systems
+    ------------------------------------ */

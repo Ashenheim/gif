@@ -2,11 +2,14 @@
 <main ng-controller="Search" ng-class="{'no-input': !query }" class="gifs">
     {%endraw%}{%include angular-module_search.html %}{%raw%}
 
-    <section class="gif__container" ng-class="{'has-no-results': filtered.length == 0}">
+    <section
+        class="gif__container results-{{ filtered.length }}"
+        ng-class="{'has-no-results': filtered.length == 0}"
+        isotope
+        isotope-watch="query"
+    >
         {%endraw%}{% include angular-module_no-results.html %}{%raw%}
-        <ul class="gif-item__container results-{{ filtered.length }}" masonry preserve-order>
-            <gif-block ng-repeat="gif in filtered = (gifs | filter:queryResults | orderBy:'randomVal' | limitTo:12 )"></gif-block>
-        </ul>
+        <gif-block ng-repeat="gif in filtered = (gifs | filter:queryResults | orderBy:'randomVal' | limitTo:12 )"></gif-block>
     </section>
 </main>
 {%endraw%}
