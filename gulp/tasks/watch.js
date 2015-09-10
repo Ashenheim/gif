@@ -17,8 +17,8 @@ var gulp         = require('gulp'),
 ------------------------------------ */
 
 gulp.task('watch',function() {
-    gulp.watch( config.jade.src, ['jade']);
+    gulp.watch( config.jade.watch, ['jade']);
     gulp.watch( config.Sass.src, ['styles']);
     gulp.watch( config.Scripts.src, ['scripts']);
-    gulp.watch( config.yaml.watch, ['yaml']);
+    gulp.watch( config.yaml.src, ['yaml']);
 });

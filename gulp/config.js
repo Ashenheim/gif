@@ -5,7 +5,7 @@
 
 var paths = {
     bower : "./bower_components/",
-    
+
     dest  : "build/",
     assets: "build/assets/",
 
@@ -36,7 +36,10 @@ module.exports = {
             '!' + paths.jade + 'layouts/*.jade'
         ],
         dest: paths.dest,
-        watch: paths.jade + '**/*.jade'
+        watch: [
+            paths.jade + '*.jade',
+            paths.jade + '**/*.jade'
+        ]
     },
 
     /* ------------------------------
@@ -76,13 +79,14 @@ module.exports = {
     ------------------------------ */
     Scripts: {
         src: [
-            paths.bower + '/jquery/dist/jquery.js',
-            paths.bower + '/angular/angular.js',
+            paths.bower + '/jquery/dist/jquery.min.js',
+            paths.bower + '/angular/angular.min.js',
+            paths.bower + '/angular-ui-router/release/angular-ui-router.min.js',
             paths.bower + '/isotope/dist/isotope.pkgd.js',
             paths.bower + '/imagesloaded/imagesloaded.pkgd.js',
             paths.js + '/vendors/**/*.js',
             paths.js + '/partials/**/*.js',
-            paths.js + '/script.js'
+            paths.js + '/init.js'
         ],
         dest: paths.assets + "js/",
         uglify: { mangle: false }

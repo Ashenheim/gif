@@ -6,23 +6,7 @@ function searchController($scope, $http, $timeout) {
         JSON request
     ------------------------------------ */
 
-    $scope.fetchScope = function() {
-        $http.get('app/data/gifs.json')
-            .then( function( results ) {
-
-                var $json    = results.data;
-                $scope.gifs = $json;
-
-                for(var i=0;i<$json.length;i++) {
-                    $json[i].name  = $json[i].image.split('/')[0];
-                    $json[i].cat   = $json[i].image.split('/')[1];
-                    $json[i].image = '/i/' + $json[i].image;
-                }
-
-            });
-    };
-
-    $scope.fetchScope();
+    $scope.gifs = GIFS;
 
     /* ------------------------------------
         Search filter
