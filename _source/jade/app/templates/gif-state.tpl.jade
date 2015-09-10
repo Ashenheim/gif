@@ -1,0 +1,9 @@
+.gif-preview
+    a.gif-preview__link(ui-sref="/")
+    .gif-preview__container
+        .gif-preview__box
+            h3 {{name}}
+            figure
+                img(src="{{image}}", alt="{{name}}")
+                
+            input#input(type="text" value="{{url}}")

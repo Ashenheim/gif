@@ -1668,6 +1668,39 @@ var events = {
     }
 };
 
+function routesConfig($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise('/');
+
+    $stateProvider
+        .state('/', {
+            url: '/'
+        })
+        .state('gif', {
+            url: '/:name',
+            views: {
+                'overlay': {
+                    templateUrl: 'app/templates/gif-state.tpl.html',
+                    controller: "gif"
+                }
+            }
+        })
+}
+
+function gifController($scope, $stateParams, $timeout) {
+
+    var $node = $scope.gifs.filter(function(node) {
+        return node.name == $stateParams.name;
+    })[0];
+
+    $scope.name = $node.name;
+    $scope.image = $node.image;
+    $scope.url =  window.location.host + $node.image;
+
+    $timeout(function() {
+        $('#input').select();
+    })
+}
+
 function searchController($scope, $http, $timeout, $state) {
 
     /* Settings */
@@ -1758,10 +1791,6 @@ function gifBlockDir($timeout) {
                 .addClass('image-is-loaded');
         });
 
-        // element.bind('click', function() {
-        //     var imageUrl = window.location.href + (element.attr('data-image')).substring(1);
-        //     window.prompt("Copy to clipboard: Ctrl+C, Enter", imageUrl);
-        // });
     }
 
     return {
@@ -1771,6 +1800,52 @@ function gifBlockDir($timeout) {
         replace: true
     };
 }
+
+var materialButton = (function() {
+    'use strict';
+
+    // Store Dom elements
+    var $buttons     = $('.btn, .nav-item, button, .hamburger');
+    var circleClass  = 'btn-circle';
+    var clickedClass = 'clicked';
+    var fadeOutTime  = 250;
+
+    events.on('buttonAnimation', init);
+
+    // Event listeners
+    function init(obj) {
+        addCircle(obj);
+        obj.css({'overflow':'hidden'});
+        obj.on('mouseup mouseleave', removeCircle);
+    }
+
+    function addCircle(obj) {
+        var $this = obj;
+        var offset = $this.offset();
+        var offsetY = (event.pageY - offset.top);
+        var offsetX = (event.pageX - offset.left);
+        var circle = $('<span class="' + circleClass + '"></span>').css({ 'top' : offsetY, 'left': offsetX });
+
+        $this.addClass(clickedClass);
+        $this.append(circle);
+    }
+
+    function removeCircle(event) {
+        var $this = $(this);
+        $this.removeClass(clickedClass)
+        $this.find('.btn-circle').fadeOut( fadeOutTime, function() {
+            $(this).remove();
+        });
+    }
+
+    function destroy() {
+        events.off('buttonAnimation');
+    }
+
+    return {
+        destroy:destroy
+    }
+})();
 
 $("html")
     .removeClass('no-js')
