@@ -24,7 +24,7 @@ var paths = {
 
 module.exports = {
 
-    build: './' + paths.dest + '/**/*',
+    build: paths.dest,
 
     /* ------------------------------
         Jade
@@ -110,18 +110,5 @@ module.exports = {
     copy: {
         src: paths.copy + '**/*',
         dest: paths.dest
-    },
-
-    /* ------------------------------
-        BrowserSync
-    ------------------------------ */
-    browserSync: {
-        server: {
-            baseDir: paths.dest
-        },
-        host: "localhost",
-        open: false,
-        port: 8080,
-        online: false
-    },
+    }
 }

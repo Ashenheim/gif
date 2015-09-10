@@ -1,17 +1,17 @@
 /* ====================================
-	General site styling
+    General site styling
 ==================================== */
 
 
 *, *:before, *:after {
-	box-sizing: inherit;
+    box-sizing: inherit;
 }
 
 html,
 body {
-	font-size: $font-size;
-	font-family: $font-family;
-	font-smoothing: antialiased;
+    font-size: $font-size;
+    font-family: $font-family;
+    font-smoothing: antialiased;
     color: $c-text;
     box-sizing: border-box;
     height: 100%;
@@ -20,6 +20,6 @@ body {
 }
 
 ::selection {
-	background: $c-main;
-	color: $black;
+    background: $c-main;
+    color: $white;
 }

@@ -13,6 +13,7 @@
         width: 100%;
         cursor: pointer;
         position: relative;
+        animation: slideDown $easing--slow;
 
         @include media('screen', '<mobile')  { width: 100%; }
         @include media('screen', '>mobile')  { width: 50%; }
@@ -201,10 +202,60 @@
     }
 }
 
-.overlay {
-    @include position(fixed, 0);
-    @include size(100%);
-    background: rgba($c-accent--d, .9);
+.gif-preview {
+    @include position( fixed, 0 );
+    @include size( 100% );
+    background: rgba($black, .9);
+    color: $c-text;
     z-index: 10;
-    display: none;
+    animation: previewIn $easing;
+
+    &:hover { color: currentcolor; }
+
+    &__container {
+        @include position(absolute, 50% null null null);
+        transform: translateY(-50%);width: 100%;
+        text-align: center;
+    }
+
+    &__box {
+        padding: $gutter;
+        display: inline-block;
+        background: $c-background;
+        box-shadow: 0 1px 8px rgba($black, .1);
+    }
+
+    &__close {
+        @include position( absolute, $gutter $gutter null null );
+        color: $white;
+        line-height: 30px;
+        @include size(30px);
+        background: $c-main;
+        border-radius: 50%;
+        text-align: center;
+    }
+
+    &__overlay {
+        @include position( absolute, 0 );
+        @include size(100%);
+    }
+
+    figure {
+        position: relative;
+        margin: 0;
+        display: block;
+        border: 1px solid $black;
+
+        img { display: block; }
+    }
+
+    p {margin-bottom: 0;}
+    input { padding: 5px; border: 0; max-width: none; background: transparent; font-size: .8em; text-align: center; }
+    input:focus { box-shadow: none; }
+    input::selection { color: $c-link; background: white; }
+}
+
+@keyframes previewIn {
+    0%   { opacity: 0; transform: scale(1.2); }
+    100% { opacity: 1; transform: scale(1); }
 }

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/assets/css/global.css">
   </head>
   <body ng-controller="Search">
+    <div ui-view="overlay"></div>
     <main ng-class="{'no-input': !query }" class="gifs">
       <section class="search">
         <form id="Search" ng-class="{'has-no-results': filtered.length == 0}" class="search-form">

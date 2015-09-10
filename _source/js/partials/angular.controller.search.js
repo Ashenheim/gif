@@ -1,4 +1,4 @@
-function searchController($scope, $http, $timeout) {
+function searchController($scope, $http, $timeout, $state) {
 
     /* Settings */
 
@@ -64,5 +64,13 @@ function searchController($scope, $http, $timeout) {
     $scope.random = function(){
         return 0.5 - Math.random();
     };
+
+
+
+    $(document).on('keyup', function(e) {
+        if(e.keyCode == 27) {
+            $state.go('/')
+        }
+    });
 
 }
