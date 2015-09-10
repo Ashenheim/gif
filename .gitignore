@@ -41,6 +41,6 @@ Thumbs.db
 
 bower_components
 node_modules
-_site
+build
 .sass-cache
 .jekyll-metadata
