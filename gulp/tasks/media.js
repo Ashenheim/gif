@@ -31,8 +31,7 @@ gulp.task('media', function() {
                 { removeUselessStrokeAndFill: false }
             ]
         }))
-        .pipe(gulp.dest( config.dest[0] ))
-        .pipe(gulp.dest( config.dest[1] ))
+        .pipe(gulp.dest( config.dest ))
         .pipe(rename({prefix: 'icon-'}))
         .pipe(svgstore())
         .pipe(gulp.dest( "./" ))

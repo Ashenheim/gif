@@ -7,19 +7,17 @@ function searchController($scope, $http, $timeout) {
     ------------------------------------ */
 
     $scope.fetchScope = function() {
-        $http.get('all-gifs.json')
+        $http.get('app/data/gifs.json')
             .then( function( results ) {
 
                 var $json    = results.data;
-                var $length  = $json.gifs.length;
-                var $results = $json.gifs.splice(0,$length); // Removes last empty entry
+                $scope.gifs = $json;
 
-                $results.forEach(function(item) {
-                    item.randomVal = $scope.random();
-                });
-
-                $scope.gifs = $results;
-                $scope.categories = $json.categories;
+                for(var i=0;i<$json.length;i++) {
+                    $json[i].name  = $json[i].image.split('/')[0];
+                    $json[i].cat   = $json[i].image.split('/')[1];
+                    $json[i].image = '/i/' + $json[i].image;
+                }
 
             });
     };

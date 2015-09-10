@@ -28,7 +28,6 @@ gulp.task('styles', function() {
         .pipe(sass( config.settings )) 
         .pipe(prefix( config.autoprefixer ))
         .pipe(sourcemaps.write({includeContent: false, sourceRoot: '/'}))
-        .pipe(gulp.dest( config.dest.one ))
-        .pipe(gulp.dest( config.dest.two ))
+        .pipe(gulp.dest( config.dest ))
         .pipe( browserSync.reload({stream:true}) );
 });

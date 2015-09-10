@@ -17,13 +17,8 @@ var gulp         = require('gulp'),
 ------------------------------------ */
 
 gulp.task('watch',function() {
-    gulp.watch( config.Jekyll.src, ['jekyll:rebuild']);
-    gulp.watch( config.Sass.src,   ['styles']);
-    gulp.watch( config.Scripts.src,['scripts']);
-    gulp.watch( config.Media.svg.src, function() {
-        runSequence(
-            'media',
-            'jekyll:rebuild'
-        )
-    });
+    gulp.watch( config.jade.src, ['jade']);
+    gulp.watch( config.Sass.src, ['styles']);
+    gulp.watch( config.Scripts.src, ['scripts']);
+    gulp.watch( config.yaml.watch, ['yaml']);
 });

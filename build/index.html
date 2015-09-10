@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>GIF</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/media/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/assets/css/global.css">
+  </head>
+  <body ng-app="searchApp">
+    <main ng-controller="Search" ng-class="{'no-input': !query }" class="gifs">
+      <section class="search">
+        <form id="Search" ng-class="{'has-no-results': filtered.length == 0}" class="search-form">
+          <div class="search-form__input">
+            <input ng-model="query" type="text" placeholder="Search" autofocus="">
+          </div>
+        </form>
+      </section>
+      <section ng-class="{'has-no-results': filtered.length == 0}" class="gif__container results-{{ filtered.length }}">
+        <div class="gif__no-results"><code>(╯°□°)╯︵ ┻━┻</code><span></span>Nothing to<strong>GIF</strong> away</div>
+        <gifblock ng-repeat="gif in filtered = (gifs | filter:queryResults | orderBy:'randomVal' | limitTo:12 )"></gifblock>
+      </section>
+    </main>
+    <script src="/assets/js/global.js"></script>
+  </body>
+</html>

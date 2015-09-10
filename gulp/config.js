@@ -5,11 +5,16 @@
 
 var paths = {
     bower : "./bower_components/",
-    dest  : "_site/",
-    assets: "assets/",
+    
+    dest  : "build/",
+    assets: "build/assets/",
+
     sass  : "_source/sass/",
     js    : "_source/js/",
-    media : "_source/media/"
+    media : "_source/media/",
+    jade  : "_source/jade/",
+    yaml  : "_source/yaml/",
+    copy  : "_source/copy/"
 }
 
 
@@ -20,20 +25,18 @@ var paths = {
 module.exports = {
 
     /* ------------------------------
-        Jekyll
+        Jade
     ------------------------------ */
-    Jekyll: {
+
+    jade: {
         src: [
-            "*.{html,md,json}",
-            "_includes/**",
-            "_layouts/**",
-            "_posts/**",
-            "_data/**",
-            "app/**/*.html",
-            "i/**",
-            "_config.yml", "_config.dev.yml"
+            paths.jade + '**/*.jade',
+            paths.jade + '*.jade',
+            '!' + paths.jade + 'partials/*.jade',
+            '!' + paths.jade + 'layouts/*.jade'
         ],
-        dest: paths.dest
+        dest: paths.dest,
+        watch: paths.jade + '**/*.jade'
     },
 
     /* ------------------------------
@@ -44,10 +47,7 @@ module.exports = {
             paths.sass + "*.{sass,scss}",
             paths.sass + "**/*.{sass,scss}"
         ],
-        dest: {
-            one: paths.dest + paths.assets + "css/",
-            two: paths.assets + "css/"
-        },
+        dest: paths.assets + "css/",
         settings: {
             style: 'compressed',
             errLogToConsole: true
@@ -63,6 +63,14 @@ module.exports = {
         ]
     },
 
+    yaml: {
+        src: [
+            paths.yaml + '*.yml',
+            paths.yaml + '**/*.yml'
+        ],
+        dest: paths.dest
+    },
+
     /* ------------------------------
         Javascript
     ------------------------------ */
@@ -76,10 +84,7 @@ module.exports = {
             paths.js + '/partials/**/*.js',
             paths.js + '/script.js'
         ],
-        dest: {
-            one: paths.dest + paths.assets + "js/",
-            two: paths.assets + "js/"
-        },
+        dest: paths.assets + "js/",
         uglify: { mangle: false }
     },
 
@@ -93,19 +98,13 @@ module.exports = {
         svg: {
             src: paths.media + "*.svg"
         },
-        dest: [
-            paths.dest + paths.assets + "media/",
-            paths.assets + "media/"
-        ]
+        dest: paths.assets + "media/"
     },
 
-    /* ------------------------------
-        Clean-up
-    ------------------------------ */
-    clear: [
-        paths.dest,
-        paths.assets
-    ],
+    copy: {
+        src: paths.copy + '**/*',
+        dest: paths.dest
+    },
 
     /* ------------------------------
         BrowserSync

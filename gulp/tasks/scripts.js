@@ -25,11 +25,9 @@ gulp.task('scripts', function() {
     return gulp.src( config.src )
         .pipe(plumber())
         .pipe(concat('global.js'))
-        .pipe(gulp.dest( config.dest.one ))
-        .pipe(gulp.dest( config.dest.two ))
-        .pipe(rename('global.min.js'))
+        .pipe(gulp.dest( config.dest ))
+        // .pipe(rename('global.min.js'))
         // .pipe(uglify( config.uglify ))
-        .pipe(gulp.dest( config.dest.one ))
-        .pipe(gulp.dest( config.dest.two ))
+        // .pipe(gulp.dest( config.dest ))
         .pipe( browserSync.reload({stream:true}) );
 });

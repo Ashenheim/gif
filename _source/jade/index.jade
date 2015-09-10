@@ -1,0 +1,21 @@
+extends layouts/default.jade
+
+block content
+    main.gifs(ng-controller='Search', ng-class="{'no-input': !query }")
+        section.search
+            form#Search.search-form(ng-class="{'has-no-results': filtered.length == 0}")
+                .search-form__input
+                    input(ng-model='query', type='text', placeholder='Search', autofocus='')
+                    
+        section.gif__container(
+            class='results-{{ filtered.length }}',
+            ng-class="{'has-no-results': filtered.length == 0}"
+        )
+            .gif__no-results
+                code (╯°□°)╯︵ ┻━┻
+                span
+                | Nothing to
+                strong GIF
+                |  away
+            
+            gifblock( ng-repeat="gif in filtered = (gifs | filter:queryResults | orderBy:'randomVal' | limitTo:12 )" )

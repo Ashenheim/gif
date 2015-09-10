@@ -14,7 +14,6 @@
 ------------------------------------ */
 
 var gulp         = require('gulp'),
-    runSequence  = require('run-sequence'),
     config       = require('../config').fonts;
 
 
@@ -23,32 +22,7 @@ var gulp         = require('gulp'),
 ------------------------------------ */
 
 // gulp build
-gulp.task('build', function(callback) {
-    runSequence(
-        'clear',
-        'jekyll:dev',
-        [ 'scripts', 'styles', 'media' ]
-    )
-});
+gulp.task('build', [ 'jade', 'yaml', 'scripts', 'styles', 'media', 'copy' ]);
+gulp.task('serve', ['browserSync', 'watch']);
 
-gulp.task('build:dist', function(callback) {
-    runSequence(
-        'clear',
-        'jekyll:dist',
-        [ 'scripts', 'styles', 'media' ]
-    )
-});
-
-// gulp server
-gulp.task('server', ['browserSync', 'watch']);
-gulp.task('serve', ['server']);
-
-// gulp (default)
-gulp.task('default', function(callback) {
-    runSequence(
-        'clear',
-        'jekyll:dev',
-        [ 'scripts', 'styles', 'media' ],
-        ['browserSync', 'watch']
-    )
-});
+gulp.task('default', [ 'build', 'serve' ]);

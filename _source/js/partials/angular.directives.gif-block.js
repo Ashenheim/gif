@@ -5,7 +5,6 @@ function gifBlockDir($timeout) {
         var container = element.parent('.gif__container');
 
         image.imagesLoaded(function() {
-            console.log('image fully loaded');
             element
                 .removeClass('image-not-loaded')
                 .addClass('image-is-loaded');
@@ -20,7 +19,7 @@ function gifBlockDir($timeout) {
     return {
         restrict: 'E',
         link: link,
-        templateUrl: 'app/templates/gif-item.html',
+        templateUrl: 'app/templates/gif-item.tpl.html',
         replace: true
     };
 }

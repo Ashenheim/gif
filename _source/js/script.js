@@ -5,8 +5,7 @@ $("html")
 angular
     .module("searchApp", [])
     .controller('Search', searchController)
-    .directive('gifBlock', gifBlockDir)
-    .directive('isotope', isotopeDir);
+    .directive('gifblock', gifBlockDir);
 
 $(document).ready(function() {
 
