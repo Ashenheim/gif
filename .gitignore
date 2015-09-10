@@ -44,3 +44,4 @@ node_modules
 build
 .sass-cache
 .jekyll-metadata
+.publish

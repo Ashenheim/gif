@@ -14,7 +14,8 @@
 ------------------------------------ */
 
 var gulp         = require('gulp'),
-    config       = require('../config').fonts;
+    ghPages      = require('gulp-gh-pages'),
+    config       = require('../config');
 
 
 /*
@@ -24,5 +25,10 @@ var gulp         = require('gulp'),
 // gulp build
 gulp.task('build', [ 'jade', 'yaml', 'scripts', 'styles', 'media', 'copy' ]);
 gulp.task('serve', ['browserSync', 'watch']);
+
+gulp.task('deploy', ['build'], function() {
+    return gulp.src(config.build)
+        .pipe(ghPages());
+});
 
 gulp.task('default', [ 'build', 'serve' ]);
