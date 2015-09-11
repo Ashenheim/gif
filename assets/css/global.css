@@ -711,12 +711,6 @@ srg {
 .gif-preview__box {
   position: relative;
   z-index: 10;
-  -webkit-box-flex: 0;
-  -o-box-flex: 0;
-  box-flex: 0;
-  -webkit-flex: none;
-  -ms-flex: none;
-  flex: none;
   display: inline-block;
   background: #f9f9f9;
   border-radius: 2px;
@@ -750,18 +744,21 @@ srg {
 }
 .gif-preview__background {
   position: absolute;
-  top: -25%;
-  left: -25%;
+  top: 50%;
+  left: 50%;
   z-index: 1;
-  width: 150%;
-  height: 150%;
-  background: center center no-repeat;
+  width: 20%;
+  height: 20%;
+  margin-left: -10%;
+  margin-top: -5%;
   background-size: cover;
-  -webkit-filter: blur(30px);
-          filter: blur(30px);
-  opacity: 0.1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
-  filter: alpha(opacity=10);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  -webkit-filter: blur(2px) grayscale(0.8) brightness(0.8);
+          filter: blur(2px) grayscale(0.8) brightness(0.8);
+  -webkit-transform: scale(6);
+  -ms-transform: scale(6);
+  transform: scale(6);
 }
 .gif-preview figure {
   position: relative;
