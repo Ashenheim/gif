@@ -13,6 +13,7 @@ var gulp            = require('gulp'),
     rupture         = require('rupture'),
     postcss         = require('gulp-postcss'),
     autoprefixer    = require('autoprefixer'),
+    csswring        = require('csswring'),
     sourcemaps      = require('gulp-sourcemaps'),
     browserSync     = require('browser-sync'),
     plumber         = require('gulp-plumber'),
@@ -44,13 +45,14 @@ gulp.task('stylus', function() {
                 use: [ nib(), rupture() ]
             }))
             .pipe(postcss([
-                autoprefixer()
+                autoprefixer({ browsers: ['last 2 versions'] }),
+                csswring()
             ]))
             // sourcemaps ends
-        .pipe(sourcemaps.write('../maps', {
+        .pipe(sourcemaps.write({
             includeContent: false,
-            sourceRoot: '../../_source/sass'
+            sourceRoot: '../../_source/stylus'
         }))
         .pipe(gulp.dest( config.dest ))
-        .pipe( browserSync.stream({match: "**/*.css"}) );
+        .pipe( browserSync.reload({stream:true}));
 });

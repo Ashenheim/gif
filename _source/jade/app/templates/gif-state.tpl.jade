@@ -1,6 +1,7 @@
 .gif-preview
     a.gif-preview__overlay(ui-sref="/")
-    a.gif-preview__close(ui-sref="/") X
+        .gif-preview__close(ui-sref="/") x
+        
     .gif-preview__background(style="background-image: url({{image}});")
     .gif-preview__container
         .gif-preview__box
@@ -8,6 +9,5 @@
                 span(ng-repeat="name in name" ng-bind="name + ' '")
             figure
                 img(src="{{image}}", alt="{{name}}")
-            //- p
-            //-     strong Ctrl + C to copy
+                
             input#input(type="text" value="{{url}}")

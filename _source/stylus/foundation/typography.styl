@@ -55,3 +55,27 @@ hr
     border none
     border-bottom 1px solid $grey
     width 100%
+
+
+.byline
+    display flex
+    justify-content center
+    align-items center
+    height 150px
+    *
+        margin 0
+        padding 0
+        margin-right $gutter
+        line-height 1
+
+    &:before,
+    &:after
+        content ""
+        display block
+        height 0
+        box-flex 1
+        border-bottom 1px dotted currentcolor
+        padding-top 1px
+        flex-grow 1
+    &:before
+        margin-right $gutter

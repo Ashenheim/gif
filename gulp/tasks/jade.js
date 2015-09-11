@@ -5,6 +5,7 @@ var gulp =  require('gulp');
 var jade =  require('gulp-jade');
 var browserSync = require('browser-sync');
 var plumber = require('gulp-plumber');
+var marked = require('marked');
 var config = require('../config.js').jade;
 
 /*
