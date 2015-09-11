@@ -13,9 +13,10 @@
     Plugins & Variables
 ------------------------------------ */
 
-var gulp         = require('gulp'),
-    ghPages      = require('gulp-gh-pages'),
-    config       = require('../config');
+var gulp    = require('gulp'),
+    subtree = require('gulp-subtree'),
+    clean   = require('gulp-clean'),
+    config  = require('../config');
 
 
 /*
@@ -28,7 +29,8 @@ gulp.task('serve', ['browser-sync', 'watch']);
 
 gulp.task('deploy', ['build'], function() {
     return gulp.src(config.build)
-        .pipe(ghPages());
+        .pipe(subtree())
+        .pipe(clean());
 });
 
 gulp.task('default', [ 'build', 'serve' ]);
