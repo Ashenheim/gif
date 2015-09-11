@@ -1,13 +1,16 @@
 .gif-preview
-    fixed top left
     size( 100% )
-    background rgba($c-main, .9)
-    color $c-text
+    fixed top left
     z-index 10
-    animation previewIn $easing
     display flex
     align-items center
     justify-content center
+    animation previewIn $easing
+    background black
+    color $c-text
+    padding $gutter
+    overflow hidden
+
 
     &:hover
         color @color
@@ -25,14 +28,16 @@
         border-radius 2px
         overflow hidden
         box-shadow 0 1px 8px rgba(black, .1)
+        padding-bottom $gutter
 
 
     &__close
         absolute top $gutter right $gutter
+        z-index 2
         color white
         line-height 30px
         size(30px)
-        background $c-main
+        background rgba(black, .8)
         border-radius 50%
         text-align center
         &:hover
@@ -40,16 +45,27 @@
 
     &__overlay
         absolute top left
+        z-index 2
         size(100%)
+
+    &__background
+        absolute top -25% left -25%
+        z-index 1
+        size(150%)
+        background center center no-repeat
+        background-size cover
+        filter blur(30px)
+        opacity .1
+
 
     figure
         position relative
         margin 0
         display block
+        padding $gutter
 
     img                 { display: block; }
     h3                  { background: white; margin: 0; padding: $gutter; border-bottom: $c-accent 1px solid; }
     p                   { margin: 0; }
-    input               { padding: 5px; border: 0; max-width: none; background: transparent; font-size: .8em; text-align: center; }
+    input               { border: 0; max-width: none; background: transparent; font-size: .8em; text-align: center; }
     input:focus         { box-shadow: none; }
-    input::selection    { color: $c-link; background: white; }
