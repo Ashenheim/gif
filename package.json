@@ -22,10 +22,16 @@
     "run-sequence": "^1.0.2"
   },
   "devDependencies": {
+    "autoprefixer": "^6.0.2",
     "gulp-clean": "^0.3.1",
     "gulp-jade": "^1.1.0",
+    "gulp-postcss": "^6.0.0",
+    "gulp-stylus": "^2.0.6",
     "gulp-subtree": "^0.1.0",
-    "gulp-yaml": "^0.2.4"
+    "gulp-watch": "^4.3.5",
+    "gulp-yaml": "^0.2.4",
+    "nib": "^1.1.0",
+    "rupture": "^0.6.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

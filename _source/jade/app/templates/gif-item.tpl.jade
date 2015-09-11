@@ -1,5 +1,5 @@
 .gif-block.image-not-loaded(data-image='{{gif.image}}')
     a(ui-sref="gif({ name: gif.name })")
+        .spinner
         figure.gif(style="background-image: url('{{gif.image}}')")
-            .spinner
             img(ng-src='{{gif.image}}', alt='{{gif.title}}')

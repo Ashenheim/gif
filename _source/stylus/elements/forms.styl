@@ -1,0 +1,31 @@
+/* ====================================
+    Form elements styling
+==================================== */
+
+input[type=text],
+input[type=search],
+input[type=url],
+input[type=email],
+input[type=number],
+textarea,
+select
+    display block
+    margin 0
+    width 100%
+    font-family sans-serif
+    font-size 18px
+    appearance none
+    box-shadow none
+    border-radius none
+    border none
+    max-width 450px
+    margin 0 auto
+    padding $gutter
+    color $c-sec
+    border 1px solid $c-accent
+    transition all $easing
+
+    &:focus
+        outline none
+        border-color $c-accent--d
+        box-shadow 0 1px 5px $c-accent

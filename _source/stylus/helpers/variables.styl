@@ -1,0 +1,64 @@
+/* ====================================
+    Variables
+==================================== */
+
+/*
+    colors
+------------------------------------ */
+
+// Generic
+aqua    = #7FDBFF
+blue    = #0074D9
+navy    = #001F3F
+teal    = #39CCCC
+green   = #2ECC40
+olive   = #3D9970
+lime    = #01FF70
+yellow  = #FFDC00
+orange  = #FF851B
+red     = #FF4136
+fuchsia = #F012BE
+purple  = #B10DC9
+maroon  = #85144B
+white   = #ffffff
+silver  = #dddddd
+gray    = #aaaaaa
+black   = #111111
+
+
+// Brand
+$c-main                     = darken( #cfd8dc, 70% );
+$c-sec                      = darken( #cfd8dc, 40% );
+
+$c-accent--l                = #f9f9f9;
+$c-accent                   = #e4e9eb;
+$c-accent--d                = #cfd8dc;
+
+// Text
+$c-text                     = rgba(black, .8);
+$c-link                     = $c-sec;
+$c-link--hover              = lighten(saturate($c-link, 30%),10%);
+$c-link-alt                 = white;
+$c-link-alt--hover          = lighten(saturate($c-main, 20%),65%);
+
+// Layout
+$c-background               = $c-accent--l;
+$c-background--sec          = lighten(saturate($c-background,5%),15%);
+
+
+// Base
+$font-family	= 'Source Sans Pro', 'sans-serif'
+$font-size      = 16px
+
+$site-width		= 960px
+$gutter			= 15px
+
+// Spacings
+$spacing-small   = .4em
+$spacing-medium  = 1.4em
+$spacing-large   = 2.4em
+
+// Animations
+$easing--fast    = 150ms ease-in-out
+$easing			 = 300ms ease-in-out
+$easing--slow    = 600ms ease-in-out

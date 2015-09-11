@@ -13,7 +13,7 @@ var gulp         = require('gulp'),
     rename       = require('gulp-rename'),
     plumber      = require('gulp-plumber'),
     browserSync  = require('browser-sync'),
-    config       = require('../config').Scripts;
+    config       = require('../config').scripts;
 
 
 /*

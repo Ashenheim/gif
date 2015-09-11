@@ -4,7 +4,7 @@ function gifController($scope, $stateParams, $timeout) {
         return node.name == $stateParams.name;
     })[0];
 
-    $scope.name = $node.name;
+    $scope.name = $node.name.split('-');
     $scope.image = $node.image;
     $scope.url =  window.location.host + $node.image;
 

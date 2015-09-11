@@ -24,7 +24,7 @@ var gulp    = require('gulp'),
 ------------------------------------ */
 
 // gulp build
-gulp.task('build', [ 'jade', 'yaml', 'scripts', 'styles', 'media', 'copy' ]);
+gulp.task('build', [ 'jade', 'yaml', 'scripts', 'stylus', 'media', 'copy' ]);
 gulp.task('serve', ['browser-sync', 'watch']);
 
 gulp.task('deploy', function() {

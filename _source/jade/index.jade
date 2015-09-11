@@ -12,4 +12,4 @@ block content
         )
             include partials/search.noresults.jade
             
-            gifblock( ng-repeat="gif in filtered = (gifs | filter:queryResults | orderBy:'randomVal' | limitTo:12 )" )
+            gifblock( ng-repeat="gif in filtered = (gifs | filter:queryResults | limitTo:12 )" )

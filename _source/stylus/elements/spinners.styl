@@ -1,0 +1,24 @@
+.spinner
+    absolute top 50% left 50%
+    size(60px)
+    transform translate3d(-50%,-50%,0)
+    z-index 2
+    display none
+
+
+    &:before
+        margin 18%
+        size(64%)
+        animation-direction reverse
+        animation-duration 1000ms
+
+    &:after, &:before
+        size(100%)
+        absolute top 0
+        top 0
+        margin 0 auto
+        content ''
+        display block
+        border 5px solid transparent
+        border-radius 50%
+        animation spinner 800ms infinite linear

@@ -24,6 +24,11 @@
         .results-2 & { width: (100% / 2); }
         .results-3 & { width: (100% / 3); }
 
+        &.image-not-loaded {
+            figure { opacity: .1; }
+            .spinner { display: block; }
+        }
+
         img {
             display: block;
             width: 100%;
@@ -82,21 +87,6 @@
 
         .has-no-results & { display: block; animation: noresults $easing; }
     }
-
-
-
-    &.image-not-loaded {
-        img {
-            height: 0;
-            padding-bottom: 65%;
-            background: $c-accent--d;
-            position: relative;
-        }
-
-        figcaption { height: 0; overflow: hidden; }
-
-        .spinner { display: block; }
-    }
 }
 
 
@@ -152,76 +142,29 @@
     }
 }
 
-.spinner {
-    @include position( absolute, 50% null null 50% );
-    @include size(60px);
-    transform: translate3d(-50%,-50%,0);
-    z-index: 2;
-    display: none;
-
-    &:after,
-    &:before {
-        @include size(100%);
-        position: absolute;
-        top: 0;
-        margin: 0 auto;
-        content: '';
-        display: block;
-        border: 5px solid transparent;
-        @include border-color( white white null );
-        border-radius: 50%;
-        animation: spinner 800ms infinite linear;
-    }
-    &:before {
-        @include margin(18%);
-        @include size(64%);
-        @include border-color( white $c-accent--d );
-        animation-direction: reverse;
-        animation-duration: 1000ms;
-    }
-}
-
-.modal {
-    padding: $spacing-large $gutter;
-    width: 100%;
-    max-width: 600px;
-    background: $white;
-    margin: 0 auto;
-    border-radius: 3px;
-    box-shadow: 0 1px 3px rgba($black, .2);
-    animation: slideDown 1s ease-in-out;
-
-    h1 {margin-bottom: 0;}
-    input { max-width: none; }
-
-    &__container {
-        @include position(fixed, 50% null null null);
-        transform: translateY(-50%);
-        width: 100%;
-        z-index: 11;
-    }
-}
-
 .gif-preview {
     @include position( fixed, 0 );
     @include size( 100% );
-    background: rgba($black, .9);
+    background: rgba($c-main, .9);
     color: $c-text;
     z-index: 10;
     animation: previewIn $easing;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &:hover { color: currentcolor; }
 
     &__container {
-        @include position(absolute, 50% null null null);
-        transform: translateY(-50%);width: 100%;
         text-align: center;
     }
 
     &__box {
-        padding: $gutter;
+        position: relative;
+        z-index: 10;
+        flex: none;
         display: inline-block;
-        background: $c-background;
+        background: $c-accent--l;
         box-shadow: 0 1px 8px rgba($black, .1);
     }
 
@@ -244,12 +187,14 @@
         position: relative;
         margin: 0;
         display: block;
-        border: 1px solid $black;
 
         img { display: block; }
     }
 
-    p {margin-bottom: 0;}
+
+
+    h3 { background: $white; margin: 0; padding: $gutter; border-bottom: $c-accent 1px solid; }
+    p { margin: 0; }
     input { padding: 5px; border: 0; max-width: none; background: transparent; font-size: .8em; text-align: center; }
     input:focus { box-shadow: none; }
     input::selection { color: $c-link; background: white; }

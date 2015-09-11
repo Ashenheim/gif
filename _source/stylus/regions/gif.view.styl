@@ -1,0 +1,57 @@
+.gif-preview {
+    fixed: top left;
+    size( 100% );
+    background: rgba($c-main, .9);
+    color: $c-text;
+    z-index: 10;
+    animation: previewIn $easing;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover { color: currentcolor; }
+
+    &__container {
+        text-align: center;
+    }
+
+    &__box {
+        position: relative;
+        z-index: 10;
+        flex: none;
+        display: inline-block;
+        background: $c-accent--l;
+        box-shadow: 0 1px 8px rgba(black, .1);
+    }
+
+    &__close {
+        absolute: top $gutter right $gutter;
+        color: white;
+        line-height: 30px;
+        size(30px);
+        background: $c-main;
+        border-radius: 50%;
+        text-align: center;
+    }
+
+    &__overlay {
+        absolute top left
+        size(100%);
+    }
+
+    figure {
+        position: relative;
+        margin: 0;
+        display: block;
+
+        img { display: block; }
+    }
+
+
+
+    h3 { background: white; margin: 0; padding: $gutter; border-bottom: $c-accent 1px solid; }
+    p { margin: 0; }
+    input { padding: 5px; border: 0; max-width: none; background: transparent; font-size: .8em; text-align: center; }
+    input:focus { box-shadow: none; }
+    input::selection { color: $c-link; background: white; }
+}

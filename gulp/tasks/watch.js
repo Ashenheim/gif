@@ -7,9 +7,10 @@
     Plugins & Variables
 ------------------------------------ */
 
-var gulp         = require('gulp'),
-    runSequence  = require('run-sequence'),
-    config       = require('../config');
+var gulp        = require('gulp'),
+    watch       = require('gulp-watch'),
+    runSequence = require('run-sequence'),
+    config      = require('../config');
 
 
 /*
@@ -17,9 +18,19 @@ var gulp         = require('gulp'),
 ------------------------------------ */
 
 gulp.task('watch',function() {
-    gulp.watch( config.jade.watch, ['jade']);
-    gulp.watch( config.Sass.src, ['styles']);
-    gulp.watch( config.Scripts.src, ['scripts']);
-    gulp.watch( config.yaml.src, ['yaml']);
-    gulp.watch( config.copy.src, ['copy']);
+    watch( config.jade.watch, function(event) {
+        gulp.start('jade');
+    });
+    watch( config.style.watch, function(event) {
+        gulp.start('stylus');
+    });
+    watch( config.scripts.src, function(event) {
+        gulp.start('scripts');
+    });
+    watch( config.yaml.src, function(event) {
+        gulp.start('yaml');
+    });
+    watch( config.copy.src, function(event) {
+        gulp.start('copy');
+    });
 });

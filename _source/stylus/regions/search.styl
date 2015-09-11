@@ -1,0 +1,49 @@
+/* ====================================
+    Search Section styling
+==================================== */
+
+.search
+    margin-bottom $spacing-medium
+    animation slideDown 1s ease-in-out
+
+    &-form
+        clearfix()
+        position relative
+        padding $gutter
+        background $c-accent--l
+        border-bottom 1px solid $c-accent
+
+        &.has-no-results input
+            border-color red
+
+
+
+    &-results
+        absolute top $gutter right 0
+        font-size 1.5em
+        font-weight bold
+        color $c-sec
+        vertical-align center
+        pointer-events none
+
+        >.current
+            transition opacity $easing
+            &after
+                font-size .5em
+                content'/'
+                display inline-block
+                font-weight normal
+                vertical-align 25%
+                opacity .5
+                margin 0 2px
+
+
+        >.total
+            font-size .5em
+            position relative
+            left -.5em
+            opacity .5
+            vertical-align 24%
+
+        .no-input & .current
+            opacity 0

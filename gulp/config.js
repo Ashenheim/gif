@@ -10,6 +10,7 @@ var paths = {
     assets: "build/assets/",
 
     sass  : "_source/sass/",
+    stylus: "_source/stylus/",
     js    : "_source/js/",
     media : "_source/media/",
     jade  : "_source/jade/",
@@ -45,26 +46,14 @@ module.exports = {
     },
 
     /* ------------------------------
-        Sass
+        Style
     ------------------------------ */
-    Sass: {
-        src: [
-            paths.sass + "*.{sass,scss}",
-            paths.sass + "**/*.{sass,scss}"
-        ],
+    style: {
+        src: paths.stylus + "global.styl",
         dest: paths.assets + "css/",
-        settings: {
-            style: 'compressed',
-            errLogToConsole: true
-        },
-        autoprefixer: [
-            'last 2 versions',
-            'safari 5',
-            'ie 8',
-            'ie 9',
-            'opera 12.1',
-            'ios 6',
-            'android 4'
+        watch: [
+            paths.stylus + "*.styl",
+            paths.stylus + "**/*.styl"
         ]
     },
 
@@ -79,7 +68,7 @@ module.exports = {
     /* ------------------------------
         Javascript
     ------------------------------ */
-    Scripts: {
+    scripts: {
         src: [
             paths.bower + '/jquery/dist/jquery.min.js',
             paths.bower + '/angular/angular.min.js',

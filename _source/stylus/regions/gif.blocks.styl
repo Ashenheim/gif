@@ -1,0 +1,99 @@
+/* ====================================
+    Gif Blocks
+==================================== */
+
+.gif
+    /* ------------------------------------
+        .gif-block
+    ------------------------------------ */
+    &-block
+        list-style-type none
+        float left
+        padding 0 $spacing-small ($spacing-small * 2)
+        margin 0
+        display block
+        float left
+        width 100%
+        cursor pointer
+        position relative
+        animation slideDown $easing--slow
+
+        +below('mobile') { width: 100%; }
+        +above('mobile') { width: 50%; }
+        +above('tablet') { width: (100% / 3 ); }
+        +above('desktop') { width: (100% / 4 ); }
+
+        .results-1 & { width: (100% / 1); }
+        .results-2 & { width: (100% / 2); }
+        .results-3 & { width: (100% / 3); }
+
+        &.image-not-loaded
+            figure { opacity: .1; }
+            .spinner { display: block; }
+
+        img
+            display block
+            display block
+            width 100%
+            width 100%
+
+        figure
+            margin 0
+            position relative
+            box-shadow 0 1px 3px $c-accent--d
+            position relative
+            height 0
+            padding-bottom 70%
+            background $c-accent--l
+            background-size cover
+
+            img
+                visibility hidden
+                visibility hidden
+
+            &:after
+            &:after
+                content ''
+                absolute top right bottom left
+                border 1px solid $c-accent--d
+
+
+
+
+/* ------------------------------------
+    .gif__container
+------------------------------------ */
+.gif__container
+    clearfix()
+    margin 0 auto
+    max-width $site-width
+    animation slideUp 1000ms ease-in-out
+
+
+
+/* ------------------------------------
+    .gif__no-results
+------------------------------------ */
+.gif__no-results
+    text-align center
+    margin-bottom $spacing-large
+    display none
+
+    >span
+        display block
+        padding $gutter
+        color red
+        font-size 1.5em
+        border-radius 3px
+
+    code
+        font-family serif
+        background red
+        color white
+        padding 10px
+        display inline-block
+        margin 0 auto
+
+    .has-no-results &
+        display block
+        animation noresults $easing
