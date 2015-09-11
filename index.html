@@ -21,7 +21,7 @@
       </section>
       <section ng-class="{'has-no-results': filtered.length == 0}" class="gif__container results-{{ filtered.length }}">
         <div class="gif__no-results"><code>(╯°□°)╯︵ ┻━┻</code><span></span>Nothing to<strong>GIF</strong> away</div>
-        <gifblock ng-repeat="gif in filtered = (gifs | filter:queryResults | orderBy:'randomVal' | limitTo:12 )"></gifblock>
+        <gifblock ng-repeat="gif in filtered = (gifs | filter:queryResults | limitTo:12 )"></gifblock>
       </section>
     </main>
     <script src="/assets/js/global.js"></script>
