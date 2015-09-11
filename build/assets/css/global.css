@@ -562,8 +562,13 @@ ol {
   width: 100%;
   cursor: pointer;
   position: relative;
-  -webkit-animation: slideDown 600ms ease-in-out;
-  animation: slideDown 600ms ease-in-out;
+  -webkit-animation: fadeIn 600ms ease-in-out forwards;
+  animation: fadeIn 600ms ease-in-out forwards;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
 }
 @media only screen and (min-width: 480px) and (max-width: 767px) {
   .gif-block {
@@ -699,7 +704,7 @@ ol {
   justify-content: center;
 }
 .gif-preview:hover {
-  color: currentcolor;
+  color: rgba(17,17,17,0.8);
 }
 .gif-preview__container {
   text-align: center;
@@ -715,6 +720,8 @@ ol {
   flex: none;
   display: inline-block;
   background: #f9f9f9;
+  border-radius: 2px;
+  overflow: hidden;
   box-shadow: 0 1px 8px rgba(17,17,17,0.1);
 }
 .gif-preview__close {
@@ -729,6 +736,9 @@ ol {
   border-radius: 50%;
   text-align: center;
 }
+.gif-preview__close:hover {
+  color: #fff;
+}
 .gif-preview__overlay {
   position: absolute;
   top: 0;
@@ -741,7 +751,7 @@ ol {
   margin: 0;
   display: block;
 }
-.gif-preview figure img {
+.gif-preview img {
   display: block;
 }
 .gif-preview h3 {

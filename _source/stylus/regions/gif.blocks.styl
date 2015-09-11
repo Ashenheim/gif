@@ -16,7 +16,9 @@
         width 100%
         cursor pointer
         position relative
-        animation slideDown $easing--slow
+        animation fadeIn $easing--slow forwards
+        opacity 0
+        animation-delay 3s
 
         +below('mobile') { width: 100%; }
         +above('mobile') { width: 50%; }
