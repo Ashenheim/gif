@@ -1732,7 +1732,7 @@ function gifController($scope, $stateParams, $timeout) {
         return node.name == $stateParams.name;
     })[0];
 
-    $scope.name = $node.name;
+    $scope.name = $node.name.split('-');
     $scope.image = $node.image;
     $scope.url =  window.location.host + $node.image;
 
@@ -1752,14 +1752,6 @@ function searchController($scope, $http, $timeout, $state) {
     $scope.gifs = GIFS;
 
     /* ------------------------------------
-        Search filter
-    ------------------------------------ */
-
-    $scope.filterFunction = function(element) {
-        return element.name.match(/^Ma/) ? true : false;
-    };
-
-    /* ------------------------------------
         Search Timeout
 
         Adds a small delay to the search
@@ -1772,7 +1764,7 @@ function searchController($scope, $http, $timeout, $state) {
 
     $scope.queryResults = '';
 
-    $scope.filterSearch = function (val) {
+    function filterSearch(val) {
         if (queryTextTimout) $timeout.cancel(queryTextTimout);
 
         queryFilterText = val;
@@ -1784,16 +1776,12 @@ function searchController($scope, $http, $timeout, $state) {
 
     };
 
-    $scope.queryFind = function (val) {
-        $scope.query = val;
-    };
-
     /* ------------------------------------
         Watch
     ------------------------------------ */
 
     $scope.$watch('query', function (val) {
-        $scope.filterSearch( val );
+        filterSearch(val);
     });
 
     $scope.$watch('querySelect', function (val) {
