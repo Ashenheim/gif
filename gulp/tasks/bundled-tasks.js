@@ -14,7 +14,7 @@
 ------------------------------------ */
 
 var gulp    = require('gulp'),
-    subtree = require('gulp-subtree'),
+    ghPages = require('gulp-gh-pages'),
     clean   = require('gulp-clean'),
     config  = require('../config');
 
@@ -27,10 +27,10 @@ var gulp    = require('gulp'),
 gulp.task('build', [ 'jade', 'yaml', 'scripts', 'styles', 'media', 'copy' ]);
 gulp.task('serve', ['browser-sync', 'watch']);
 
-gulp.task('deploy', ['build'], function() {
-    return gulp.src(config.build)
-        .pipe(subtree())
-        .pipe(clean());
+gulp.task('deploy', function() {
+    return gulp.src('./' + config.build + '**/*')
+        .pipe(ghPages())
+        // .pipe(clean());
 });
 
 gulp.task('default', [ 'build', 'serve' ]);
