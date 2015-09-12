@@ -1,9 +1,9 @@
 
-<div class="gif-preview"><a ui-sref="/" class="gif-preview__overlay">
-    <div ui-sref="/" class="gif-preview__close">x</div></a>
-  <div style="background-image: url({{image}});" class="gif-preview__background"></div>
-  <div class="gif-preview__container">
-    <div class="gif-preview__box">
+<div class="gif-page"><a ui-sref="/" class="gif-page__overlay">
+    <div ui-sref="/" class="gif-page__close">x</div>
+    <div style="background-image: url({{image}});" class="gif-page__background"></div></a>
+  <div class="gif-page__container">
+    <div class="gif-page__box">
       <h3><span ng-repeat="name in name" ng-bind="name + ' '"></span></h3>
       <figure><img src="{{image}}" alt="{{name}}"/></figure>
       <input id="input" type="text" value="{{url}}"/>

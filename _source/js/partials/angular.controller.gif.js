@@ -6,7 +6,7 @@ function gifController($scope, $stateParams, $timeout) {
 
     $scope.name = $node.name.split('-');
     $scope.image = $node.image;
-    $scope.url =  window.location.host + $node.image;
+    $scope.url = 'http://' + window.location.host + $node.image;
 
     $timeout(function() {
         $('#input').select();
