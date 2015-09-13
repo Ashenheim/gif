@@ -6,7 +6,12 @@
     <div class="gif-page__box">
       <h3><span ng-repeat="name in name" ng-bind="name + ' '"></span></h3>
       <figure><img src="{{image}}" alt="{{name}}"/></figure>
-      <input id="input" type="text" value="{{url}}"/>
+      <div class="button-bar"><a ui-sref="/" class="button alt">Close</a>
+        <button id="CopyBtn" class="button">Copy link</button>
+      </div>
+      <div class="gif-page__input hidden">
+        <input id="input" type="text" value="{{url}}"/>
+      </div>
     </div>
   </div>
 </div>
