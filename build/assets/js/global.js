@@ -1257,8 +1257,28 @@ function gifController($scope, $stateParams, $timeout) {
     $scope.url = 'http://' + window.location.host + $node.image;
 
     $timeout(function() {
-        $('#input').select();
-    })
+        var copyButton = $('#CopyBtn');
+        var copyInput = $('#input');
+        var copyButtonSuccessTpl = '<span class="button-overlay">Link copied!</span>';
+
+        copyButton.on('click', function(event) {
+            copyInput.select();
+
+            try {
+                var successful = document.execCommand('copy');
+                var msg = successful ? 'successful' : 'unsuccessful';
+                if(msg == 'successful') {
+                    var copyButtonSuccess = copyButton.append(copyButtonSuccessTpl);
+                    $('.button-overlay', this).delay(650).fadeOut(300, function() {
+                        $(this).remove();
+                    });
+                }
+            } catch (err) {
+                console.log(err);
+                $('.gif-page__input.hidden').removeClass('hidden');
+            }
+        });
+    },0);
 }
 
 function searchController($scope, $http, $timeout, $state) {
@@ -1380,10 +1400,6 @@ var materialButton = (function() {
     }
 })();
 
-$("html")
-    .removeClass('no-js')
-    .addClass('js');
-
 (function() {
 
     angular
@@ -1417,5 +1433,6 @@ $("html")
             angular.bootstrap(document, ['myApp']);
         });
     }
+
 
 })();

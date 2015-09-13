@@ -22,15 +22,17 @@ select
     margin 0 auto
     padding $gutter
     color $c-sec
-    border 1px solid $c-accent
+    background $c-accent
     transition all $easing
 
     &:focus
         outline none
-        border-color $c-accent--d
+        color white
+        background $c-main
         box-shadow 0 1px 5px $c-accent
+        &::placeholder { color: white; }
 
 ::placeholder
     font-family $font-family
-    color $c-accent
+    color $c-accent--d
     line-height 1.2

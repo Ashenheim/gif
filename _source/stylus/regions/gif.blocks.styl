@@ -40,18 +40,23 @@
             position relative
             height 0
             padding-bottom 70%
-            box-shadow 0 1px 3px $c-accent--d
             position relative
-            background $c-accent--l
+            background $c-accent--l center center
             background-size cover
 
             img
                 visibility hidden
 
-            &:before
+            &:after
                 content ''
-                absolute top right bottom left
-                border 1px solid $c-accent--d
+                size(100%)
+                absolute top left
+                border 1px solid $c-accent
+                transition border $easing
+
+            &:hover:after
+                border-color $c-main
+                border-width 2px
 
 
 

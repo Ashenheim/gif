@@ -75,8 +75,8 @@ module.exports = {
             paths.bower + '/angular-ui-router/release/angular-ui-router.min.js',
             paths.bower + '/isotope/dist/isotope.pkgd.js',
             paths.bower + '/imagesloaded/imagesloaded.pkgd.js',
-            paths.js + '/vendors/**/*.js',
-            paths.js + '/partials/**/*.js',
+            paths.js + '/vendors/*.js',
+            paths.js + '/partials/*.js',
             paths.js + '/init.js'
         ],
         dest: paths.assets + "js/",

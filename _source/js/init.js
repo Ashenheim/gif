@@ -1,7 +1,3 @@
-$("html")
-    .removeClass('no-js')
-    .addClass('js');
-
 (function() {
 
     angular
@@ -35,5 +31,6 @@ $("html")
             angular.bootstrap(document, ['myApp']);
         });
     }
+
 
 })();
