@@ -7,16 +7,15 @@ var materialButton = (function() {
     var clickedClass = 'clicked';
     var fadeOutTime  = 250;
 
-    events.on('buttonAnimation', init);
-
     // Event listeners
     function init(obj) {
-        addCircle(obj);
         obj.css({'overflow':'hidden'});
+        obj.on('mousedown', addCircle)
         obj.on('mouseup mouseleave', removeCircle);
     }
 
-    function addCircle(obj) {
+    function addCircle(event) {
+        console.log('addCircle');
         var $this = obj;
         var offset = $this.offset();
         var offsetY = (event.pageY - offset.top);
@@ -24,7 +23,7 @@ var materialButton = (function() {
         var circle = $('<span class="' + circleClass + '"></span>').css({ 'top' : offsetY, 'left': offsetX });
 
         $this.addClass(clickedClass);
-        $this.append(circle);
+        $this.appendAfter(circle);
     }
 
     function removeCircle(event) {
