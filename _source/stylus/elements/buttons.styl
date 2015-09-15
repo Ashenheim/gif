@@ -1,0 +1,35 @@
+.button,
+button
+    display inline-block
+    padding 12px 15px
+    background $c-main
+    color rgba(white, .9)
+    border none
+    text-align center
+    font-weight normal
+    position relative
+    overflow hidden
+
+    &-overlay
+        background green
+        absolute top left
+        padding @padding
+        size(100%)
+        animation buttonOverlay $easing--fast
+
+    &:hover { color: white; background: $c-main--d; }
+    &:focus { outline: none; }
+
+    &.alt
+        background $c-sec
+        &:hover { background: darken($c-sec, 10%); }
+
+.button-bar
+    display flex
+    > *
+        flex 1
+
+
+@keyframes buttonOverlay
+    0%   { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: none; }

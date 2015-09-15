@@ -1,0 +1,57 @@
+.gif-page
+    size( 100% )
+    fixed top left
+    z-index 10
+    display flex
+    align-items center
+    justify-content center
+    animation previewIn $easing
+    color $c-text
+    padding $gutter
+    overflow hidden
+    background linear-gradient(top, black, rgba(black, .8) )
+
+    &:hover
+        color @color
+
+    &__input.hidden
+        height 1px
+        margin -1px
+        overflow hidden
+
+    &__container {}
+
+
+    &__box
+        position relative
+        z-index 10
+        display inline-block
+        background $c-accent--l
+        overflow hidden
+        min-width 380px
+        box-shadow 0 1px 12px 2px rgba(black, .1)
+
+    &__close
+        size(1.5em)
+        font-size 1.2em
+        absolute top $gutter right $gutter
+        z-index 2
+        color $c-accent
+        line-height 1.3em
+        background rgba(black, .2) url("../media/close.svg") center center no-repeat
+        border-radius 50%
+        vertical-align center
+        text-align center
+
+    &__overlay
+        size(100%)
+        absolute top left
+        z-index 2
+
+
+    figure      { position: relative; margin: 0; display: block; padding: $gutter; }
+    img         { display: block; margin: 0 auto; }
+    h3          { background: white; font-weight:normal; margin: 0; padding: $gutter; border-bottom: $c-accent 1px solid; }
+    p           { margin: 0; }
+    input       { border: 0; max-width: none; background: transparent; font-size: .8em; text-align: center; }
+    input:focus { box-shadow: none; }
