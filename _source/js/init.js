@@ -18,6 +18,7 @@
                 data[i].name  = data[i].image.split('/')[1].split('.gif')[0];
                 data[i].cat   = data[i].image.split('/')[0];
                 data[i].image = '/i/' + data[i].image;
+                data[i].rank = ((Math.random()*6));
             }
 
             return [

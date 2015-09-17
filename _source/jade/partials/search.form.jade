@@ -1,4 +1,6 @@
 section.search
-    form#Search.search-form(ng-class="{'has-no-results': filtered.length == 0}")
+    .search-form(ng-class="{'has-no-results': filtered.length == 0}")
         .search-form__input
             input(ng-model='query', type='text', placeholder='Search', autofocus='')
+        .search-form__total
+            {{gifs.length}}

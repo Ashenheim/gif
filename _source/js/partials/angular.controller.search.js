@@ -1,4 +1,4 @@
-function searchController($scope, $http, $timeout, $state) {
+function searchController($scope, $http, $timeout, $state, $window) {
 
     /* Settings */
 
@@ -31,6 +31,12 @@ function searchController($scope, $http, $timeout, $state) {
         }, queryTimeOutTime);
 
     };
+
+    $scope.filterSearch = function(val) {
+        filterSearch(val)
+    };
+
+    // console.log($scope.query);
 
     /* ------------------------------------
         Watch

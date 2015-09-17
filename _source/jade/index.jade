@@ -1,7 +1,7 @@
 extends layouts/default.jade
         
 block content
-
+    
     div( ui-view="overlay" )
         
     main.gifs(ng-class="{'no-input': !query }")
@@ -12,4 +12,4 @@ block content
             ng-class="{'has-no-results': filtered.length == 0}"
         )
             include partials/search.noresults.jade
-            gifblock( ng-repeat="gif in filtered = (gifs | filter:queryResults | limitTo:12 )" )
+            gifblock( ng-repeat="gif in filtered = (gifs | filter:queryResults | orderBy:'rank' | limitTo:12 )" )

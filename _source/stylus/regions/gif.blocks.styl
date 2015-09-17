@@ -21,10 +21,15 @@
         position relative
         animation fadeIn $easing--slow forwards
 
+        +above('mobile') { width: 50%; }
+        +above('tablet') { width: 33.33333%; }
+        +above('desktop') { width: 25%; }
+
         .results-1 & { width: (100% / 1); }
         .results-2 & { width: (100% / 2); }
         .results-3 & { width: (100% / 3); }
 
+        // &.image-is-loaded,
         &.image-not-loaded
             figure { opacity: .1; }
             .spinner { display: block; }
@@ -65,8 +70,6 @@
 ------------------------------------ */
 .gif__container
     clearfix()
-    display flex
-    flex-wrap wrap
     margin 0 auto
     max-width $site-width
     animation slideUp 1000ms ease-in-out

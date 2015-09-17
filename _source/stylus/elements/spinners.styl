@@ -5,20 +5,17 @@
     z-index 2
     display none
 
-
-    &:before
-        margin 18%
-        size(64%)
-        animation-direction reverse
-        animation-duration 1000ms
-
-    &:after, &:before
-        size(100%)
-        absolute top 0
-        top 0
-        margin 0 auto
+    &:before,
+    &:after
         content ''
-        display block
-        border 5px solid transparent
+        size 100%
+        absolute top left
+        border 2px solid $c-main
         border-radius 50%
-        animation spinner 800ms infinite linear
+        border-bottom-color transparent
+        animation spinner 500ms linear infinite
+
+    &:after
+        size 70%
+        margin 15%
+        animation-direction alternate

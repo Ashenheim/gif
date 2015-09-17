@@ -8,10 +8,17 @@
 
     &-form
         clearfix()
-        position relative
+        margin 0 auto
         padding $gutter
         background $c-accent--l
         border-bottom 1px solid $c-accent
+        display flex
+        align-items center
+        max-width ($site-width / 2)
+
+        &__input
+            flex 1
+            padding-right $gutter
 
         &.has-no-results input
             border-color red
