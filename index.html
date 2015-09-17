@@ -13,15 +13,16 @@
     <div ui-view="overlay"></div>
     <main ng-class="{'no-input': !query }" class="gifs">
       <section class="search">
-        <form id="Search" ng-class="{'has-no-results': filtered.length == 0}" class="search-form">
+        <div ng-class="{'has-no-results': filtered.length == 0}" class="search-form">
           <div class="search-form__input">
             <input ng-model="query" type="text" placeholder="Search" autofocus="">
           </div>
-        </form>
+          <div class="search-form__total">{{gifs.length}}</div>
+        </div>
       </section>
       <section ng-class="{'has-no-results': filtered.length == 0}" class="gif__container results-{{ filtered.length }}">
         <div class="gif__no-results"><code>(╯°□°)╯︵ ┻━┻</code><span></span>Nothing to<strong>GIF</strong> away</div>
-        <gifblock ng-repeat="gif in filtered = (gifs | filter:queryResults | limitTo:12 )"></gifblock>
+        <gifblock ng-repeat="gif in filtered = (gifs | filter:queryResults | orderBy:'rank' | limitTo:12 )"></gifblock>
       </section>
     </main>
     <script src="/assets/js/global.js"></script>
