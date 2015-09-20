@@ -40,9 +40,6 @@
     }
 
     function bootstrapApp() {
-
-        console.log(JSON.stringify(CATS));
-
         return angular.element(document).ready(function() {
             angular.bootstrap(document, ['myApp']);
         });

@@ -10,21 +10,26 @@
     <link rel="stylesheet" href="/assets/css/global.css">
   </head>
   <body ng-controller="Search">
-    <div ui-view="overlay"></div>
-    <main ng-class="{'no-input': !query }" class="gifs">
-      <section class="search">
-        <div ng-class="{'has-no-results': filtered.length == 0}" class="search-form">
-          <div class="search-form__input">
-            <input ng-model="query" type="text" placeholder="Search" autofocus="">
+    <div class="site-wrap">               
+      <div ui-view="overlay"></div>
+      <main ng-class="{'no-input': !query }" class="gifs">
+        <section class="search">
+          <ul></ul>
+          <div ng-class="{'has-no-results': filtered.length == 0}" class="search-form">
+            <div class="search-form__input">
+              <input ng-model="query" type="text" placeholder="Search" autofocus="">
+            </div>
+            <div class="search-form__total"><span ng-bind="filtered.length + '/' + gifs.length"></span></div>
           </div>
-          <div class="search-form__total"><span ng-bind="filtered.length + '/' + gifs.length"></span></div>
-        </div>
-      </section>
-      <section ng-class="{'has-no-results': filtered.length == 0}" class="gif__container results-{{ filtered.length }}">
-        <div class="gif__no-results"><code>(╯°□°)╯︵ ┻━┻</code><span></span>Nothing to<strong>GIF</strong> away</div>
-        <gifblock ng-repeat="gif in filtered = (gifs | filter:queryResults | orderBy:'rank' | limitTo:12 )"></gifblock>
-      </section>
-    </main>
+        </section>
+        <section ng-class="{'has-no-results': filtered.length == 0}" class="gif__container results-{{ filtered.length }}">
+          <div class="gif__no-results"><code>(╯°□°)╯︵ ┻━┻</code>
+            <p>no results</p>
+          </div>
+          <gifblock ng-repeat="gif in filtered = (gifs | filter:queryResults | orderBy:'rank' | limitTo:12 )"></gifblock>
+        </section>
+      </main>
+    </div>
     <script src="/assets/js/global.js"></script>
   </body>
 </html>

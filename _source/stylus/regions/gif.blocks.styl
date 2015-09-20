@@ -59,8 +59,9 @@
 
             &:hover:after
                 background-color rgba($c-main, .5)
-                border-color @background-color
                 background-image url("../media/expand.svg")
+                border-color @background-color
+                box-shadow 0 0 15px @background-color
 
 
 
@@ -72,6 +73,7 @@
     clearfix()
     margin 0 auto
     max-width $site-width
+    width 90%
     animation slideUp 1000ms ease-in-out
 
     > * { flex: 1; }
@@ -86,13 +88,6 @@
     text-align center
     margin-bottom $spacing-large
     display none
-
-    >span
-        display block
-        padding $gutter
-        color red
-        font-size 1.5em
-        border-radius 3px
 
     code
         font-family serif

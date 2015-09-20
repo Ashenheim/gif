@@ -1290,6 +1290,7 @@ function mainController($scope, $http, $timeout, $state, $window) {
     ------------------------------------ */
 
     $scope.gifs = GIFS;
+    $scope.categories = CATS;
 
     /* ------------------------------------
         Search Timeout
@@ -1447,9 +1448,6 @@ function gifBlockDir($timeout) {
     }
 
     function bootstrapApp() {
-
-        console.log(JSON.stringify(CATS));
-
         return angular.element(document).ready(function() {
             angular.bootstrap(document, ['myApp']);
         });

@@ -7,6 +7,7 @@ function mainController($scope, $http, $timeout, $state, $window) {
     ------------------------------------ */
 
     $scope.gifs = GIFS;
+    $scope.categories = CATS;
 
     /* ------------------------------------
         Search Timeout
