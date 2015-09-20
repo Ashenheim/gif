@@ -1,4 +1,4 @@
-function searchController($scope, $http, $timeout, $state, $window) {
+function mainController($scope, $http, $timeout, $state, $window) {
 
     /* Settings */
 

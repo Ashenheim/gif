@@ -1198,35 +1198,35 @@ function makeArray( obj ) {
 
 });
 
-// Event handler for modules
-
-var events = {
-    events: {},
-    // Adds event to the list
-    on: function (eventName, fn) {
-        this.events[eventName] = this.events[eventName] || [];
-        this.events[eventName].push(fn);
-    },
-    // Removes event from the list
-    off: function(eventName, fn) {
-        if (this.events[eventName]) {
-            for (var i = 0; i < this.events[eventName].length; i++) {
-                if (this.events[eventName][i] === fn) {
-                    this.events[eventName].splice(i, 1);
-                    break;
-                }
-            };
-        }
-    },
-    // Searched events list for function and executes it
-    emit: function (eventName, data) {
-        if (this.events[eventName]) {
-            this.events[eventName].forEach(function(fn) {
-                fn(data);
-            });
-        }
-    }
-};
+// // Event handler for modules
+//
+// var events = {
+//     events: {},
+//     // Adds event to the list
+//     on: function (eventName, fn) {
+//         this.events[eventName] = this.events[eventName] || [];
+//         this.events[eventName].push(fn);
+//     },
+//     // Removes event from the list
+//     off: function(eventName, fn) {
+//         if (this.events[eventName]) {
+//             for (var i = 0; i < this.events[eventName].length; i++) {
+//                 if (this.events[eventName][i] === fn) {
+//                     this.events[eventName].splice(i, 1);
+//                     break;
+//                 }
+//             };
+//         }
+//     },
+//     // Searched events list for function and executes it
+//     emit: function (eventName, data) {
+//         if (this.events[eventName]) {
+//             this.events[eventName].forEach(function(fn) {
+//                 fn(data);
+//             });
+//         }
+//     }
+// };
 
 function routesConfig($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
@@ -1281,7 +1281,7 @@ function gifController($scope, $stateParams, $timeout) {
     },0);
 }
 
-function searchController($scope, $http, $timeout, $state, $window) {
+function mainController($scope, $http, $timeout, $state, $window) {
 
     /* Settings */
 
@@ -1360,57 +1360,57 @@ function gifBlockDir($timeout) {
     };
 }
 
-var materialButton = (function() {
-    'use strict';
-
-    // Store Dom elements
-    var $buttons     = $('.btn, .nav-item, button, .hamburger');
-    var circleClass  = 'btn-circle';
-    var clickedClass = 'clicked';
-    var fadeOutTime  = 250;
-
-    // Event listeners
-    function init(obj) {
-        obj.css({'overflow':'hidden'});
-        obj.on('mousedown', addCircle)
-        obj.on('mouseup mouseleave', removeCircle);
-    }
-
-    function addCircle(event) {
-        console.log('addCircle');
-        var $this = obj;
-        var offset = $this.offset();
-        var offsetY = (event.pageY - offset.top);
-        var offsetX = (event.pageX - offset.left);
-        var circle = $('<span class="' + circleClass + '"></span>').css({ 'top' : offsetY, 'left': offsetX });
-
-        $this.addClass(clickedClass);
-        $this.appendAfter(circle);
-    }
-
-    function removeCircle(event) {
-        var $this = $(this);
-        $this.removeClass(clickedClass)
-        $this.find('.btn-circle').fadeOut( fadeOutTime, function() {
-            $(this).remove();
-        });
-    }
-
-    function destroy() {
-        events.off('buttonAnimation');
-    }
-
-    return {
-        destroy:destroy
-    }
-})();
+// var materialButton = (function() {
+//     'use strict';
+//
+//     // Store Dom elements
+//     var $buttons     = $('.btn, .nav-item, button, .hamburger');
+//     var circleClass  = 'btn-circle';
+//     var clickedClass = 'clicked';
+//     var fadeOutTime  = 250;
+//
+//     // Event listeners
+//     function init(obj) {
+//         obj.css({'overflow':'hidden'});
+//         obj.on('mousedown', addCircle)
+//         obj.on('mouseup mouseleave', removeCircle);
+//     }
+//
+//     function addCircle(event) {
+//         console.log('addCircle');
+//         var $this = obj;
+//         var offset = $this.offset();
+//         var offsetY = (event.pageY - offset.top);
+//         var offsetX = (event.pageX - offset.left);
+//         var circle = $('<span class="' + circleClass + '"></span>').css({ 'top' : offsetY, 'left': offsetX });
+//
+//         $this.addClass(clickedClass);
+//         $this.appendAfter(circle);
+//     }
+//
+//     function removeCircle(event) {
+//         var $this = $(this);
+//         $this.removeClass(clickedClass)
+//         $this.find('.btn-circle').fadeOut( fadeOutTime, function() {
+//             $(this).remove();
+//         });
+//     }
+//
+//     function destroy() {
+//         events.off('buttonAnimation');
+//     }
+//
+//     return {
+//         destroy:destroy
+//     }
+// })();
 
 (function() {
 
     angular
         .module("myApp", ['ui.router'])
         .config(routesConfig)
-        .controller('Search', searchController)
+        .controller('Search', mainController)
         .controller('gif', gifController)
         .directive('gifblock', gifBlockDir);
 
@@ -1421,20 +1421,35 @@ var materialButton = (function() {
         var $http = initInjector.get("$http");
         return $http.get('app/data/gifs.json').success(function(data) {
 
-            for(var i=0;i<data.length;i++) {
-                data[i].name  = data[i].image.split('/')[1].split('.gif')[0];
-                data[i].cat   = data[i].image.split('/')[0];
-                data[i].image = '/i/' + data[i].image;
-                data[i].rank = ((Math.random()*6));
-            }
+            var allCatNames = [],
+                catNames = [];
+
+            $.each(data, function(i, el){
+                el.name  = el.image.split('/')[1].split('.gif')[0];
+                el.cat   = el.image.split('/')[0];
+                el.image = '/i/' + el.image;
+                el.rank = ((Math.random()*6));
+
+                allCatNames.push(el.cat);
+            });
+
+            $.each(allCatNames, function(i, el){
+                if($.inArray(el, catNames) === -1) {
+                    catNames.push(el)
+                };
+            });
 
             return [
-                GIFS = data
+                GIFS = data,
+                CATS = catNames
             ];
         });
     }
 
     function bootstrapApp() {
+
+        console.log(JSON.stringify(CATS));
+
         return angular.element(document).ready(function() {
             angular.bootstrap(document, ['myApp']);
         });

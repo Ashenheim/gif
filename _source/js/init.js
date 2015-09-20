@@ -3,7 +3,7 @@
     angular
         .module("myApp", ['ui.router'])
         .config(routesConfig)
-        .controller('Search', searchController)
+        .controller('Search', mainController)
         .controller('gif', gifController)
         .directive('gifblock', gifBlockDir);
 
@@ -14,20 +14,35 @@
         var $http = initInjector.get("$http");
         return $http.get('app/data/gifs.json').success(function(data) {
 
-            for(var i=0;i<data.length;i++) {
-                data[i].name  = data[i].image.split('/')[1].split('.gif')[0];
-                data[i].cat   = data[i].image.split('/')[0];
-                data[i].image = '/i/' + data[i].image;
-                data[i].rank = ((Math.random()*6));
-            }
+            var allCatNames = [],
+                catNames = [];
+
+            $.each(data, function(i, el){
+                el.name  = el.image.split('/')[1].split('.gif')[0];
+                el.cat   = el.image.split('/')[0];
+                el.image = '/i/' + el.image;
+                el.rank = ((Math.random()*6));
+
+                allCatNames.push(el.cat);
+            });
+
+            $.each(allCatNames, function(i, el){
+                if($.inArray(el, catNames) === -1) {
+                    catNames.push(el)
+                };
+            });
 
             return [
-                GIFS = data
+                GIFS = data,
+                CATS = catNames
             ];
         });
     }
 
     function bootstrapApp() {
+
+        console.log(JSON.stringify(CATS));
+
         return angular.element(document).ready(function() {
             angular.bootstrap(document, ['myApp']);
         });
