@@ -17,7 +17,7 @@
           <div class="search-form__input">
             <input ng-model="query" type="text" placeholder="Search" autofocus="">
           </div>
-          <div class="search-form__total">{{gifs.length}}</div>
+          <div class="search-form__total"><span ng-bind="filtered.length + '/' + gifs.length"></span></div>
         </div>
       </section>
       <section ng-class="{'has-no-results': filtered.length == 0}" class="gif__container results-{{ filtered.length }}">
