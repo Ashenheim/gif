@@ -7,17 +7,18 @@
     Plugins & Variables
 ------------------------------------ */
 
-var gulp            = require('gulp'),
-    stylus          = require('gulp-stylus'),
-    nib             = require('nib'),
-    rupture         = require('rupture'),
-    postcss         = require('gulp-postcss'),
-    autoprefixer    = require('autoprefixer'),
-    csswring        = require('csswring'),
-    sourcemaps      = require('gulp-sourcemaps'),
-    browserSync     = require('browser-sync'),
-    plumber         = require('gulp-plumber'),
-    config          = require('../config').style;
+var gulp         = require('gulp'),
+    stylus       = require('gulp-stylus'),
+    nib          = require('nib'),
+    rupture      = require('rupture'),
+    postcss      = require('gulp-postcss'),
+    autoprefixer = require('autoprefixer'),
+    csswring     = require('csswring'),
+    cssMqpacker  = require('css-mqpacker'),
+    sourcemaps   = require('gulp-sourcemaps'),
+    browserSync  = require('browser-sync'),
+    plumber      = require('gulp-plumber'),
+    config       = require('../config').style;
 
 
 /*
@@ -45,6 +46,7 @@ gulp.task('stylus', function() {
                 use: [ nib(), rupture() ]
             }))
             .pipe(postcss([
+                cssMqpacker(),
                 autoprefixer({ browsers: ['last 2 versions'] }),
                 csswring()
             ]))

@@ -4,8 +4,12 @@
     <div class="gif-page__background"></div></a>
   <div class="gif-page__container">
     <div class="gif-page__box">
-      <h3><strong ng-bind="category"></strong><span ng-repeat="name in name" ng-bind="' ' + name"></span></h3>
-      <figure><img src="{{image}}" alt="{{name}}"/></figure>
+      <div class="gif-page__box-inner">
+        <figure><img src="{{image}}" alt="{{name}}"/></figure>
+        <ul class="button-list">
+          <li ng-repeat="name in name" ng-click="filterSearch(name)" ng-bind="' ' + name"></li>
+        </ul>
+      </div>
       <div class="button-bar"><a ui-sref="/" class="button alt">Close</a>
         <button id="CopyBtn" class="button">Copy link</button>
       </div>

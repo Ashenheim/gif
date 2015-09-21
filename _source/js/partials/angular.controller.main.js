@@ -35,13 +35,13 @@ function mainController($scope, $http, $timeout, $state, $window) {
     };
 
     $scope.filterSearch = function(val) {
+        $state.go('/')
         filterSearch(val)
     };
 
     $scope.submit = function() {
-        if ($scope.query) {
-            filterSearch($scope.query);
-        }
+        $state.go('/')
+        filterSearch($scope.query);
     }
 
     // console.log($scope.query);

@@ -28,8 +28,9 @@
         display inline-block
         background $c-accent--l
         overflow hidden
-        min-width 380px
         box-shadow 0 1px 12px 2px rgba(black, .1)
+        &-inner
+            padding $gutter
 
     &__close
         size(1.5em)
@@ -49,8 +50,8 @@
         z-index 2
 
 
-    figure      { position: relative; margin: 0; display: block; padding: $gutter; }
-    img         { display: block; margin: 0 auto; }
+    figure      { position: relative; margin: 0 0 $gutter; display: block; }
+    img         { display: block; margin: 0 auto; min-width: 380px; }
     h3          { background: white; font-weight:normal; margin: 0; padding: $gutter; border-bottom: $c-accent 1px solid; }
     p           { margin: 0; }
     input       { border: 0; max-width: none; background: transparent; font-size: .8em; text-align: center; }

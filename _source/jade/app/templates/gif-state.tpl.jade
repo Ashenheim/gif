@@ -5,11 +5,14 @@
     
     div.gif-page__container
         .gif-page__box
-            h3
-                strong(ng-bind="category")
-                span(ng-repeat="name in name" ng-bind="' ' + name")
-            figure
-                img(src="{{image}}", alt="{{name}}")
+            //- h3
+            //-     span(ng-bind="category")
+            .gif-page__box-inner
+                figure
+                    img(src="{{image}}", alt="{{name}}")
+                    
+                ul.button-list
+                    li(ng-repeat="name in name", ng-click="filterSearch(name)", ng-bind="' ' + name")
                 
             .button-bar
                 a.button.alt(ui-sref="/") Close

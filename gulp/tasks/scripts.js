@@ -26,8 +26,11 @@ gulp.task('scripts', function() {
         .pipe(plumber())
         .pipe(concat('global.js'))
         .pipe(gulp.dest( config.dest ))
-        // .pipe(rename('global.min.js'))
-        // .pipe(uglify( config.uglify ))
-        // .pipe(gulp.dest( config.dest ))
         .pipe( browserSync.reload({stream:true}) );
 });
+
+gulp.task('scripts:dist', function() {
+    return gulp.src( config.dest + '*.js' )
+        .pipe(uglify( config.uglify ))
+        .pipe(gulp.dest( config.dest ))
+})

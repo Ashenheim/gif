@@ -5,13 +5,14 @@
 .search
     margin-bottom $spacing-medium
     animation slideDown 1s ease-in-out
+    border-bottom 1px solid $c-accent
+    box-shadow 0 0 15px $c-accent
 
     &-form
         clearfix()
         margin 0 auto
         padding $gutter
         background $c-accent--l
-        border-bottom 1px solid $c-accent
         display flex
         justify-content center
         align-items center
@@ -28,7 +29,7 @@
                 border-right: 1px solid transparent
                 &:hover,
                 &:focus
-                    border-color: rgba(black, 10%)
+                    border-color: rgba(black, .05)
 
             > input[type="submit"]
                 border-radius 0 3px 3px 0
