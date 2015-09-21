@@ -14,11 +14,11 @@
       <div ui-view="overlay"></div>
       <main ng-class="{'no-input': !query }" class="gifs">
         <section class="search">
-          <ul></ul>
           <div ng-class="{'has-no-results': filtered.length == 0}" class="search-form">
-            <div class="search-form__input">
+            <form ng-submit="submit()" class="search-form__input">
               <input ng-model="query" type="text" placeholder="Search" autofocus="">
-            </div>
+              <input type="submit" id="submit" value="Submit" class="button">
+            </form>
             <div class="search-form__total"><span ng-bind="filtered.length + '/' + gifs.length"></span></div>
           </div>
         </section>

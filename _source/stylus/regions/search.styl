@@ -17,12 +17,24 @@
         align-items center
 
         &__input
+            display flex
             flex 1
             padding-right $gutter
-            max-width 450px
+            max-width 550px
+
+            > input[type="text"]
+                flex 1
+                border-radius 3px 0 0 3px
+                border-right: 1px solid transparent
+                &:hover,
+                &:focus
+                    border-color: rgba(black, 10%)
+
+            > input[type="submit"]
+                border-radius 0 3px 3px 0
 
         &.has-no-results input
-            border-color red
+            background red
 
 
 

@@ -1,12 +1,13 @@
 .gif-page
     a.gif-page__overlay(ui-sref="/")
-        .gif-page__close(ui-sref="/")
+        .gif-page__close
         .gif-page__background
     
-    .gif-page__container
+    div.gif-page__container
         .gif-page__box
             h3
-                span(ng-repeat="name in name" ng-bind="name + ' '")
+                strong(ng-bind="category")
+                span(ng-repeat="name in name" ng-bind="' ' + name")
             figure
                 img(src="{{image}}", alt="{{name}}")
                 

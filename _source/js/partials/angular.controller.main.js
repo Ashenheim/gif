@@ -29,6 +29,7 @@ function mainController($scope, $http, $timeout, $state, $window) {
 
         queryTextTimout = $timeout(function() {
             $scope.queryResults = queryFilterText;
+            $scope.query = val;
         }, queryTimeOutTime);
 
     };
@@ -37,15 +38,17 @@ function mainController($scope, $http, $timeout, $state, $window) {
         filterSearch(val)
     };
 
+    $scope.submit = function() {
+        if ($scope.query) {
+            filterSearch($scope.query);
+        }
+    }
+
     // console.log($scope.query);
 
     /* ------------------------------------
         Watch
     ------------------------------------ */
-
-    $scope.$watch('query', function (val) {
-        filterSearch(val);
-    });
 
     $(document).on('keyup', function(e) {
         if(e.keyCode == 27) {

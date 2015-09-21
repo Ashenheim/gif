@@ -2,66 +2,69 @@
     Gif Blocks
 ==================================== */
 
-.gif
-    /* ------------------------------------
-        .gif-block
-    ------------------------------------ */
-    &-block
-        list-style-type none
-        float left
-        padding 0 $spacing-small ($spacing-small * 2)
-        margin 0
+
+
+
+/* ------------------------------------
+    .gif-block
+------------------------------------ */
+
+.gif-block
+    list-style-type none
+    float left
+    padding 0 $spacing-small ($spacing-small * 2)
+    margin 0
+    display block
+    float left
+    width 100%
+    height 0
+    min-width 220px
+    min-height 200px
+    cursor pointer
+    position relative
+    animation fadeIn $easing--slow forwards
+
+    +above('mobile')  { width: (100% / 2 ); }
+    +above('tablet')  { width: (100% / 3 ); }
+    +above('desktop') { width: (100% / 4 ); }
+
+    .results-1 & { width: (100% / 1); }
+    .results-2 & { width: (100% / 2); }
+    .results-3 & { width: (100% / 3); }
+
+    // &.image-is-loaded,
+    &.image-not-loaded
+        figure { opacity: .1; }
+        .spinner { display: block; }
+
+    img
         display block
-        float left
         width 100%
-        height 0
-        min-width 220px
-        min-height 200px
-        cursor pointer
+
+    figure
+        margin 0
         position relative
-        animation fadeIn $easing--slow forwards
-
-        +above('mobile') { width: 50%; }
-        +above('tablet') { width: 33.33333%; }
-        +above('desktop') { width: 25%; }
-
-        .results-1 & { width: (100% / 1); }
-        .results-2 & { width: (100% / 2); }
-        .results-3 & { width: (100% / 3); }
-
-        // &.image-is-loaded,
-        &.image-not-loaded
-            figure { opacity: .1; }
-            .spinner { display: block; }
+        height 100%
+        position relative
+        background $c-accent--l center center
+        background-size cover
 
         img
-            display block
-            width 100%
+            visibility hidden
 
-        figure
-            margin 0
-            position relative
-            height 100%
-            position relative
-            background $c-accent--l center center
-            background-size cover
+        &:after
+            content ''
+            size(100%)
+            absolute top left
+            background transparent center center no-repeat
+            border 1px solid $c-accent
+            transition all $easing
 
-            img
-                visibility hidden
-
-            &:after
-                content ''
-                size(100%)
-                absolute top left
-                background transparent center center no-repeat
-                border 1px solid $c-accent
-                transition all $easing
-
-            &:hover:after
-                background-color rgba($c-main, .5)
-                background-image url("../media/expand.svg")
-                border-color @background-color
-                box-shadow 0 0 15px @background-color
+        &:hover:after
+            background-color rgba($c-main, .5)
+            background-image url("../media/expand.svg")
+            border-color @background-color
+            box-shadow 0 0 15px @background-color
 
 
 
@@ -73,8 +76,11 @@
     clearfix()
     margin 0 auto
     max-width $site-width
-    width 90%
+    width 100%
     animation slideUp 1000ms ease-in-out
+
+    +above('tablet')
+        width 90%
 
     > * { flex: 1; }
 
