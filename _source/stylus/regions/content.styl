@@ -1,0 +1,39 @@
+
+
+$Baymax-border = 4px
+#Baymax
+    display flex
+    justify-content center
+    align-items center
+    color lighten($c-accent, 10%)
+    max-width 220px
+    margin 0 auto $spacing-large
+    padding 10px
+
+    .eye
+        background @color
+        border: $Baymax-border solid @color
+        border-radius 50%
+        width 25%
+        position relative
+        opacity 0.999 // overflow hack
+        overflow hidden
+        &:after { content: ''; display: block; width: 100%; height: 0; padding-bottom: 100%; }
+
+        &-shuts
+            absolute top left
+            size 100%
+            background linear-gradient(top, black, white)
+            background white
+            transform-origin 50% 0%
+            animation BaymaxEyes 8s infinite
+
+    .mouth
+        background @color
+        height $Baymax-border
+        margin 0 -15px
+        flex 1
+
+@keyframes BaymaxEyes
+    100%, 0%, 4%  { transform: scale(1,1); }
+    7%, 99%      { transform: scale(1,0); }

@@ -56,5 +56,5 @@ gulp.task('stylus', function() {
             sourceRoot: '../../_source/stylus'
         }))
         .pipe(gulp.dest( config.dest ))
-        .pipe( browserSync.reload({stream:true}));
+        .pipe( browserSync.stream({match: '**/*.css'}));
 });
