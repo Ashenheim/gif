@@ -29,7 +29,8 @@ gulp.task('browser-sync', function() {
             baseDir: config.build
         },
         host: "localhost",
-        online: true,
+        port: 8080,
+        online: false,
         open: false,
         notify: {
             styles: [
