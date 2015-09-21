@@ -24,7 +24,11 @@
         </section>
         <section ng-class="{'has-no-results': filtered.length == 0}" class="gif__container results-{{ filtered.length }}">
           <div class="gif__no-results"><code>(╯°□°)╯︵ ┻━┻</code>
-            <p>no results</p>
+            <p></p><strong>I'm sorry, nothing to gif away here.</strong>
+            <p>Why not trying something from below?</p>
+            <ul class="button-list">
+              <li ng-repeat="category in categories" ng-click="filterSearch(category)" ng-bind="category"></li>
+            </ul>
           </div>
           <gifblock ng-repeat="gif in filtered = (gifs | filter:queryResults | orderBy:'rank' | limitTo:12 )"></gifblock>
         </section>

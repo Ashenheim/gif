@@ -1,3 +1,7 @@
 .gif__no-results
     code (╯°□°)╯︵ ┻━┻
-    p no results
+    p
+    strong I'm sorry, nothing to gif away here.
+    p Why not trying something from below?
+    ul.button-list
+        li(ng-repeat="category in categories", ng-click="filterSearch(category)", ng-bind="category")
