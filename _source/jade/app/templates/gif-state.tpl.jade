@@ -12,7 +12,9 @@
                     img(src="{{image}}", alt="{{name}}")
                     
                 ul.button-list
-                    li(ng-repeat="name in name", ng-click="filterSearch(name)", ng-bind="' ' + name")
+                    li
+                        strong(ng-click="filterSearch(category)", ng-bind="category")
+                    li(ng-repeat="name in names track by $index", ng-click="filterSearch(name)", ng-bind="name")
                 
             .button-bar
                 a.button.alt(ui-sref="/") Close

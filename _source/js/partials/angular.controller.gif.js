@@ -4,10 +4,12 @@ function gifController($scope, $stateParams, $timeout) {
         return node.name == $stateParams.name;
     })[0];
 
-    $scope.name = $node.name.split('-');
+    $scope.names = $node.name.split('-');
     $scope.image = $node.image;
     $scope.category = $node.cat;
     $scope.url = 'http://' + window.location.host + $node.image;
+
+    console.log($scope.names);
 
     $timeout(function() {
         var copyButton = $('#CopyBtn');

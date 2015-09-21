@@ -7,7 +7,8 @@
       <div class="gif-page__box-inner">
         <figure><img src="{{image}}" alt="{{name}}"/></figure>
         <ul class="button-list">
-          <li ng-repeat="name in name" ng-click="filterSearch(name)" ng-bind="' ' + name"></li>
+          <li><strong ng-click="filterSearch(category)" ng-bind="category"></strong></li>
+          <li ng-repeat="name in names track by $index" ng-click="filterSearch(name)" ng-bind="name"></li>
         </ul>
       </div>
       <div class="button-bar"><a ui-sref="/" class="button alt">Close</a>

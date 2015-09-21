@@ -7,11 +7,11 @@
     Plugins & Variables
 ------------------------------------ */
 
-var gulp    = require('gulp'),
-    ghPages = require('gulp-gh-pages'),
-    clean   = require('gulp-clean'),
+var gulp        = require('gulp'),
+    ghPages     = require('gulp-gh-pages'),
+    clean       = require('gulp-clean'),
     runSequence = require('run-sequence'),
-    config  = require('../config');
+    config      = require('../config');
 
 
 /*
@@ -23,18 +23,17 @@ gulp.task('clean', function() {
         .pipe(clean());
 });
 
-gulp.task('ghpages', function() {
+gulp.task('deploy', function() {
     return gulp.src(config.build + '**/*')
         .pipe(ghPages());
 });
 
 
-gulp.task('deploy', function() {
+gulp.task('dist', function() {
     runSequence(
         'clean',
         'build',
-        ['scripts:dist'],
-        'ghpages'
+        ['scripts:dist']
     )
 });
 

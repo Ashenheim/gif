@@ -51,8 +51,8 @@ gulp.task('stylus', function() {
                 csswring()
             ]))
             // sourcemaps ends
-        .pipe(sourcemaps.write({
-            includeContent: false,
+        .pipe(sourcemaps.write('../maps/', {
+            includeContent: true,
             sourceRoot: '../../_source/stylus'
         }))
         .pipe(gulp.dest( config.dest ))
