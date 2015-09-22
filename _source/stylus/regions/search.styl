@@ -3,6 +3,7 @@
 ==================================== */
 
 .search
+    position relative
     margin-bottom $spacing-medium
     animation slideDown 1s ease-in-out
     border-bottom 1px solid $c-accent
@@ -40,7 +41,18 @@
             input[type="submit"]
                 background red
 
-
+    &-close
+        position relative
+        size 0
+        background blue
+        &:after
+            content ''
+            display block
+            border-radius 50%
+            cursor pointer
+            size 20px
+            relative left -120px top -10px
+            background red url("../media/close.svg") center center no-repeat
 
     &-results
         absolute top $gutter right 0

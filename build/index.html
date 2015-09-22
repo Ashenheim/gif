@@ -19,11 +19,16 @@
               <input ng-model="query" type="text" placeholder="Search" autofocus="">
               <input type="submit" id="submit" value="Submit" class="button">
             </form>
+            <div ng-show="query" ng-click="filterSearch('')" class="search-close"></div>
             <div class="search-form__total"><span ng-bind="filtered.length + '/' + gifs.length"></span></div>
           </div>
         </section>
         <section ng-class="{'has-no-results': filtered.length == 0}" class="gif__container results-{{ filtered.length }}">
-          <div class="gif__no-results"><code>(╯°□°)╯︵ ┻━┻</code>
+          <div class="gif__no-results">
+            
+            <div id="Baymax">
+              <div class="mouth"></div>
+            </div>
             <p></p><strong>I'm sorry, nothing to gif away here.</strong>
             <p>Why not trying something from below?</p>
             <ul class="button-list">
@@ -32,15 +37,6 @@
           </div>
           <gifblock ng-repeat="gif in filtered = (gifs | filter:queryResults | orderBy:'rank' | limitTo:12 )"></gifblock>
         </section>
-        <div id="Baymax">
-          <div class="eye">
-            <div class="eye-shuts"></div>
-          </div>
-          <div class="mouth"></div>
-          <div class="eye">
-            <div class="eye-shuts"></div>
-          </div>
-        </div>
       </main>
     </div>
     <script src="/assets/js/global.js"></script>

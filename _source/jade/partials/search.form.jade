@@ -3,5 +3,6 @@ section.search
         form.search-form__input(ng-submit="submit()")
             input(ng-model='query', type='text', placeholder='Search', autofocus='')
             input(type="submit" class="button" id="submit" value="Submit")
+        .search-close(ng-show="query" ng-click="filterSearch('')")
         .search-form__total
             span(ng-bind="filtered.length + '/' + gifs.length")

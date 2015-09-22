@@ -13,12 +13,3 @@ block content
         )
             include partials/search.noresults.jade
             gifblock( ng-repeat="gif in filtered = (gifs | filter:queryResults | orderBy:'rank' | limitTo:12 )" )
-    
-            
-            
-        #Baymax
-            .eye
-                .eye-shuts
-            .mouth
-            .eye
-                .eye-shuts
