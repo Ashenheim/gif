@@ -36,7 +36,7 @@ function mainController($scope, $http, $timeout, $state, $window) {
 
     $scope.filterSearch = function(val) {
         $state.go('/')
-        filterSearch(val)
+        filterSearch(val);
     };
 
     $scope.submit = function() {

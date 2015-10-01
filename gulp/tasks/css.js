@@ -47,7 +47,7 @@ gulp.task('stylus', function() {
             }))
             .pipe(postcss([
                 cssMqpacker(),
-                autoprefixer({ browsers: ['last 2 versions'] }),
+                autoprefixer({ browsers: ['> 0.5%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1'] }),
                 csswring()
             ]))
             // sourcemaps ends
