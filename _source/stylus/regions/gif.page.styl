@@ -9,7 +9,7 @@
     color $c-text
     padding $gutter
     overflow hidden
-    background rgba(#000, .9)
+    background rgba(white, .8)
 
     &:hover
         color @color
@@ -27,22 +27,22 @@
         z-index 10
         display inline-block
         background $c-accent--l
-        overflow hidden
         box-shadow 0 1px 12px 2px rgba(black, .1)
         &-inner
             padding $gutter
 
     &__close
-        size(1.5em)
-        font-size 1.2em
+        size 2em
         absolute top $gutter right $gutter
         z-index 2
         color $c-accent
-        line-height 1.3em
-        background rgba(black, .2) url("../media/close.svg") center center no-repeat
+        background $c-main url("../media/close.svg") center center no-repeat
+        background-size 40%
         border-radius 50%
         vertical-align center
         text-align center
+        box-shadow: 0px 1px 8px rgba($c-main, .5),
+                    0px 1px 4px rgba(black, .2);
 
     &__overlay
         size(100%)

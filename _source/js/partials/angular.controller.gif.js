@@ -9,8 +9,6 @@ function gifController($scope, $stateParams, $timeout) {
     $scope.category = $node.cat;
     $scope.url = 'http://' + window.location.host + $node.image;
 
-    console.log($scope.names);
-
     $timeout(function() {
         var copyButton = $('#CopyBtn');
         var copyInput = $('#input');

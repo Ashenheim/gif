@@ -2,9 +2,10 @@
     margin 0
     padding-left 0
     li
-        @extend .button
-        background $c-accent
-        color $c-accent--d
+        button($c-accent)
+        cursor pointer
         display inline-block
         margin-right 4px
         padding 3px 10px 4px
+        &:hover
+            button($c-main)

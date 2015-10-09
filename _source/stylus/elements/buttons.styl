@@ -1,9 +1,18 @@
+button($color)
+    if lightness($color) > 70%
+        $text-color = black
+    else
+        $text-color = white
+    background: $color
+    color: rgba($text-color, .9)
+    box-shadow: 0px 1px 4px rgba(black, .05),
+                0px 3px 22px 1px rgba(lighten($color, 40%), .5);
+
+
 .button,
 button
     display inline-block
     padding 12px 15px
-    background $c-main
-    color rgba(white, .9)
     border none
     text-align center
     font-weight normal
@@ -11,6 +20,9 @@ button
     overflow hidden
     cursor pointer
     transition all $easing
+    button($c-main)
+    &:hover
+        button(darken($c-main, 20%))
 
     &-overlay
         background green
@@ -19,12 +31,12 @@ button
         size(100%)
         animation buttonOverlay $easing--fast
 
-    &:hover { color: white; background: $c-main--d; }
     &:focus { outline: none; }
 
     &.alt
-        background $c-sec
-        &:hover { background: darken($c-sec, 10%); }
+        button($c-sec)
+        &:hover
+            button(darken($c-sec, 20%))
 
 .button-bar
     display flex
