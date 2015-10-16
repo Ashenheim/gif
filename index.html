@@ -9,10 +9,10 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/assets/css/global.css">
   </head>
-  <body ng-controller="Search">
+  <body ng-controller="Search" ng-class="containerClass">
     <div class="site-wrap">               
       <div ui-view="overlay"></div>
-      <main ng-class="{'no-input': !query }" class="gifs">
+      <main ng-class="{'no-input': !query }" class="main-content gifs">
         <section class="search">
           <div ng-class="{'has-no-results': filtered.length == 0}" class="search-form">
             <form ng-submit="submit()" class="search-form__input">
