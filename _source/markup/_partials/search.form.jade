@@ -1,0 +1,7 @@
+section.search
+    .search-form(ng-class="{'has-no-results': filtered.length == 0}")
+        form.search-form__input(ng-submit="submit()")
+            input(ng-model='query', type='text', placeholder='Search', autofocus='')
+            input(type="submit" class="button" id="submit" value="Submit")
+        .search-form__total
+            span(ng-bind="filtered.length + '/' + gifs.length")
