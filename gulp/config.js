@@ -33,10 +33,10 @@ module.exports = {
 
     jade: {
         src: [
-            paths.jade + '**/*.jade',
-            paths.jade + '*.jade',
-            '!' + paths.jade + 'partials/*.jade',
-            '!' + paths.jade + 'layouts/*.jade'
+            paths.copy + '**/*.jade',
+            paths.copy + '*.jade',
+            '!' + paths.jade + '_partials/',
+            '!' + paths.jade + '_layouts/'
         ],
         dest: paths.dest,
         watch: [
@@ -97,7 +97,12 @@ module.exports = {
     },
 
     copy: {
-        src: paths.copy + '**/*',
+        src: [
+            paths.copy + '**/*',
+            '!' + paths.copy + '**/*.jade',
+            '!' + paths.jade + '_partials/',
+            '!' + paths.jade + '_layouts/'
+        ],
         dest: paths.dest
     }
 }

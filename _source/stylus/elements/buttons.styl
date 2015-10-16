@@ -3,10 +3,10 @@ button($color)
         $text-color = black
     else
         $text-color = white
-    background: $color
+    background-color: $color
     color: rgba($text-color, .9)
-    box-shadow: 0px 1px 4px rgba(black, .05),
-                0px 3px 22px 1px rgba(lighten($color, 40%), .5);
+    /* box-shadow: 0px 1px 4px rgba(black, .05),
+                0px 3px 22px 1px rgba(lighten($color, 40%), .5); */
 
 
 .button,
@@ -42,10 +42,9 @@ button
     display flex
     > *
         flex 1
-        &:first-child
-            text-align left
-        &:last-child
-            text-align right
+        background-image linear-gradient(to bottom,  rgba(black, .3), rgba(black, 0) 6px)
+        &:first-child { text-align: left; }
+        &:last-child  { text-align: right; }
 
 
 @keyframes buttonOverlay

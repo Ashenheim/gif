@@ -4,6 +4,7 @@ function gifController($scope, $stateParams, $timeout) {
         return node.name == $stateParams.name;
     })[0];
 
+
     $scope.names = $node.name.split('-');
     $scope.image = $node.image;
     $scope.category = $node.cat;
@@ -13,6 +14,8 @@ function gifController($scope, $stateParams, $timeout) {
         var copyButton = $('#CopyBtn');
         var copyInput = $('#input');
         var copyButtonSuccessTpl = '<span class="button-overlay">Link copied!</span>';
+
+        $scope.bodyClass = "test";
 
         copyButton.on('click', function(event) {
             copyInput.select();
