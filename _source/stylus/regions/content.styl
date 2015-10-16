@@ -1,44 +1,7 @@
-$Baymax-border = 6px
-#Baymax
-    display flex
-    justify-content center
-    align-items center
-    // color black
-    color red
-    max-width 240px
-    margin 0 auto $spacing-large
-    padding 10px
-    border $Baymax-border solid @color
-    border-radius 50%
-    padding 60px 20px
-    background white
-    // box-shadow 0 1px 15px rgba(red, 1)
+.site-wrap
+    overflow-x hidden
+    overflow-y visible
+    min-height 100vh
 
-    &:before,
-    &:after
-        content ''
-        background @color
-        background linear-gradient(top, white, white 50%, @color 50%, @color);
-        background-position 0 -100%
-        background-size 200%
-        border $Baymax-border solid @color
-        border-radius 50%
-        size 3.5em
-        position relative
-        overflow hidden
-        transform skewX(-6deg)
-        animation blink 6s infinite
-    &:after
-        transform skewX(6deg)
-        animation-delay 0.1s
-
-    .mouth
-        background @color
-        height $Baymax-border
-        margin $Baymax-border -15px 0
-        flex 1
-
-@keyframes blink
-    0%, 50%     { background-position: 0 100%; }
-    85%, 95%    { background-position: 0 50%; }
-    100%        { background-position: 0 100%; }
+.main-content
+    padding-bottom $spacing-large

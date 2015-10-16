@@ -20,6 +20,7 @@
     "imagesloaded": "~3.1.8",
     "angular": "~1.4.5",
     "angular-ui-router": "~0.2.15",
-    "zeroclipboard": "~2.2.0"
+    "zeroclipboard": "~2.2.0",
+    "angular-animate": "~1.4.7"
   }
 }

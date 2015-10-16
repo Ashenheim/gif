@@ -81,9 +81,10 @@ module.exports = {
         src: [
             paths.bower + '/jquery/dist/jquery.min.js',
             paths.bower + '/angular/angular.min.js',
+            paths.bower + '/angular-animate/angular-animate.min.js',
             paths.bower + '/angular-ui-router/release/angular-ui-router.min.js',
-            paths.bower + '/isotope/dist/isotope.pkgd.js',
             paths.bower + '/imagesloaded/imagesloaded.pkgd.js',
+
             paths.js + '/vendors/*.js',
             paths.js + '/partials/*.js',
             paths.js + '/init.js'

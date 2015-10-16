@@ -3,7 +3,7 @@ extends _layouts/default.jade
 block content
     
     div( ui-view="overlay" )
-    main.gifs(ng-class="{'no-input': !query }")
+    main.main-content.gifs(ng-class="{'no-input': !query }")
         include _partials/search.form.jade
         
         section.gif__container(

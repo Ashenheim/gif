@@ -9,6 +9,10 @@ function mainController($scope, $http, $timeout, $state, $window) {
     $scope.gifs = GIFS;
     $scope.categories = CATS;
 
+    $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
+        $scope.containerClass = "page-" + toState.containerClass;
+    });
+
     /* ------------------------------------
         Search Timeout
 

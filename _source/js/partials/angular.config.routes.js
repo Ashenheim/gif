@@ -3,10 +3,12 @@ function routesConfig($stateProvider, $urlRouterProvider) {
 
     $stateProvider
         .state('/', {
-            url: '/'
+            url: '/',
+            containerClass: 'home is-exiting'
         })
         .state('gif', {
             url: '/:name',
+            containerClass: 'gif',
             views: {
                 'overlay': {
                     templateUrl: 'app/templates/gif-state.tpl.html',
