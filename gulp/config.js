@@ -13,9 +13,8 @@ var paths = {
     stylus: "_source/stylus/",
     js    : "_source/js/",
     media : "_source/media/",
-    jade  : "_source/jade/",
-    yaml  : "_source/yaml/",
-    copy  : "_source/copy/"
+    markup: "_source/markup/",
+    yaml  : "_source/yaml/"
 }
 
 
@@ -27,21 +26,31 @@ module.exports = {
 
     build: paths.dest,
 
+    copy: {
+        src: [
+            paths.markup + '**/*',
+            '!' + paths.markup + '**/*.{jade,yml}',
+            '!' + paths.markup + '{_partials,_partials/**}',
+            '!' + paths.markup + '{_layouts,_layouts/**}'
+        ],
+        dest: paths.dest
+    },
+
     /* ------------------------------
         Jade
     ------------------------------ */
 
     jade: {
         src: [
-            paths.copy + '**/*.jade',
-            paths.copy + '*.jade',
-            '!' + paths.jade + '_partials/',
-            '!' + paths.jade + '_layouts/'
+            paths.markup + '**/*.jade',
+            paths.markup + '*.jade',
+            '!' + paths.markup + '{_partials,_partials/**}',
+            '!' + paths.markup + '{_layouts,_layouts/**}'
         ],
         dest: paths.dest,
         watch: [
-            paths.jade + '*.jade',
-            paths.jade + '**/*.jade'
+            paths.markup + '*.jade',
+            paths.markup + '**/*.jade'
         ]
     },
 
@@ -59,8 +68,8 @@ module.exports = {
 
     yaml: {
         src: [
-            paths.yaml + '*.yml',
-            paths.yaml + '**/*.yml'
+            paths.markup + '*.yml',
+            paths.markup + '**/*.yml'
         ],
         dest: paths.dest
     },
@@ -94,15 +103,5 @@ module.exports = {
             src: paths.media + "*.svg"
         },
         dest: paths.assets + "media/"
-    },
-
-    copy: {
-        src: [
-            paths.copy + '**/*',
-            '!' + paths.copy + '**/*.jade',
-            '!' + paths.jade + '_partials/',
-            '!' + paths.jade + '_layouts/'
-        ],
-        dest: paths.dest
     }
 }
