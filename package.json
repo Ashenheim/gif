@@ -8,9 +8,11 @@
   "scripts": {
     "clean": "rimraf ./app/",
     "prestart": "npm run clean",
-    "start": "webpack --env.production",
+    "start": "gulp build --gulpfile tasks",
     "prewatch": "npm run clean",
-    "watch": "webpack-dev-server"
+    "watch": "gulp serve --gulpfile tasks",
+    "pretest": "npm run clean",
+    "test": "gulp test --gulpfile tasks"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
@@ -22,16 +24,24 @@
     "babel-preset-es2016": "^6.24.1",
     "babel-preset-es2017": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "browser-sync": "^2.18.11",
+    "chai": "^3.5.0",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.1",
+    "gulp": "gulpjs/gulp#4.0",
+    "gulp-util": "^3.0.8",
     "html-webpack-plugin": "^2.28.0",
     "offline-plugin": "^4.7.0",
     "rimraf": "^2.6.1",
     "style-loader": "^0.17.0",
     "webpack": "^2.5.1",
-    "webpack-dev-server": "^2.4.5"
+    "webpack-dev-middleware": "^1.10.2",
+    "webpack-dev-server": "^2.4.5",
+    "webpack-hot-middleware": "^2.18.0",
+    "webpack-node-externals": "^1.6.0"
   },
   "dependencies": {
+    "mocha": "^3.4.1",
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
