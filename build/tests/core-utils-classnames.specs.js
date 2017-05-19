@@ -85,10 +85,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 describe('classnames()', function () {
-    it('should create a single string from multiple class names', function () {
+    it('should create a single class string from multiple class names', function () {
         var classes = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__classnames__["a" /* default */])('foo', 'bar');
 
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_chai__["expect"])(classes).to.equal('foo bar');
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_chai__["expect"])(classes).to.be.equal('foo bar');
+    });
+
+    it('should create a single class string without extra spaces', function () {
+        var classes = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__classnames__["a" /* default */])('foo', '', 'bar');
+
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_chai__["expect"])(classes).to.be.equal('foo bar');
+    });
+
+    it('should create a single class string by filtering an object', function () {
+        var classes = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__classnames__["a" /* default */])('class', {
+            'hidden-class': false,
+            'shown-class': true
+        });
+
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_chai__["expect"])(classes).to.be.equal('class shown-class');
     });
 });
 
@@ -97,12 +112,22 @@ describe('classnames()', function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = (function () {
-  for (var _len = arguments.length, classes = Array(_len), _key = 0; _key < _len; _key++) {
-    classes[_key] = arguments[_key];
-  }
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-  return classes.join(' ');
+/* harmony default export */ __webpack_exports__["a"] = (function () {
+    for (var _len = arguments.length, classes = Array(_len), _key = 0; _key < _len; _key++) {
+        classes[_key] = arguments[_key];
+    }
+
+    return classes.map(function (c) {
+        if ((typeof c === 'undefined' ? 'undefined' : _typeof(c)) === 'object') {
+            return Object.keys(c).filter(function (value) {
+                return c[value];
+            });
+        }
+
+        return c;
+    }).filter(Boolean).join(' ');
 });
 
 /***/ })
