@@ -27,7 +27,7 @@ const webpackTestCompile = () => new Promise(resolve => {
 });
 
 const createWebpackConfigWithHot = (config) => {
-    config.entry = config.entry.unshift(
+    config.entry.unshift(
         'webpack-hot-middleware/client?reload=true'
     );
 

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Keybind, Gif, FilterBox } from 'Components';
-import { createSelector } from 'reselect';
 import transformGifsList from 'core/transforms/transform-gifs-list';
 
 

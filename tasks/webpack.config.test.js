@@ -5,6 +5,7 @@ const getCommonLoaders = require('./webpack.common-loaders');
 const getCommonPlugins = require('./webpack.common-plugins');
 const webpackConfig = require('./webpack.config');
 
+const config = Object.assign({}, webpackConfig);
 const tests = true;
 
 
@@ -20,12 +21,12 @@ const entries = files.reduce((e, f) => {
 }, {});
 
 
-webpackConfig.target = 'node';
-webpackConfig.entry = entries;
-webpackConfig.output.path = `${webpackConfig.output.path}/tests`;
-webpackConfig.output.filename = '[name].specs.js';
-webpackConfig.module.loaders = getCommonLoaders({ tests });
-webpackConfig.plugins = getCommonPlugins({ tests });
-webpackConfig.externals = [nodeExternals()];
+config.target = 'node';
+config.entry = entries;
+config.output.path = `${config.output.path}/tests`;
+config.output.filename = '[name].specs.js';
+config.module.loaders = getCommonLoaders({ tests });
+config.plugins = getCommonPlugins({ tests });
+config.externals = [nodeExternals()];
 
-module.exports = webpackConfig;
+module.exports = config;

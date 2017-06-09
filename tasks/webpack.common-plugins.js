@@ -18,7 +18,6 @@ module.exports = (env = {}) => [
     !env.tests && new CopyWebpackPlugin([
         { context: './static', from: '**/*' },
     ]),
-    !env.tests && new OfflinePlugin(),
     !env.tests && new HtmlWebpackPlugin({
         template: './source/shell.html',
     }),
